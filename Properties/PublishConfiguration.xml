@@ -5,50 +5,44 @@
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="Fast Bikes" />
 	<!--Short description of the mod-->
-	<ShortDescription Value="Fast Bikes, Scooters, and Path Speeds :)" />
+	<ShortDescription Value="Adjust Bikes and Path Speed Limits :)" />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 	<!--LongDescription Value="Fast Bikes" /-->
 	<LongDescription>
-🚲 Fast Bikes: speeds up bicycles and scooters.
+🚴 **Path speed limit** - YES - now you can adjust bike paths (paths are independent of road speed limits) !
+🚲 *Fast Bikes* speeds up bicycles + scooters. Speed can be disabled [x] if you just want the paths.
+🚴 *Status report* - compare Bike count versus Cars count and usage (Stats can be used without enabling Fast Bikes or Path speed checkbox at all).
+- road speed mods don't let you set "path" speed limits, so that is unique to this mod.
 
-🚴 Path speed limit - YES - now you can change bike paths (paths are independent of road speed limits)!
-🚴 Status report - compare Bike count versus Cars usage (this can be used without enabling Fast Bikes checkbox).
+### Features
+- ✅ Speed ⬆️ ⬇️
+- ✅ Smoothing math for acceleration + braking (no teleport and panic braking)
+- ✅ One-click Reset buttons.
 
-- road mods don't let you set "path" speeds so this is unique to this mod.
+---
 
-#### Features
-
-- ✅  Speed ⬆️ ⬇️
-- ✅  Smoothing math for acceleration + braking (no teleport and panic braking)
-- ✅  One-click Reset buttons.
-
-#### Tech notes
-
-- Road speed limits and game conditions may still cap speeds.
+## Tech notes
+- Road speed limits and game conditions may still cap speeds on bikes in roads.
+- Path speed limit - for both bike and pedestrian paths.
 - Compatible with "Road Speed Adjuster" mod (as that does normal roads and not Paths).
-- Path speed limit: includes both bike and pedestrian paths.
 - To disable the mod without uninstalling, uncheck [ ] the enable box.
-- Safe to remove (Reset button first for fast return to game defaults, then save city, and uninstall).
+- Safe to remove (Reset button first for fast return to game defaults, then save city, and uninstall). If you don't reset, it's not a problem, you keep the changed paths until you replace your paths since they are vanilla paths.
 
-#### Support and Feedback
-
+### Support and Feedback
 - If the mod helps, drop a Like, it's free + easy to do :)
-- Report issues on Github / Forum / Discord.
+- Report issues on Github / Discord.
 
-
-#### Design + Performance
-- Fast Bikes is built to be lightweight. It's partly why this was made; to have a mod that does not run in the city per-frame.
-- Bike/vehicle or path speed are features that can be implemented without Harmony patch or running in the city per frame.
-- It works to apply tuning when you change settings (or when a city loads), then goes idle, simple.
+### Design + Performance
+- Fast Bikes is built to be lightweight. It's partly why this was made; to have a mod that does not have parts that run in the city per-frame all the time.
+- No Harmony patch. It works to apply tuning when you change settings (or when a city loads), then goes idle, simple.
 - Status report refreshes only when the Options menu is open (to not affect city gameplay performance).
-- This is a brief idea, there is much more; be sure, effort is made for these details.
+- This is a brief idea, there is much more; be sure, effort is made for these details because I like the idea I can run these kind of mods even on an old laptop.
 
+### Credits
+- River-mochi - author
 
-#### Credits
+tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, change path speed, bike path, slow path, slow cims
 
-- **River-mochi** - author
-
-tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, change path speed, bike path.
 </LongDescription>
 
 	<!--Thumbnail-->
@@ -64,7 +58,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.8" />
+	<ModVersion Value="1.0.9" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.5.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -73,8 +67,8 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<RequiredDLC Value="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<ChangeLog>
-- More Compatibility with other mods, remove sway feature.
-- update language files.
+- Adds Turkish translation
+- Adds Vietnamese translation
 </ChangeLog>
 	<!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
 	<ExternalLink Type="" Url="" />

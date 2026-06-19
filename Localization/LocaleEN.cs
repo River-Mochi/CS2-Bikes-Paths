@@ -3,8 +3,8 @@
 
 namespace FastBikes
 {
-    using Colossal;                    // IDictionarySource, IDictionaryEntryError
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
+    using Colossal;                    // IDictionarySource, IDictionaryEntryError
 
     public sealed class LocaleEN : IDictionarySource
     {
@@ -154,8 +154,8 @@ namespace FastBikes
                 // Debug
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DumpBicyclePrefabs)), "Bike debug report" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.DumpBicyclePrefabs)),
+                    "<Not needed for normal gameplay>.\n" +
                     "One-time detailed log report for debugging or game patch day verify.\n" +
-                    "Not needed for normal gameplay.\n" +
                     "Load a city first.\n" +
                     "Output location: **Logs/FastBikes.log**"
                 }
