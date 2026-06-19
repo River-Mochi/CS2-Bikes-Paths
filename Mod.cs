@@ -3,16 +3,16 @@
 
 namespace FastBikes
 {
+    using System;                    // Exception, Func<T>
+    using System.Reflection;         // Assembly
     using Colossal;                  // IDictionarySource
     using Colossal.IO.AssetDatabase; // AssetDatabase.LoadSettings
     using Colossal.Localization;     // LocalizationManager
     using Colossal.Logging;          // ILog, LogManager
-    using CS2HonuShared;             // LogUtils
+    using CS2Shared.RiverMochi;      // LogUtils
     using Game;                      // UpdateSystem, SystemUpdatePhase
     using Game.Modding;              // IMod
     using Game.SceneFlow;            // GameManager
-    using System;                    // Exception, Func<T>
-    using System.Reflection;         // Assembly
 
     public sealed class Mod : IMod
     {
@@ -47,6 +47,7 @@ namespace FastBikes
 
         public void OnLoad(UpdateSystem updateSystem)
         {
+            LogUtils.Configure(ModId, s_Log);
             if (!s_BannerLogged)
             {
                 s_BannerLogged = true;

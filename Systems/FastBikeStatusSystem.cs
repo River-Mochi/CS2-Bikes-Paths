@@ -3,6 +3,9 @@
 
 namespace FastBikes
 {
+    using System;              // DateTime, StringComparison
+    using System.Collections.Generic;
+    using System.Text;
     using Game;                // GameSystemBase
     using Game.Citizens;       // TouristHousehold, CurrentBuilding, HouseholdMember, Household
     using Game.Common;         // Deleted, Destroyed, Owner
@@ -10,9 +13,6 @@ namespace FastBikes
     using Game.Prefabs;        // BicycleData, PrefabBase, PrefabRef, PrefabSystem
     using Game.Tools;          // Temp
     using Game.Vehicles;       // CarCurrentLane, CarTrailer, ParkedCar, PersonalCar
-    using System;              // DateTime, StringComparison
-    using System.Collections.Generic;
-    using System.Text;
     using Unity.Collections;   // Allocator, NativeArray, NativeList, NativeParallelHashSet
     using Unity.Entities;      // Entity, EntityQuery, ComponentLookup, ComponentType
 

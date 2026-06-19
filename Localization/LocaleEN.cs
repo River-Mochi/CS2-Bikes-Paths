@@ -129,6 +129,12 @@ namespace FastBikes
                     "Use Scene Explorer mod to Jump To the listed Vehicle entity IDs and investigate."
                 },
 
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromStatus)), "Open Log" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromStatus)),
+                    "Opens **Logs/FastBikes.log** if it exists.\n" +
+                    "If the file is not found yet, opens the Logs folder instead."
+                },
+
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "Status not loaded." },
                 { "FAST_STATS_NOT_AVAIL",       "No city... ¯\\_(ツ)_/¯ ...No stats" },
@@ -158,6 +164,12 @@ namespace FastBikes
                     "One-time detailed log report for debugging or game patch day verify.\n" +
                     "Load a city first.\n" +
                     "Output location: **Logs/FastBikes.log**"
+                },
+
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromDebug)), "Open Log" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromDebug)),
+                    "Opens **Logs/FastBikes.log** if it exists.\n" +
+                    "If the file is not found yet, opens the Logs folder instead."
                 }
             };
         }

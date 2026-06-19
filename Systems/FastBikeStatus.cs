@@ -3,10 +3,10 @@
 
 namespace FastBikes
 {
-    using CS2HonuShared;          // LocaleUtils
+    using System;                 // DateTime, TimeSpan
+    using CS2Shared.RiverMochi;   // LocaleUtils
     using Game;                   // IsGame()
     using Game.SceneFlow;         // GameManager
-    using System;                 // DateTime, TimeSpan
     using Unity.Entities;         // World
     using UnityEngine;            // Time.frameCount
 

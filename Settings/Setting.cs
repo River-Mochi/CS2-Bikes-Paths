@@ -3,18 +3,18 @@
 
 namespace FastBikes
 {
+    using System;                    // Exception, Math
     using Colossal.IO.AssetDatabase; // FileLocation
     using Game.Modding;              // IMod, ModSetting
     using Game.Settings;             // Settings UI attributes
     using Game.UI;                   // Unit
-    using System;                    // Exception, Math
     using Unity.Entities;            // World
     using UnityEngine;               // Application.OpenURL
 
     [FileLocation("ModsSettings/FastBikes/FastBikes")]
     [SettingsUITabOrder(ActionsTab, AboutTab)]
     [SettingsUIGroupOrder(
-        ActionsSpeedGrp, ActionsPathSpeedGrp,  ActionsResetGrp, ActionsStatusGrp,
+        ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp, ActionsStatusGrp,
         AboutInfoGrp, AboutLinksGrp, AboutDebugGrp)]
     [SettingsUIShowGroupName(
         ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp, ActionsStatusGrp,
@@ -36,6 +36,9 @@ namespace FastBikes
         public const string AboutInfoGrp = "Mod info";
         public const string AboutLinksGrp = "Links";
         public const string AboutDebugGrp = "Debug";
+
+        public const string ActionsStatusButtonsRow = "StatusButtonsRow";
+        public const string AboutDebugButtonsRow = "AboutDebugButtonsRow";
 
         private const string UrlParadox =
             "https://mods.paradoxplaza.com/authors/River-mochi/cities_skylines_2?games=cities_skylines_2&orderBy=desc&sortBy=best&time=alltime";
@@ -104,8 +107,6 @@ namespace FastBikes
             get; set;
         }
 
-       
-
         // -----------------------------
         // Actions: Path speed
         // -----------------------------
@@ -118,7 +119,6 @@ namespace FastBikes
         {
             get; set;
         }
-
 
         // ------------------------
         // Actions: Reset buttons
@@ -158,7 +158,6 @@ namespace FastBikes
             }
         }
 
-
         // -----------------------------
         // Actions: Status (read-only)
         // -----------------------------
@@ -194,6 +193,7 @@ namespace FastBikes
         }
 
         [SettingsUISection(ActionsTab, ActionsStatusGrp)]
+        [SettingsUIButtonGroup(ActionsStatusButtonsRow)]
         [SettingsUIButton]
         public bool LogBorderHiddenCars
         {
@@ -212,6 +212,22 @@ namespace FastBikes
 
                 world.GetOrCreateSystemManaged<FastBikeStatusSystem>()
                     .LogBorderParkedSamples(headCount: 10, tailCount: 10);
+            }
+        }
+
+        [SettingsUISection(ActionsTab, ActionsStatusGrp)]
+        [SettingsUIButtonGroup(ActionsStatusButtonsRow)]
+        [SettingsUIButton]
+        public bool OpenLogFromStatus
+        {
+            set
+            {
+                if (!value)
+                {
+                    return;
+                }
+
+                ShellOpen.OpenModLogOrLogsFolder();
             }
         }
 
@@ -256,6 +272,7 @@ namespace FastBikes
         // ------------------------
 
         [SettingsUISection(AboutTab, AboutDebugGrp)]
+        [SettingsUIButtonGroup(AboutDebugButtonsRow)]
         [SettingsUIButton]
         public bool DumpBicyclePrefabs
         {
@@ -267,6 +284,22 @@ namespace FastBikes
                 }
 
                 GetSystem()?.ScheduleDump();
+            }
+        }
+
+        [SettingsUISection(AboutTab, AboutDebugGrp)]
+        [SettingsUIButtonGroup(AboutDebugButtonsRow)]
+        [SettingsUIButton]
+        public bool OpenLogFromDebug
+        {
+            set
+            {
+                if (!value)
+                {
+                    return;
+                }
+
+                ShellOpen.OpenModLogOrLogsFolder();
             }
         }
 

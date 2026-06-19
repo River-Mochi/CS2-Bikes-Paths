@@ -5,12 +5,12 @@
 // - Null-safe: returns fallback when LocalizationManager/dictionary is unavailable.
 // - Culture-aware: numeric formatting uses current culture.
 
-namespace CS2HonuShared
+namespace CS2Shared.RiverMochi
 {
-    using Colossal.Localization;   // LocalizationDictionary
-    using Game.SceneFlow;          // GameManager
     using System;                  // Exception, FormatException
     using System.Globalization;    // CultureInfo
+    using Colossal.Localization;   // LocalizationDictionary
+    using Game.SceneFlow;          // GameManager
 
     public static class LocaleUtils
     {
