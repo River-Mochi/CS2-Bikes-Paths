@@ -5,12 +5,12 @@
 
 namespace FastBikes
 {
+    using System.Collections.Generic;     // Dictionary
     using Colossal.Serialization.Entities; // Purpose
     using Game;                           // GameSystemBase, GameMode
     using Game.Common;                    // Deleted, Overridden
     using Game.Prefabs;                   // PrefabSystem, PrefabBase, BicyclePrefab, BicycleData, CarData, PrefabData, SwayingData
     using Game.Tools;                     // Temp
-    using System.Collections.Generic;     // Dictionary
     using Unity.Entities;                 // Entity, RefRW, SystemAPI
     using Unity.Mathematics;              // math.*
 

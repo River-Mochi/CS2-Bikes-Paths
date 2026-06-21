@@ -5,11 +5,14 @@
 
 namespace FastBikes
 {
+    using System;                     // StringComparison
+    using System.Collections.Generic; // List, HashSet
+    using System.Text;                // StringBuilder
     using Game.Common;                // Deleted, Overridden
     using Game.Prefabs;               // BicyclePrefab, BicycleData, CarData, SwayingData, PrefabBase, PrefabData, PrefabRef
     using Game.Tools;                 // Temp
-    using System;                     // StringComparison
-    using System.Collections.Generic; // List, HashSet
+    using Game.Vehicles;              // parkedcar
+    using Unity.Collections;          // Allocator, NativeArray, NativeList, NativeParallelHashSet
     using Unity.Entities;             // Entity, SystemAPI, RefRO
     using Unity.Mathematics;          // math, float3
 
