@@ -64,7 +64,7 @@ namespace FastBikes
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpeedScalar)), "Bike & scooter speed" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.SpeedScalar)),
                     "**Scales max speed**.\n" +
-                    "Acceleration + brake use smoothing math at high-speed for less jump starts and panic braking look.\n" +
+                    "Acceleration + braking use smoothing math at high-speed for less jump starts and panic-braking look.\n" +
                     "**0.30 = 30%** of game default\n" +
                     "**1.00 = game default**\n" +
                     "Note: road limits and game conditions still apply."
@@ -120,7 +120,7 @@ namespace FastBikes
                     "Personal cars only (excludes the Bike group).\n" +
                     "**Active** = has a current lane (moving).\n" +
                     "**Parked** = all **ParkedCar**, not just parking lots.\n " +
-                    "Scan runs only while Options is open and not in-city fps, so no worries on performance."
+                    "Scan runs only while Options menu is open, not in-city gameplay, so no FPS concern."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary3)), "Hidden parked cars" },

@@ -25,7 +25,7 @@ namespace FastBikes
     public sealed class Mod : IMod
     {
         public const string ModId = "FastBikes";
-        public const string ModName = "Fast Bikes";
+        public const string ModName = "Bikes + Paths";
         public const string ModTag = "[FB]";
 
         public static readonly string ModVersion =
@@ -55,7 +55,6 @@ namespace FastBikes
 
         public void OnLoad(UpdateSystem updateSystem)
         {
-            LogUtils.Configure(ModId, s_Log);
             ShellOpen.Configure(s_Log, ModId, ModTag);
 
             if (!s_BannerLogged)
