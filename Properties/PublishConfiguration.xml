@@ -3,9 +3,9 @@
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
 	<ModId Value="134067" />
 	<!--Name of the mod to display to players-->
-	<DisplayName Value="Fast Bikes" />
+	<DisplayName Value="Bikes + Paths" />
 	<!--Short description of the mod-->
-	<ShortDescription Value="Adjust Bikes and Path Speed Limits :)" />
+	<ShortDescription Value="Adjust Bikes, Path Speed Limits. Detailed Status Report :)" />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 	<!--LongDescription Value="Fast Bikes" /-->
 	<LongDescription>
@@ -59,9 +59,9 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.1.0" />
+	<ModVersion Value="1.1.1" />
 	<!--Recommended version of the base game to use the mod-->
-	<GameVersion Value="1.5.10*" />
+	<GameVersion Value="1.6.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Required DLC, can be set multiple times. Supported values are "Landmark Buildings", "San Fransisco Set", "Beach Properties", "Urban Promenades", "Modern Architecture"-->

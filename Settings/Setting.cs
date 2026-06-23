@@ -1,3 +1,11 @@
+// <copyright file="Setting.cs" company="River-Mochi">
+// Copyright (c) 2026 River-Mochi. All rights reserved.
+// Licensed under the MIT License. You may not use this file except in compliance with this License.
+// See LICENSE file in the project root for full license information.
+// This notice and the MIT License notice must be kept with
+// all copies or substantial portions of this code.
+// ================= </copyright> ======================
+
 // File: Settings/Setting.cs
 // Purpose: Options UI + live apply triggers for FastBikes.
 
@@ -5,6 +13,7 @@ namespace FastBikes
 {
     using System;                    // Exception, Math
     using Colossal.IO.AssetDatabase; // FileLocation
+    using CS2Shared.RiverMochi;      // ShellOpen
     using Game.Modding;              // IMod, ModSetting
     using Game.Settings;             // Settings UI attributes
     using Game.UI;                   // Unit
