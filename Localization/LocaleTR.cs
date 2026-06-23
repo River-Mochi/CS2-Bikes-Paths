@@ -11,8 +11,8 @@
 
 namespace FastBikes
 {
-    using Colossal;                    // IDictionarySource, IDictionaryEntryError
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
+    using Colossal;                    // IDictionarySource, IDictionaryEntryError
 
     public sealed class LocaleTR : IDictionarySource
     {
@@ -56,7 +56,8 @@ namespace FastBikes
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EnableFastBikes)), "Fast Bikes'i etkinleştir" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.EnableFastBikes)),
                     "Modu **AÇ / KAPAT** yapar.\n" +
-                    "Kapalıyken bisiklet ve scooter davranışı oyun varsayılanına döner.\n\n" +
+                    "Kapalıyken bisiklet ve scooter davranışı oyun varsayılanına döner.\n" +
+                    "\n" +
                     "Fast Bikes kapalı olsa bile aşağıdaki durum bilgisi kullanılabilir."
                 },
 
@@ -91,7 +92,8 @@ namespace FastBikes
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.PathSpeedScalar)),
                     "**Patika** hız sınırlarını ölçekler (patikalar yol değildir).\n" +
                     "**1.00 = oyun varsayılanı**\n" +
-                    "Etkiler: bisiklet yolları, ayrılmış yaya+bisiklet yolları ve yaya patikaları.\n\n" +
+                    "Etkiler: bisiklet yolları, ayrılmış yaya+bisiklet yolları ve yaya patikaları.\n" +
+                    "\n" +
                     "Kaldırma notu: 1.00 yap veya sıfırlama düğmesini kullan, şehri kaydet, sonra kaldır.\n" +
                     "Unutursan eski patikalar modlu hızda kalır, yeni patikalar vanilla oyun varsayılanını kullanır."
                 },
@@ -112,29 +114,35 @@ namespace FastBikes
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary1)),
                     "Bisikletler ve elektrikli scooterlar.\n" +
                     "**Aktif** = mevcut şeridi var (hareket ediyor).\n" +
-                    "**Toplam park** = yalnız otoparklar değil, her yerdeki tüm park durumlarını içerir."
+                    "**Toplam park** = yalnız otoparklar değil, her yerdeki tüm Parked durumlarını içerir."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary2)), "Araba grubu" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary2)),
                     "Sadece kişisel arabalar (Bisiklet grubu hariç).\n" +
                     "**Aktif** = mevcut şeridi var (hareket ediyor).\n" +
-                    "**Park** = sadece otoparklar değil, tüm **ParkedCar**.\n " +
-                    "Tarama sadece Options açıkken çalışır, şehir içi fps değildir; performans için dert etme."
+                    "**Park** = sadece otoparklar değil, tüm **ParkedCar**.\n" +
+                    "Tarama sadece Options menüsü açıkken çalışır, şehir oynanışı sırasında değil; FPS derdi yok."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary3)), "Gizli park etmiş arabalar" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary3)),
                     "**OC sınırındaki toplam** = Şehir Dışı (OC) bağlantısında ParkedCar olan araba grubu araçları.\n" +
                     "Bazı şehirlerde Şehir Dışı bağlantısında parkta takılmış çok sayıda araba görülür.\n" +
-                    "Gizli arabaların örnek dökümü için <Gizli arabaları günlüğe yaz> kullan.\n"
+                    "Gizli arabaların örnek dökümü için <Log hidden cars> kullan."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LogBorderHiddenCars)), "Gizli arabaları günlüğe yaz" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.LogBorderHiddenCars)),
                     "**Logs/FastBikes.log** içine tek seferlik rapor yazar.\n" +
-                    "Toplam + A/B/C grup dökümü ve örnek ID numaralarını içerir.\n" +
-                    "Scene Explorer moduyla listelenen araç varlık ID'lerine atlayıp incele."
+                    "Toplam + Bucket A/B/C dökümü ve örnek ID numaralarını içerir.\n" +
+                    "Scene Explorer moduyla listelenen Vehicle varlık ID'lerine atlayıp incele."
+                },
+
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromStatus)), "Günlüğü aç" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromStatus)),
+                    "Varsa **Logs/FastBikes.log** dosyasını açar.\n" +
+                    "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
                 },
 
                 // Status fallback keys
@@ -162,10 +170,16 @@ namespace FastBikes
                 // Debug
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DumpBicyclePrefabs)), "Bisiklet debug raporu" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.DumpBicyclePrefabs)),
+                    "<Normal oynanış için gerekmez>.\n" +
                     "Debug veya oyun yaması sonrası kontrol için tek seferlik ayrıntılı günlük raporu.\n" +
-                    "Normal oynanış için gerekmez.\n" +
                     "Önce bir şehir yükle.\n" +
                     "Çıktı konumu: **Logs/FastBikes.log**"
+                },
+
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromDebug)), "Günlüğü aç" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromDebug)),
+                    "Varsa **Logs/FastBikes.log** dosyasını açar.\n" +
+                    "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
                 }
             };
         }

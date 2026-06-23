@@ -11,8 +11,8 @@
 
 namespace FastBikes
 {
-    using Colossal;                    // IDictionarySource, IDictionaryEntryError
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
+    using Colossal;                    // IDictionarySource, IDictionaryEntryError
 
     public sealed class LocaleVI : IDictionarySource
     {
@@ -55,18 +55,19 @@ namespace FastBikes
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EnableFastBikes)), "Bật Fast Bikes" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.EnableFastBikes)),
-                    "**Bật / tắt** mod.\n" +
-                    "Khi tắt, xe đạp và scooter sẽ về hành vi mặc định của game.\n\n" +
-                    "Thông tin trạng thái bên dưới vẫn xem được dù Fast Bikes đang tắt."
+                    "Bật hoặc tắt mod **ON / OFF**.\n" +
+                    "Khi tắt, hành vi xe đạp và scooter trở về mặc định của game.\n" +
+                    "\n" +
+                    "Thông tin trạng thái bên dưới vẫn dùng được ngay cả khi Fast Bikes tắt."
                 },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpeedScalar)), "Tốc độ xe đạp & scooter" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.SpeedScalar)),
                     "**Nhân tốc độ tối đa**.\n" +
-                    "Tăng tốc + phanh dùng công thức làm mượt ở tốc độ cao để bớt giật và bớt phanh gấp.\n" +
-                    "**0.30 = 30%** mặc định game\n" +
-                    "**1.00 = mặc định game**\n" +
+                    "Tăng tốc + phanh dùng làm mượt ở tốc độ cao để bớt giật khi khởi hành và bớt cảm giác phanh gấp.\n" +
+                    "**0.30 = 30%** mặc định của game\n" +
+                    "**1.00 = mặc định của game**\n" +
                     "Lưu ý: giới hạn đường và điều kiện trong game vẫn áp dụng."
                 },
 
@@ -76,35 +77,36 @@ namespace FastBikes
     //                "Hệ số cho **biên độ lắc**.\n" +
     //                "**Cao hơn = ít nghiêng hơn**.\n" +
     //                "**Thấp hơn = lắc nhiều hơn**.\n" +
-    //                "Gợi ý: 1.25–1.75 để ổn định ở tốc độ cao."
+    //                "Gợi ý: 1.25–1.75 để ổn định hơn ở tốc độ cao."
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "Giảm dao động" },
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "Giảm chấn" },
     //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.DampingScalar)),
     //                "Cao hơn = ổn định nhanh hơn (ít dao động hơn).\n" +
-    //                "**1.00 = mặc định game**\n" +
-    //                "Gợi ý: 1.25–2.00 để ổn định ở tốc độ cao."
+    //                "**1.00 = mặc định của game**\n" +
+    //                "Gợi ý: 1.25–2.00 để ổn định hơn ở tốc độ cao."
     //            },
 
                 // Path Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.PathSpeedScalar)), "Giới hạn tốc độ đường đi" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.PathSpeedScalar)),
-                    "Nhân giới hạn tốc độ **đường đi** (đường đi không phải đường xe chạy).\n" +
-                    "**1.00 = mặc định game**\n" +
-                    "Ảnh hưởng: đường xe đạp, đường đi bộ+xe đạp tách làn, và đường đi bộ.\n\n" +
+                    "Nhân giới hạn tốc độ của **đường đi** (đường đi không phải đường xe chạy).\n" +
+                    "**1.00 = mặc định của game**\n" +
+                    "Ảnh hưởng: đường xe đạp, đường tách người đi bộ+xe đạp, và đường đi bộ.\n" +
+                    "\n" +
                     "Gỡ mod: đặt về 1.00 hoặc dùng nút đặt lại, lưu thành phố, rồi gỡ mod.\n" +
-                    "Nếu quên, đường đi cũ giữ tốc độ modded, đường đi mới dùng mặc định vanilla."
+                    "Nếu quên, đường cũ vẫn giữ tốc độ đã chỉnh, còn đường mới dùng mặc định vanilla."
                 },
 
                 // Reset buttons
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToModDefaults)), "Mặc định mod" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToModDefaults)),
-                    "Áp dụng giá trị tinh chỉnh mặc định của mod."
+                    "Áp dụng các giá trị chỉnh mặc định của mod."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToVanilla)), "Mặc định game" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToVanilla)),
-                    "Đưa mọi thanh trượt về **100%** và khôi phục mặc định game (vanilla)."
+                    "Đặt tất cả thanh trượt về **100%** và khôi phục mặc định của game (vanilla)."
                 },
 
                 // Status lines
@@ -112,29 +114,35 @@ namespace FastBikes
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary1)),
                     "Xe đạp và scooter điện.\n" +
                     "**Đang chạy** = có làn hiện tại (đang di chuyển).\n" +
-                    "**Tổng đang đỗ** = tính mọi trạng thái đỗ ở mọi nơi, không chỉ bãi đỗ."
+                    "**Tổng đang đỗ** = gồm mọi cờ Parked ở mọi nơi, không chỉ bãi đỗ."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary2)), "Nhóm ô tô" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary2)),
-                    "Chỉ xe cá nhân (không tính nhóm xe đạp).\n" +
+                    "Chỉ xe cá nhân (không gồm nhóm xe đạp).\n" +
                     "**Đang chạy** = có làn hiện tại (đang di chuyển).\n" +
-                    "**Đang đỗ** = tất cả **ParkedCar**, không chỉ bãi đỗ.\n " +
-                    "Quét chỉ chạy khi Options đang mở, không chạy vào fps trong thành phố, nên đừng lo hiệu năng."
+                    "**Đang đỗ** = mọi **ParkedCar**, không chỉ bãi đỗ.\n" +
+                    "Quét chỉ chạy khi menu Options mở, không chạy trong lúc chơi thành phố, nên không lo FPS."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary3)), "Xe đỗ ẩn" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary3)),
-                    "**Tổng ở biên OC** = xe nhóm ô tô có ParkedCar tại kết nối Ngoài Thành Phố (OC).\n" +
-                    "Một số thành phố có rất nhiều xe bị kẹt đang đỗ ở kết nối Ngoài Thành Phố.\n" +
-                    "Dùng <Ghi log xe ẩn> để xem mẫu phân nhóm xe ẩn.\n"
+                    "**Tổng ở biên OC** = xe trong nhóm ô tô có ParkedCar tại kết nối Outside City (OC).\n" +
+                    "Một số thành phố có nhiều xe bị kẹt ở trạng thái đỗ tại kết nối Outside City.\n" +
+                    "Dùng <Log hidden cars> để xem phân nhóm mẫu của xe ẩn."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LogBorderHiddenCars)), "Ghi log xe ẩn" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.LogBorderHiddenCars)),
                     "Ghi báo cáo một lần vào **Logs/FastBikes.log**.\n" +
-                    "Có tổng số + phân nhóm A/B/C và số ID mẫu.\n" +
-                    "Dùng mod Scene Explorer để nhảy tới ID thực thể xe được liệt kê và kiểm tra."
+                    "Có tổng số + phân nhóm Bucket A/B/C và số ID mẫu.\n" +
+                    "Dùng mod Scene Explorer để nhảy tới ID thực thể Vehicle được liệt kê và kiểm tra."
+                },
+
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromStatus)), "Mở log" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromStatus)),
+                    "Mở **Logs/FastBikes.log** nếu có.\n" +
+                    "Nếu chưa tìm thấy file, sẽ mở thư mục Logs."
                 },
 
                 // Status fallback keys
@@ -162,10 +170,16 @@ namespace FastBikes
                 // Debug
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DumpBicyclePrefabs)), "Báo cáo gỡ lỗi xe đạp" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.DumpBicyclePrefabs)),
+                    "<Không cần cho chơi bình thường>.\n" +
                     "Báo cáo log chi tiết một lần để gỡ lỗi hoặc kiểm tra sau ngày patch.\n" +
-                    "Không cần cho chơi bình thường.\n" +
                     "Hãy tải thành phố trước.\n" +
                     "Nơi xuất: **Logs/FastBikes.log**"
+                },
+
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromDebug)), "Mở log" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromDebug)),
+                    "Mở **Logs/FastBikes.log** nếu có.\n" +
+                    "Nếu chưa tìm thấy file, sẽ mở thư mục Logs."
                 }
             };
         }
