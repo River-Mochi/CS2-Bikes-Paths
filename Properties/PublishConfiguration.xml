@@ -47,7 +47,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 </LongDescription>
 
 	<!--Thumbnail-->
-	<Thumbnail Value="Properties/ThumbnailFastBikePath8.jpg" />
+	<Thumbnail Value="Properties/ThumbnailFastBikePathSky.jpg" />
 	<!--Screenshot, can be set multiple times-->
 	<Screenshot Value="Properties/image10-Actions.jpg" />
     <Screenshot Value="Properties/image20-Status.jpg" />

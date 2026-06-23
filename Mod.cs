@@ -17,7 +17,7 @@ namespace FastBikes
     using Colossal.IO.AssetDatabase; // AssetDatabase.LoadSettings
     using Colossal.Localization;     // LocalizationManager
     using Colossal.Logging;          // ILog, LogManager
-    using CS2Shared.RiverMochi;      // LogUtils
+    using CS2Shared.RiverMochi;      // LogUtils, ShellOpen
     using Game;                      // UpdateSystem, SystemUpdatePhase
     using Game.Modding;              // IMod
     using Game.SceneFlow;            // GameManager
@@ -56,6 +56,8 @@ namespace FastBikes
         public void OnLoad(UpdateSystem updateSystem)
         {
             LogUtils.Configure(ModId, s_Log);
+            ShellOpen.Configure(s_Log, ModId, ModTag);
+
             if (!s_BannerLogged)
             {
                 s_BannerLogged = true;
@@ -82,6 +84,8 @@ namespace FastBikes
             AddLocaleSource("pt-BR", new LocalePT_BR(setting));
             AddLocaleSource("zh-HANS", new LocaleZH_CN(setting));    // Simplified Chinese
             AddLocaleSource("zh-HANT", new LocaleZH_HANT(setting));  // Traditional Chinese
+            AddLocaleSource("tr-TR", new LocaleTR(setting));         // Turkish
+            AddLocaleSource("vi-VN", new LocaleVI(setting));         // Vietnamese
 
             try
             {
