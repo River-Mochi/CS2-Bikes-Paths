@@ -16,9 +16,9 @@ namespace FastBikes
 
     public sealed class LocaleJA : IDictionarySource
     {
-        private readonly Setting m_Setting;
+        private readonly FBSetting m_Setting;
 
-        public LocaleJA(Setting setting)
+        public LocaleJA(FBSetting setting)
         {
             m_Setting = setting;
         }
@@ -38,23 +38,23 @@ namespace FastBikes
                 { m_Setting.GetSettingsLocaleID(), title },
 
                 // Tabs
-                { m_Setting.GetOptionTabLocaleID(Setting.ActionsTab), "アクション" },
-                { m_Setting.GetOptionTabLocaleID(Setting.AboutTab),   "情報" },
+                { m_Setting.GetOptionTabLocaleID(FBSetting.ActionsTab), "アクション" },
+                { m_Setting.GetOptionTabLocaleID(FBSetting.AboutTab),   "情報" },
 
                 // Groups
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsSpeedGrp),      "速度" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsStabilityGrp),  "安定性" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsResetGrp),      "リセット" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsStatusGrp),     "個人車両ステータス" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsPathSpeedGrp),  "パス" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsSpeedGrp),      "速度" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStabilityGrp),  "安定性" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsResetGrp),      "リセット" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStatusGrp),     "個人車両ステータス" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsPathSpeedGrp),  "パス" },
 
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutInfoGrp),  "MOD情報" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutLinksGrp), "リンク" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutDebugGrp), "デバッグ" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutInfoGrp),  "MOD情報" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutLinksGrp), "リンク" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutDebugGrp), "デバッグ" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EnableFastBikes)), "Fast Bikes を有効化" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.EnableFastBikes)), "Fast Bikes を有効化" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.EnableFastBikes)),
                     "MOD を **ON / OFF** します。\n" +
                     "OFF の時は、自転車とスクーターの挙動をゲーム既定値に戻します。\n" +
                     "\n" +
@@ -62,8 +62,8 @@ namespace FastBikes
                 },
 
                 // Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpeedScalar)), "自転車＆スクーター速度" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.SpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.SpeedScalar)), "自転車＆スクーター速度" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.SpeedScalar)),
                     "**最高速度を倍率変更**します。\n" +
                     "高速時は加速＋ブレーキを滑らかにし、急発進やパニックブレーキっぽさを減らします。\n" +
                     "**0.30 = ゲーム既定値の 30%**\n" +
@@ -88,8 +88,8 @@ namespace FastBikes
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.PathSpeedScalar)), "パス速度制限" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.PathSpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.PathSpeedScalar)), "パス速度制限" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.PathSpeedScalar)),
                     "**パス** の速度制限を倍率変更します（パスは道路ではありません）。\n" +
                     "**1.00 = ゲーム既定値**\n" +
                     "対象: 自転車道、歩行者＋自転車の分離パス、歩道パス。\n" +
@@ -99,48 +99,48 @@ namespace FastBikes
                 },
 
                 // Reset buttons
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToModDefaults)), "MOD既定値" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToModDefaults)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToModDefaults)), "MOD既定値" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToModDefaults)),
                     "MOD の既定チューニング値を適用します。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToVanilla)), "ゲーム既定値" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToVanilla)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToVanilla)), "ゲーム既定値" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToVanilla)),
                     "すべてのスライダーを **100%** にし、ゲーム既定値（vanilla）に戻します。"
                 },
 
                 // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary1)), "自転車グループ" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary1)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary1)), "自転車グループ" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary1)),
                     "自転車と電動スクーター。\n" +
                     "**Active** = 現在のレーンがある（移動中）。\n" +
                     "**Total Parked** = 駐車場だけでなく、どこにある Parked フラグも含みます。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary2)), "車グループ" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary2)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary2)), "車グループ" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary2)),
                     "個人車のみ（自転車グループを除く）。\n" +
                     "**Active** = 現在のレーンがある（移動中）。\n" +
                     "**Parked** = 駐車場だけでなく、すべての **ParkedCar**。\n" +
                     "スキャンは Options メニューが開いている時だけ実行され、都市プレイ中は動かないので FPS の心配はありません。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary3)), "隠れた駐車車両" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary3)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary3)), "隠れた駐車車両" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary3)),
                     "**OC 境界の合計** = Outside City (OC) 接続にある ParkedCar の車グループ車両。\n" +
                     "都市によっては、Outside City 接続で駐車状態のまま詰まった車が大量に出ることがあります。\n" +
                     "隠れた車のサンプル内訳は <Log hidden cars> を使ってください。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LogBorderHiddenCars)), "隠れた車をログ出力" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LogBorderHiddenCars)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.LogBorderHiddenCars)), "隠れた車をログ出力" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.LogBorderHiddenCars)),
                     "**Logs/FastBikes.log** に 1 回だけレポートを書き込みます。\n" +
                     "合計 + Bucket A/B/C の内訳とサンプル ID 番号を含みます。\n" +
                     "Scene Explorer mod で一覧の Vehicle エンティティ ID へジャンプして調査できます。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromStatus)), "ログを開く" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromStatus)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromStatus)), "ログを開く" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromStatus)),
                     "**Logs/FastBikes.log** があれば開きます。\n" +
                     "ファイルがまだ見つからない場合は、代わりに Logs フォルダーを開きます。"
                 },
@@ -158,26 +158,26 @@ namespace FastBikes
                 { "FAST_STATS_CARS_ROW3",  "{0} OC 境界で非表示 | 更新 {1}" },
 
                 // About: Info
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AboutName)),    "Mod" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AboutName)),     "表示名。" },
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AboutVersion)), "バージョン" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AboutVersion)),  "現在のバージョン。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutName)),    "Mod" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutName)),     "表示名。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutVersion)), "バージョン" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutVersion)),  "現在のバージョン。" },
 
                 // Links
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenParadoxMods)), "Paradox Mods" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenParadoxMods)),  "作者の Paradox Mods ページを開きます。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenParadoxMods)), "Paradox Mods" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenParadoxMods)),  "作者の Paradox Mods ページを開きます。" },
 
                 // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DumpBicyclePrefabs)), "自転車デバッグレポート" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.DumpBicyclePrefabs)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DumpBicyclePrefabs)), "自転車デバッグレポート" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DumpBicyclePrefabs)),
                     "<通常プレイには不要です>。\n" +
                     "デバッグやゲームパッチ後の確認用に、詳細ログレポートを 1 回出力します。\n" +
                     "先に都市を読み込んでください。\n" +
                     "出力先: **Logs/FastBikes.log**"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromDebug)), "ログを開く" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromDebug)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromDebug)), "ログを開く" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromDebug)),
                     "**Logs/FastBikes.log** があれば開きます。\n" +
                     "ファイルがまだ見つからない場合は、代わりに Logs フォルダーを開きます。"
                 }

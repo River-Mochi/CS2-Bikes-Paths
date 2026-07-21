@@ -16,9 +16,9 @@ namespace FastBikes
 
     public sealed class LocaleEN : IDictionarySource
     {
-        private readonly Setting m_Setting;
+        private readonly FBSetting m_Setting;
 
-        public LocaleEN(Setting setting)
+        public LocaleEN(FBSetting setting)
         {
             m_Setting = setting;
         }
@@ -38,31 +38,31 @@ namespace FastBikes
                 { m_Setting.GetSettingsLocaleID(), title },
 
                 // Tabs
-                { m_Setting.GetOptionTabLocaleID(Setting.ActionsTab), "Actions" },
-                { m_Setting.GetOptionTabLocaleID(Setting.AboutTab),   "About" },
+                { m_Setting.GetOptionTabLocaleID(FBSetting.ActionsTab), "Actions" },
+                { m_Setting.GetOptionTabLocaleID(FBSetting.AboutTab),   "About" },
 
                 // Groups
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsSpeedGrp),      "Speed" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsStabilityGrp),  "Stability" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsResetGrp),      "Reset" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsStatusGrp),     "Status personal vehicles" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsPathSpeedGrp),  "Paths" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsSpeedGrp),      "Speed" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStabilityGrp),  "Stability" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsResetGrp),      "Reset" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStatusGrp),     "Status personal vehicles" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsPathSpeedGrp),  "Paths" },
 
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutInfoGrp),  "Mod info" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutLinksGrp), "Links" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutDebugGrp), "Debug" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutInfoGrp),  "Mod info" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutLinksGrp), "Links" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EnableFastBikes)), "Enable Fast Bikes" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.EnableFastBikes)), "Enable Fast Bikes" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.EnableFastBikes)),
                     "Turns the mod **ON / OFF**.\n" +
                     "When OFF, bicycle and scooter behavior is restored to game defaults.\n\n" +
                     "Status info below is available even if Enable Fast Bikes is OFF."
                 },
 
                 // Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpeedScalar)), "Bike & scooter speed" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.SpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.SpeedScalar)), "Bike & scooter speed" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.SpeedScalar)),
                     "**Scales max speed**.\n" +
                     "Acceleration + braking use smoothing math at high-speed for less jump starts and panic-braking look.\n" +
                     "**0.30 = 30%** of game default\n" +
@@ -87,8 +87,8 @@ namespace FastBikes
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.PathSpeedScalar)), "Path speed limit" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.PathSpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.PathSpeedScalar)), "Path speed limit" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.PathSpeedScalar)),
                     "Scales **Path** speed limits (paths are not roads).\n" +
                     "**1.00 = game default**\n" +
                     "Affects: bike paths, divided pedestrian+bike, and pedestrian paths.\n\n" +
@@ -97,48 +97,48 @@ namespace FastBikes
                 },
 
                 // Reset buttons
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToModDefaults)), "Mod defaults" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToModDefaults)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToModDefaults)), "Mod defaults" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToModDefaults)),
                     "Applies the mod’s default tuning values."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToVanilla)), "Game defaults" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToVanilla)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToVanilla)), "Game defaults" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToVanilla)),
                     "Sets all sliders to **100%** and restores game defaults (vanilla)."
                 },
 
                 // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary1)), "Bike group" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary1)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary1)), "Bike group" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary1)),
                     "Bikes and electric scooters.\n" +
                     "**Active** = has a current lane (moving).\n" +
                     "**Total Parked** = includes all Parked flags from anywhere, not just parking lots."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary2)), "Car group" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary2)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary2)), "Car group" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary2)),
                     "Personal cars only (excludes the Bike group).\n" +
                     "**Active** = has a current lane (moving).\n" +
                     "**Parked** = all **ParkedCar**, not just parking lots.\n " +
                     "Scan runs only while Options menu is open, not in-city gameplay, so no FPS concern."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary3)), "Hidden parked cars" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary3)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary3)), "Hidden parked cars" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary3)),
                     "**Total at OC border** = car-group vehicles with ParkedCar at Outside City (OC) connection.\n" +
                     "Some cities show a large number of cars stuck parked at Outside City connection.\n" +
                     "Use <Log hidden cars> for sample breakdown of hidden cars.\n"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LogBorderHiddenCars)), "Log hidden cars" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LogBorderHiddenCars)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.LogBorderHiddenCars)), "Log hidden cars" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.LogBorderHiddenCars)),
                     "Writes a one-time report to **Logs/FastBikes.log**.\n" +
                     "Includes Total + Bucket A/B/C breakdown and sample ID numbers.\n" +
                     "Use Scene Explorer mod to Jump To the listed Vehicle entity IDs and investigate."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromStatus)), "Open Log" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromStatus)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromStatus)), "Open Log" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromStatus)),
                     "Opens **Logs/FastBikes.log** if it exists.\n" +
                     "If the file is not found yet, opens the Logs folder instead."
                 },
@@ -156,26 +156,26 @@ namespace FastBikes
                 { "FAST_STATS_CARS_ROW3",  "{0} hidden at OC border | updated {1}" },
 
                 // About: Info
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AboutName)),    "Mod" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AboutName)),     "Display name." },
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AboutVersion)), "Version" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AboutVersion)),  "Current version." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutName)),    "Mod" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutName)),     "Display name." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutVersion)), "Version" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutVersion)),  "Current version." },
 
                 // Links
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenParadoxMods)), "Paradox Mods" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenParadoxMods)),  "Opens the author’s Paradox mods page." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenParadoxMods)), "Paradox Mods" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenParadoxMods)),  "Opens the author’s Paradox mods page." },
 
                 // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DumpBicyclePrefabs)), "Bike debug report" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.DumpBicyclePrefabs)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DumpBicyclePrefabs)), "Bike debug report" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DumpBicyclePrefabs)),
                     "<Not needed for normal gameplay>.\n" +
                     "One-time detailed log report for debugging or game patch day verify.\n" +
                     "Load a city first.\n" +
                     "Output location: **Logs/FastBikes.log**"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromDebug)), "Open Log" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromDebug)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromDebug)), "Open Log" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromDebug)),
                     "Opens **Logs/FastBikes.log** if it exists.\n" +
                     "If the file is not found yet, opens the Logs folder instead."
                 }

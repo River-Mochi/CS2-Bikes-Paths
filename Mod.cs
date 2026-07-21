@@ -48,7 +48,7 @@ namespace FastBikes
 #endif
             );
 
-        public static Setting? Settings
+        public static FBSetting? Settings
         {
             get; private set;
         }
@@ -69,7 +69,7 @@ namespace FastBikes
                 return;
             }
 
-            Setting setting = new Setting(this);
+            FBSetting setting = new FBSetting(this);
             Settings = setting;
 
             AddLocaleSource("en-US", new LocaleEN(setting));
@@ -88,7 +88,7 @@ namespace FastBikes
 
             try
             {
-                AssetDatabase.global.LoadSettings(ModId, setting, new Setting(this));
+                AssetDatabase.global.LoadSettings(ModId, setting, new FBSetting(this));
                 setting.RegisterInOptionsUI();
             }
             catch (Exception ex)

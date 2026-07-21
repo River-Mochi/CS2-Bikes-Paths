@@ -16,9 +16,9 @@ namespace FastBikes
 
     public sealed class LocaleTR : IDictionarySource
     {
-        private readonly Setting m_Setting;
+        private readonly FBSetting m_Setting;
 
-        public LocaleTR(Setting setting)
+        public LocaleTR(FBSetting setting)
         {
             m_Setting = setting;
         }
@@ -38,23 +38,23 @@ namespace FastBikes
                 { m_Setting.GetSettingsLocaleID(), title },
 
                 // Tabs
-                { m_Setting.GetOptionTabLocaleID(Setting.ActionsTab), "İşlemler" },
-                { m_Setting.GetOptionTabLocaleID(Setting.AboutTab),   "Hakkında" },
+                { m_Setting.GetOptionTabLocaleID(FBSetting.ActionsTab), "İşlemler" },
+                { m_Setting.GetOptionTabLocaleID(FBSetting.AboutTab),   "Hakkında" },
 
                 // Groups
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsSpeedGrp),      "Hız" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsStabilityGrp),  "Stabilite" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsResetGrp),      "Sıfırla" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsStatusGrp),     "Kişisel araç durumu" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.ActionsPathSpeedGrp),  "Patikalar" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsSpeedGrp),      "Hız" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStabilityGrp),  "Stabilite" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsResetGrp),      "Sıfırla" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStatusGrp),     "Kişisel araç durumu" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsPathSpeedGrp),  "Patikalar" },
 
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutInfoGrp),  "Mod bilgisi" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutLinksGrp), "Bağlantılar" },
-                { m_Setting.GetOptionGroupLocaleID(Setting.AboutDebugGrp), "Debug" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutInfoGrp),  "Mod bilgisi" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutLinksGrp), "Bağlantılar" },
+                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EnableFastBikes)), "Fast Bikes'i etkinleştir" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.EnableFastBikes)), "Fast Bikes'i etkinleştir" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.EnableFastBikes)),
                     "Modu **AÇ / KAPAT** yapar.\n" +
                     "Kapalıyken bisiklet ve scooter davranışı oyun varsayılanına döner.\n" +
                     "\n" +
@@ -62,8 +62,8 @@ namespace FastBikes
                 },
 
                 // Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SpeedScalar)), "Bisiklet & scooter hızı" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.SpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.SpeedScalar)), "Bisiklet & scooter hızı" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.SpeedScalar)),
                     "**Maksimum hızı ölçekler**.\n" +
                     "Yüksek hızda daha az ani kalkış ve panik fren görünümü için hızlanma + fren yumuşatma hesabı kullanır.\n" +
                     "**0.30 = oyun varsayılanının %30'u**\n" +
@@ -88,8 +88,8 @@ namespace FastBikes
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.PathSpeedScalar)), "Patika hız sınırı" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.PathSpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.PathSpeedScalar)), "Patika hız sınırı" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.PathSpeedScalar)),
                     "**Patika** hız sınırlarını ölçekler (patikalar yol değildir).\n" +
                     "**1.00 = oyun varsayılanı**\n" +
                     "Etkiler: bisiklet yolları, ayrılmış yaya+bisiklet yolları ve yaya patikaları.\n" +
@@ -99,48 +99,48 @@ namespace FastBikes
                 },
 
                 // Reset buttons
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToModDefaults)), "Mod varsayılanları" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToModDefaults)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToModDefaults)), "Mod varsayılanları" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToModDefaults)),
                     "Modun varsayılan ayar değerlerini uygular."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ResetToVanilla)), "Oyun varsayılanları" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ResetToVanilla)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToVanilla)), "Oyun varsayılanları" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToVanilla)),
                     "Tüm kaydırıcıları **%100** yapar ve oyun varsayılanlarını (vanilla) geri yükler."
                 },
 
                 // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary1)), "Bisiklet grubu" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary1)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary1)), "Bisiklet grubu" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary1)),
                     "Bisikletler ve elektrikli scooterlar.\n" +
                     "**Aktif** = mevcut şeridi var (hareket ediyor).\n" +
                     "**Toplam park** = yalnız otoparklar değil, her yerdeki tüm Parked durumlarını içerir."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary2)), "Araba grubu" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary2)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary2)), "Araba grubu" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary2)),
                     "Sadece kişisel arabalar (Bisiklet grubu hariç).\n" +
                     "**Aktif** = mevcut şeridi var (hareket ediyor).\n" +
                     "**Park** = sadece otoparklar değil, tüm **ParkedCar**.\n" +
                     "Tarama sadece Options menüsü açıkken çalışır, şehir oynanışı sırasında değil; FPS derdi yok."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StatusSummary3)), "Gizli park etmiş arabalar" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.StatusSummary3)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary3)), "Gizli park etmiş arabalar" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary3)),
                     "**OC sınırındaki toplam** = Şehir Dışı (OC) bağlantısında ParkedCar olan araba grubu araçları.\n" +
                     "Bazı şehirlerde Şehir Dışı bağlantısında parkta takılmış çok sayıda araba görülür.\n" +
                     "Gizli arabaların örnek dökümü için <Log hidden cars> kullan."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.LogBorderHiddenCars)), "Gizli arabaları günlüğe yaz" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.LogBorderHiddenCars)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.LogBorderHiddenCars)), "Gizli arabaları günlüğe yaz" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.LogBorderHiddenCars)),
                     "**Logs/FastBikes.log** içine tek seferlik rapor yazar.\n" +
                     "Toplam + Bucket A/B/C dökümü ve örnek ID numaralarını içerir.\n" +
                     "Scene Explorer moduyla listelenen Vehicle varlık ID'lerine atlayıp incele."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromStatus)), "Günlüğü aç" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromStatus)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromStatus)), "Günlüğü aç" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromStatus)),
                     "Varsa **Logs/FastBikes.log** dosyasını açar.\n" +
                     "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
                 },
@@ -158,26 +158,26 @@ namespace FastBikes
                 { "FAST_STATS_CARS_ROW3",  "{0} OC sınırında gizli | güncellendi {1}" },
 
                 // About: Info
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AboutName)),    "Mod" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AboutName)),     "Görünen ad." },
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AboutVersion)), "Sürüm" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AboutVersion)),  "Geçerli sürüm." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutName)),    "Mod" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutName)),     "Görünen ad." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutVersion)), "Sürüm" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutVersion)),  "Geçerli sürüm." },
 
                 // Links
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenParadoxMods)), "Paradox Mods" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenParadoxMods)),  "Yazarın Paradox Mods sayfasını açar." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenParadoxMods)), "Paradox Mods" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenParadoxMods)),  "Yazarın Paradox Mods sayfasını açar." },
 
                 // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DumpBicyclePrefabs)), "Bisiklet debug raporu" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.DumpBicyclePrefabs)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DumpBicyclePrefabs)), "Bisiklet debug raporu" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DumpBicyclePrefabs)),
                     "<Normal oynanış için gerekmez>.\n" +
                     "Debug veya oyun yaması sonrası kontrol için tek seferlik ayrıntılı günlük raporu.\n" +
                     "Önce bir şehir yükle.\n" +
                     "Çıktı konumu: **Logs/FastBikes.log**"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenLogFromDebug)), "Günlüğü aç" },
-                { m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenLogFromDebug)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromDebug)), "Günlüğü aç" },
+                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromDebug)),
                     "Varsa **Logs/FastBikes.log** dosyasını açar.\n" +
                     "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
                 }

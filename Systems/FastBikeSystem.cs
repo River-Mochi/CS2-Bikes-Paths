@@ -127,7 +127,7 @@ namespace FastBikes
                 return;
             }
 
-            Setting? setting = Mod.Settings;
+            FBSetting? setting = Mod.Settings;
             if (setting == null)
             {
                 // Settings not available: clear all work and stop.

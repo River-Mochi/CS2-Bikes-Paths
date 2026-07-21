@@ -90,9 +90,9 @@ namespace FastBikes
 
         private static string FormatPct(float value01) => (value01 * 100f).ToString("0.##") + "%";
 
-        private static bool TryGetSettings(out Setting settings)
+        private static bool TryGetSettings(out FBSetting settings)
         {
-            if (Mod.Settings is Setting s)
+            if (Mod.Settings is FBSetting s)
             {
                 settings = s;
                 return true;
@@ -115,7 +115,7 @@ namespace FastBikes
             float rawPathSpeed = -1f;
             float pathScalar = 1.0f;
 
-            if (enableFastBikes && TryGetSettings(out Setting settings))
+            if (enableFastBikes && TryGetSettings(out FBSetting settings))
             {
                 rawPathSpeed = settings.PathSpeedScalar;
                 pathScalar = Unity.Mathematics.math.clamp(rawPathSpeed, 1.0f, 5.0f);

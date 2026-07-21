@@ -1,4 +1,4 @@
-// <copyright file="Setting.cs" company="River-Mochi">
+// <copyright file="FBSetting.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,7 +6,7 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Settings/Setting.cs
+// File: Settings/FBSetting.cs
 // Purpose: Options UI + live apply triggers for FastBikes.
 
 namespace FastBikes
@@ -33,7 +33,7 @@ namespace FastBikes
     [SettingsUIShowGroupName(
         ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp, ActionsStatusGrp,
         AboutInfoGrp, AboutLinksGrp, AboutDebugGrp)]
-    public sealed class Setting : ModSetting
+    public sealed class FBSetting : ModSetting
     {
         public const string ActionsTab = "Actions";
         public const string AboutTab = "About";
@@ -70,7 +70,7 @@ namespace FastBikes
 
         private const float FloatEpsilon = 0.0001f;
 
-        public Setting(IMod mod) : base(mod)
+        public FBSetting(IMod mod) : base(mod)
         {
             EnableFastBikes = DefaultEnabled;
             SpeedScalar = DefaultSpeed;
@@ -87,7 +87,7 @@ namespace FastBikes
         // ----------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
-        [SettingsUISetter(typeof(Setting), nameof(SetEnableFastBikes))]
+        [SettingsUISetter(typeof(FBSetting), nameof(SetEnableFastBikes))]
         public bool EnableFastBikes
         {
             get; set;
@@ -98,9 +98,9 @@ namespace FastBikes
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(Setting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(FBSetting), nameof(EnableFastBikes), true)]
         [SettingsUISlider(min = 0.30f, max = 10.00f, step = 0.10f, unit = Unit.kFloatTwoFractions)]
-        [SettingsUISetter(typeof(Setting), nameof(SetSpeedScalar))]
+        [SettingsUISetter(typeof(FBSetting), nameof(SetSpeedScalar))]
         public float SpeedScalar
         {
             get; set;
@@ -126,9 +126,9 @@ namespace FastBikes
         // -----------------------------
 
         [SettingsUISection(ActionsTab, ActionsPathSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(Setting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(FBSetting), nameof(EnableFastBikes), true)]
         [SettingsUISlider(min = 1.00f, max = 5.00f, step = 0.25f, unit = Unit.kFloatTwoFractions)]
-        [SettingsUISetter(typeof(Setting), nameof(SetPathSpeedScalar))]
+        [SettingsUISetter(typeof(FBSetting), nameof(SetPathSpeedScalar))]
         public float PathSpeedScalar
         {
             get; set;
@@ -139,7 +139,7 @@ namespace FastBikes
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(Setting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(FBSetting), nameof(EnableFastBikes), true)]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToModDefaults
@@ -156,7 +156,7 @@ namespace FastBikes
         }
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(Setting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(FBSetting), nameof(EnableFastBikes), true)]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToVanilla
