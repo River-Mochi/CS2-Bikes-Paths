@@ -15,13 +15,16 @@
 
 namespace FastBikes
 {
-    using Game.Common;               // Deleted, Overridden
-    using Game.Net;                  // Edge, Road, CarLane, SubLane
-    using Game.Prefabs;              // PathwayPrefab, PathwayData, PathwayComposition, PrefabData, PrefabRef, NetCompositionData
-    using Game.Tools;                // Temp
-    using Unity.Collections;         // NativeArray, NativeList, Allocator
-    using Unity.Entities;            // Entity, RefRO, RefRW, SystemAPI, BufferLookup, ComponentLookup
-    using Unity.Mathematics;         // math.*
+    using System;                     // Exception, StringComparison used by generated partial system
+    using System.Collections.Generic; // Dictionary, HashSet, List used by generated partial system
+    using System.Text;                // StringBuilder used by generated partial system
+    using Game.Common;                // Deleted, Overridden
+    using Game.Net;                   // Edge, Road, CarLane, SubLane
+    using Game.Prefabs;               // PathwayPrefab, PathwayData, PathwayComposition, PrefabData, PrefabRef, NetCompositionData
+    using Game.Tools;                 // Temp
+    using Unity.Collections;          // NativeArray, NativeList, Allocator
+    using Unity.Entities;             // Entity, RefRO, RefRW, SystemAPI, BufferLookup, ComponentLookup
+    using Unity.Mathematics;           // math.*
 
     public sealed partial class FastBikeSystem
     {
