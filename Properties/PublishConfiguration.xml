@@ -47,7 +47,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 </LongDescription>
 
 	<!--Thumbnail-->
-	<Thumbnail Value="Properties/ThumbnailFastBikePathSky.jpg" />
+	<Thumbnail Value="Properties/ThumbnailBikePathSky.jpg" />
 	<!--Screenshot, can be set multiple times-->
 	<Screenshot Value="Properties/image10-Actions.jpg" />
     <Screenshot Value="Properties/image20-Status.jpg" />
@@ -59,7 +59,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.1.1" />
+	<ModVersion Value="1.1.2" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.6.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -69,11 +69,12 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<ChangeLog>
 - Update for game patch 1.6
+- new thumbnail
 - fix Turkish and Vietnamese language register
 </ChangeLog>
 	<!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
 	<ExternalLink Type="" Url="" />
-	<ExternalLink Type="discord" Url="https://discord.gg/HTav7ARPs2" />
+	<ExternalLink Type="discord" Url="https://discord.gg/gwXgvtyhjc" />
 	<ExternalLink Type="github" Url="https://github.com/River-Mochi/CS2-Fastbikes" />
 	<!--Supported values Public, Private, Unlisted-->
 	<AccessLevel Value="Public" />

@@ -12,12 +12,17 @@
 namespace FastBikes
 {
     using System;                    // Exception, Math
+
     using Colossal.IO.AssetDatabase; // FileLocation
+
     using CS2Shared.RiverMochi;      // ShellOpen
+
     using Game.Modding;              // IMod, ModSetting
     using Game.Settings;             // Settings UI attributes
     using Game.UI;                   // Unit
+
     using Unity.Entities;            // World
+
     using UnityEngine;               // Application.OpenURL
 
     [FileLocation("ModsSettings/FastBikes/FastBikes")]
@@ -94,7 +99,7 @@ namespace FastBikes
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
         [SettingsUIHideByCondition(typeof(Setting), nameof(EnableFastBikes), true)]
-        [SettingsUISlider(min = 0.30f, max = 10.00f, step = 0.10f, unit = Unit.kFloatTwoFractions, updateOnDragEnd = true)]
+        [SettingsUISlider(min = 0.30f, max = 10.00f, step = 0.10f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(Setting), nameof(SetSpeedScalar))]
         public float SpeedScalar
         {
@@ -122,7 +127,7 @@ namespace FastBikes
 
         [SettingsUISection(ActionsTab, ActionsPathSpeedGrp)]
         [SettingsUIHideByCondition(typeof(Setting), nameof(EnableFastBikes), true)]
-        [SettingsUISlider(min = 1.00f, max = 5.00f, step = 0.25f, unit = Unit.kFloatTwoFractions, updateOnDragEnd = true)]
+        [SettingsUISlider(min = 1.00f, max = 5.00f, step = 0.25f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(Setting), nameof(SetPathSpeedScalar))]
         public float PathSpeedScalar
         {
