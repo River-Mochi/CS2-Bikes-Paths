@@ -6,21 +6,21 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/FastBikeStatusSystem.cs
+// File: Systems/BikeAndPathStatusSystem.cs
 // Purpose: Snapshot counts for the Options UI.
 
 namespace BikeAndPath
 {
-    using System;              // DateTime, StringComparison
+    using System;               // DateTime, StringComparison
     using CS2Shared.RiverMochi; // LogUtils
-    using Game;                // GameSystemBase
-    using Game.Common;         // Deleted, Destroyed, Owner
-    using Game.Objects;        // Unspawned
-    using Game.Prefabs;        // BicycleData, PrefabBase, PrefabRef, PrefabSystem
-    using Game.Tools;          // Temp
-    using Game.Vehicles;       // CarCurrentLane, CarTrailer, ParkedCar, PersonalCar
-    using Unity.Collections;   // Allocator, NativeArray
-    using Unity.Entities;      // Entity, EntityQuery, ComponentLookup, ComponentType
+    using Game;                 // GameSystemBase
+    using Game.Common;          // Deleted, Destroyed, Owner
+    using Game.Objects;         // Unspawned
+    using Game.Prefabs;         // BicycleData, PrefabBase, PrefabRef, PrefabSystem
+    using Game.Tools;           // Temp
+    using Game.Vehicles;        // CarCurrentLane, CarTrailer, ParkedCar, PersonalCar
+    using Unity.Collections;    // Allocator, NativeArray
+    using Unity.Entities;       // Entity, EntityQuery, SystemAPI
 
     public sealed partial class BikeAndPathStatusSystem : GameSystemBase
     {
@@ -89,29 +89,21 @@ namespace BikeAndPath
 
             m_PrefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
 
-            m_PersonalVehicleQuery = GetEntityQuery(
-                ComponentType.ReadOnly<PrefabRef>(),
-                ComponentType.ReadOnly<Game.Vehicles.PersonalCar>(),
-                ComponentType.Exclude<CarTrailer>(),
-                ComponentType.Exclude<Deleted>(),
-                ComponentType.Exclude<Temp>(),
-                ComponentType.Exclude<Destroyed>());
+            m_PersonalVehicleQuery = SystemAPI.QueryBuilder()
+                .WithAll<PrefabRef, Game.Vehicles.PersonalCar>()
+                .WithNone<CarTrailer, Deleted, Temp>()
+                .WithNone<Destroyed>()
+                .Build();
 
-            m_TrailerQuery = GetEntityQuery(
-                ComponentType.ReadOnly<PrefabRef>(),
-                ComponentType.ReadOnly<Game.Vehicles.PersonalCar>(),
-                ComponentType.ReadOnly<CarTrailer>(),
-                ComponentType.Exclude<Deleted>(),
-                ComponentType.Exclude<Temp>(),
-                ComponentType.Exclude<Destroyed>());
+            m_TrailerQuery = SystemAPI.QueryBuilder()
+                .WithAll<PrefabRef, Game.Vehicles.PersonalCar, CarTrailer>()
+                .WithNone<Deleted, Temp, Destroyed>()
+                .Build();
 
-            m_CitizenLocQuery = GetEntityQuery(
-                ComponentType.ReadOnly<Game.Citizens.Citizen>(),
-                ComponentType.ReadOnly<Game.Citizens.CurrentBuilding>(),
-                ComponentType.ReadOnly<Game.Citizens.HouseholdMember>(),
-                ComponentType.Exclude<Deleted>(),
-                ComponentType.Exclude<Temp>(),
-                ComponentType.Exclude<Destroyed>());
+            m_CitizenLocQuery = SystemAPI.QueryBuilder()
+                .WithAll<Game.Citizens.Citizen, Game.Citizens.CurrentBuilding, Game.Citizens.HouseholdMember>()
+                .WithNone<Deleted, Temp, Destroyed>()
+                .Build();
 
             Enabled = false;
         }

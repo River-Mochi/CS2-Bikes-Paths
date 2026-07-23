@@ -132,14 +132,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Log hidden cars" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Writes a one-time report to **Logs/FastBikes.log**.\n" +
+                    "Writes a one-time report to **Logs/BikesAndPaths.log**.\n" +
                     "Includes Total + Bucket A/B/C breakdown and sample ID numbers.\n" +
                     "Use Scene Explorer mod to Jump To the listed Vehicle entity IDs and investigate."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Open Log" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Opens **Logs/FastBikes.log** if it exists.\n" +
+                    "Opens **Logs/BikesAndPaths.log** if it exists.\n" +
                     "If the file is not found yet, opens the Logs folder instead."
                 },
 
@@ -171,12 +171,12 @@ namespace BikeAndPath
                     "<Not needed for normal gameplay>.\n" +
                     "One-time detailed log report for debugging or game patch day verify.\n" +
                     "Load a city first.\n" +
-                    "Output location: **Logs/FastBikes.log**"
+                    "Output location: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Open Log" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Opens **Logs/FastBikes.log** if it exists.\n" +
+                    "Opens **Logs/BikesAndPaths.log** if it exists.\n" +
                     "If the file is not found yet, opens the Logs folder instead."
                 }
             };

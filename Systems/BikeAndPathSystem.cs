@@ -14,14 +14,17 @@
 namespace BikeAndPath
 {
     using System.Collections.Generic;     // Dictionary
-    using Colossal.Serialization.Entities; // Purpose
-    using CS2Shared.RiverMochi;       // LogUtils
-    using Game;                           // GameSystemBase, GameMode
-    using Game.Common;                    // Deleted, Overridden
-    using Game.Prefabs;                   // PrefabSystem, PrefabBase, BicyclePrefab, BicycleData, CarData, PrefabData, SwayingData
-    using Game.Tools;                     // Temp
-    using Unity.Entities;                 // Entity, RefRW, SystemAPI
-    using Unity.Mathematics;              // math.*
+    using System.Text;                      // StringBuilder, used by gen. partial system.
+    using Colossal.Serialization.Entities;  // Purpose
+    using CS2Shared.RiverMochi;             // LogUtils
+    using Game;                             // GameSystemBase, GameMode
+    using Game.Common;                      // Deleted, Overridden
+    using Game.Prefabs;                     // PrefabSystem, PrefabBase, BicyclePrefab, BicycleData, CarData, PrefabData, SwayingData
+    using Game.Tools;                       // Temp
+    using Game.Vehicles;                    // ParkedCar used by gen. partial system
+    using Unity.Collections;                // NativeArray - used by gen. partial system
+    using Unity.Entities;                   // Entity, RefRW, SystemAPI
+    using Unity.Mathematics;                // math.*
 
     public sealed partial class BikeAndPathSystem : GameSystemBase
     {

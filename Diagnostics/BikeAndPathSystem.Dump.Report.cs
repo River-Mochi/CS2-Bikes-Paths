@@ -12,7 +12,6 @@
 namespace BikeAndPath
 {
     using System.Collections.Generic; // List
-    using System.Text;                // StringBuilder used by gen. partial system
     using CS2Shared.RiverMochi;       // LogUtils
     using Game.Common;                // Deleted, Overridden
     using Game.Prefabs;               // PathwayPrefab, PathwayData, PathwayComposition, NetCompositionData, RoadData, PrefabBase, PrefabData, PrefabRef

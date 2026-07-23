@@ -21,7 +21,7 @@ namespace BikeAndPath
     using UnityEngine;               // Application.OpenURL
 
 
-    [FileLocation("ModsSettings/FastBikes/FastBikes")]
+    [FileLocation("ModsSettings/BikesAndPaths/BikesAndPaths")]
     [SettingsUITabOrder(ActionsTab, AboutTab)]
     [SettingsUIGroupOrder(
         ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp, ActionsStatusGrp,

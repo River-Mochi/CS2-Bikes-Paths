@@ -16,8 +16,8 @@ It can also raise **path speed limits** so bikes don’t get bottlenecked on pat
   - Car group counts (personal cars; bikes excluded)
   - “Total at OC border” count for hidden parked cars at Outside Connection
 - Logs / debug:
-  - **Log hidden cars** → writes A/B/C bucket breakdown + sample entity IDs to `Logs/FastBikes.log`
-  - **Bike debug report** → detailed report to `Logs/FastBikes.log` (good for patch-day sanity checks)
+  - **Log hidden cars** → writes A/B/C bucket breakdown + sample entity IDs to `Logs/BikesAndPaths.log`
+  - **Bike debug report** → detailed report to `Logs/BikesAndPaths.log` (good for patch-day sanity checks)
 
 > Compatibility note: the optional “sway/stability tuning” UI has been removed for now to avoid conflicts with mods that also modify stiffness/damping.
 
@@ -59,7 +59,7 @@ In the Status panel, the row shows **Total at OC border**.
 If you want to help investigate:
 1. Open **Options → Bikes + Paths → Status**
 2. Click **Log hidden cars**
-3. Open `Logs/FastBikes.log`
+3. Open `Logs/BikesAndPaths.log`
 4. The log prints:
    - **Total OC Hidden Cars**
    - Bucket **A/B/C** breakdown
@@ -98,10 +98,10 @@ If you uninstall without resetting Path Speed to 1.00:
 ## Troubleshooting
 - Load a city first (don’t test from main menu).
 - Toggle **Enable Bikes + Paths** OFF then ON.
-- Run **Bike debug report** and check `Logs/FastBikes.log`.
+- Run **Bike debug report** and check `Logs/BikesAndPaths.log`.
 
 If settings get corrupted:
-- Delete `ModsSettings/FastBikes/FastBikes.coc`
+- Delete `ModsSettings/BikesAndPaths/BikesAndPaths.coc`
 - Start the game (a fresh settings file will be recreated)
 
 ---

@@ -14,9 +14,8 @@ namespace BikeAndPath
 {
     using System.Collections.Generic;
     using System.Text;
-    using CS2Shared.RiverMochi;    // LogUtils
+    using CS2Shared.RiverMochi;   // LogUtils
     using Game.Common;            // Deleted, Destroyed, Overridden, Owner
- // using Game.Net;               // OutsideConnection, ConnectionLane
     using Game.Objects;           // Moving, Stopped, Unspawned
     using Game.Prefabs;           // BicycleData
     using Game.Tools;             // Temp

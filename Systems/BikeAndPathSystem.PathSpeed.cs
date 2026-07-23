@@ -15,13 +15,10 @@
 
 namespace BikeAndPath
 {
-    using System.Collections.Generic; // Dictionary, HashSet, List, used by gen. partial system
-
     using Game.Common;                // Deleted, Overridden
     using Game.Net;                   // Edge, Road, CarLane, SubLane
     using Game.Prefabs;               // PathwayPrefab, PathwayData, PathwayComposition, PrefabData, PrefabRef, NetCompositionData
     using Game.Tools;                 // Temp
-    using Game.Vehicles;              // ParkedCar used by gen. partial system
     using Unity.Collections;          // NativeArray, NativeList, Allocator
     using Unity.Entities;             // Entity, RefRO, RefRW, SystemAPI, BufferLookup, ComponentLookup
 

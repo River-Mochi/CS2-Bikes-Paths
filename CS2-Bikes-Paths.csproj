@@ -12,7 +12,7 @@
     <PublishConfigScript>$(MSBuildProjectDirectory)\Scripts\Update-PublishConfig.ps1</PublishConfigScript>
 
     <!-- DLL name and default namespace -->
-    <AssemblyName>FastBikes</AssemblyName>
+    <AssemblyName>BikesAndPaths</AssemblyName>
     <RootNamespace>BikeAndPath</RootNamespace>
 
     <!-- Enable nullable reference types project-wide -->
@@ -38,6 +38,7 @@
     <Reference Include="Colossal.UI"><Private>false</Private></Reference>
     <Reference Include="Colossal.UI.Binding"><Private>false</Private></Reference>
     <Reference Include="Colossal.Localization"><Private>false</Private></Reference>
+    <Reference Include="Colossal.PSI.Common"><Private>false</Private></Reference>
     <Reference Include="UnityEngine.CoreModule"><Private>false</Private></Reference>
     <Reference Include="Unity.Burst"> <Private>false</Private></Reference>
     <Reference Include="Unity.Collections"><Private>false</Private> </Reference>
