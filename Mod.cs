@@ -175,8 +175,21 @@ namespace BikeAndPath
 
                 Directory.CreateDirectory(directory);
 
-                // Copy first so the settings data is in the new location.
-                File.Copy(oldLocation, correctLocation, overwrite: false);
+                // Write the file to the new location first, so the settings data is safe
+                // even if the Asset Database remap below were to throw.
+                //
+                // The .coc's first line is the section header, and it equals the OLD
+                // LoadSettings name (LegacyModId). LoadSettings(ModId, ...) matches on that
+                // header, so a plain copy would keep "FastBikes" and the values would NOT
+                // load (they would silently reset). Rewrite the header to the new ModId so
+                // the saved SpeedScalar / PathSpeedScalar actually carry over.
+                string coc = File.ReadAllText(oldLocation);
+                if (coc.StartsWith(LegacyModId, StringComparison.Ordinal))
+                {
+                    coc = ModId + coc.Substring(LegacyModId.Length);
+                }
+
+                File.WriteAllText(correctLocation, coc);
 
                 // Keep the same AssetDatabase GUID, but remap it from the old
                 // physical path to the new path for this running session.
@@ -188,6 +201,11 @@ namespace BikeAndPath
                     typeof(SettingAsset),
                     oldGuid);
 
+                // Remap succeeded, so the old file is now safe to remove. Deleting it keeps
+                // ModsSettings clean and prevents the "already exists" skip on future loads.
+                // Done last, and in its own guard, so a delete failure cannot lose settings.
+                TryDeleteLegacyFileAndFolder(oldLocation);
+
                 LogUtils.Info(() =>
                     $"Migrated settings to ModsSettings/{ModId}/{ModId}.coc file.");
             }
@@ -198,6 +216,28 @@ namespace BikeAndPath
                     $"Settings migration failed: {ex.GetType().Name}: {ex.Message}.\n" +
                     $"Delete old ModsSettings/FastBikes file and restart the game.\n" +
                     $"A new ModsSettings/BikesAndPaths file appears after making any slider change and a clean game exit.");
+            }
+        }
+
+        // Best-effort cleanup of the old settings file and its now-empty folder.
+        // Any failure here is harmless: the settings already live at the new location.
+        private static void TryDeleteLegacyFileAndFolder(string oldLocation)
+        {
+            try
+            {
+                File.Delete(oldLocation);
+
+                string? oldDir = Path.GetDirectoryName(oldLocation);
+                if (!string.IsNullOrEmpty(oldDir) &&
+                    Directory.Exists(oldDir) &&
+                    Directory.GetFileSystemEntries(oldDir).Length == 0)
+                {
+                    Directory.Delete(oldDir);
+                }
+            }
+            catch
+            {
+                // A leftover legacy file is harmless; ignore.
             }
         }
 

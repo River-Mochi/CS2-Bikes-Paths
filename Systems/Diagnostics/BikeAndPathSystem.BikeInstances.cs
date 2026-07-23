@@ -13,7 +13,6 @@
 namespace BikeAndPath
 {
     using System.Collections.Generic;
-    using System.Text;
     using CS2Shared.RiverMochi;   // LogUtils
     using Game.Common;            // Deleted, Destroyed, Overridden, Owner
     using Game.Objects;           // Moving, Stopped, Unspawned
@@ -185,7 +184,7 @@ namespace BikeAndPath
 
             LogUtils.Info(( ) =>
             {
-                StringBuilder sb = new System.Text.StringBuilder();
+                var sb = new System.Text.StringBuilder();
 
                 sb.AppendLine($"[FB] Trailers: Total={trailerTotal}, Unspawned={trailerUnspawned}");
                 sb.AppendLine($"[FB] CarGroup AllLive: Total={allLiveTotal}, Parked={parked}, Active={active}, Pending={pending}");
@@ -352,7 +351,7 @@ namespace BikeAndPath
 
             LogUtils.Info(( ) =>
             {
-                StringBuilder sb = new System.Text.StringBuilder();
+                var sb = new System.Text.StringBuilder();
 
                 sb.AppendLine($"[FB] Bicycle-group prefabs: Count={groupPrefabCount}, MissingPrefabBase={missingPrefabBase}");
                 sb.AppendLine($"[FB] BikeGroup: Total={total}, Active={active}, Parked={parked}, Other={other}");

@@ -14,7 +14,6 @@
 namespace BikeAndPath
 {
     using System.Collections.Generic;     // Dictionary
-    using System.Text;                      // StringBuilder, used by gen. partial system.
     using Colossal.Serialization.Entities;  // Purpose
     using CS2Shared.RiverMochi;             // LogUtils
     using Game;                             // GameSystemBase, GameMode

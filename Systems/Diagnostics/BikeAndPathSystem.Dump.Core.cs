@@ -17,7 +17,7 @@ namespace BikeAndPath
     using System.Collections.Generic; // List, HashSet
     using CS2Shared.RiverMochi;       // LogUtils
     using Game.Common;                // Deleted, Overridden
-    using Game.Prefabs;               // BicyclePrefab, BicycleData, CarData, SwayingData, PrefabBase, PrefabData, PrefabRef
+    using Game.Prefabs;               // BicyclePrefab, BicycleData, CarData, SwayingData,PrefabData
     using Game.Tools;                 // Temp
     using Unity.Entities;             // Entity, SystemAPI, RefRO
     using Unity.Mathematics;          // math, float3
