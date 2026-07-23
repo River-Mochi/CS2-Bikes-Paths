@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <!-- File: CS2-Bikes-Paths.csproj -->
   <!-- Purpose: Build configuration for Fast Bikes mod using CSII toolchain.
 	     Notes: TargetFramework net48, C# LangVersion 9.0, OutputType Library is set by toolchain Mod.props. -->
@@ -26,14 +26,9 @@
     <GameVersion>1.6.*</GameVersion>
   </PropertyGroup>
 
-
   <!-- Imports must be after PropertyGroup -->
   <Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
   <Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
-
-  <ItemGroup>
-    <Compile Remove="Systems\OLD-FastBikeSystem.Dump.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Game"><Private>false</Private></Reference>
@@ -77,8 +72,7 @@
 
   <!-- AUTO UPDATE PublishConfiguration GameVersion + ModVersion + nested mod.json "version" from $(Version).
          remove BOM, make EOL=LF, and left-align text -->
-  <Target Name="UpdatePublishConfigVersion" BeforeTargets="PrepareForBuild"
-          Condition="Exists('$(PublishConfigScript)') AND Exists('$(MSBuildProjectDirectory)\$(PublishConfigurationPath)')">
+  <Target Name="UpdatePublishConfigVersion" BeforeTargets="PrepareForBuild" Condition="Exists('$(PublishConfigScript)') AND Exists('$(MSBuildProjectDirectory)\$(PublishConfigurationPath)')">
 
     <Message Text="$(AssemblyTitle) PublishConfig: syncing ModVersion/GameVersion + normalizing EOL/BOM + left-aligning blocks..." Importance="high" />
 

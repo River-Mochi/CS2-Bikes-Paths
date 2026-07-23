@@ -6,30 +6,30 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/FastBikeSystem.BikeInstances.cs
+// File: Diagnostics/FastBikeSystem.BikeInstances.cs
 // Purpose: Dump bicycle-group instance counts and car-group runtime classification (incl. OC-hidden split).
 // Notes: Read-only.
 
 namespace FastBikes
 {
+    using System.Collections.Generic;
+    using System.Text;
+    using CS2Shared.RiverMochi;     // LogUtils
     using Game.Common;            // Deleted, Destroyed, Overridden, Owner
-    using Game.Net;                  // OutsideConnection, ConnectionLane
+  //  using Game.Net;                  // OutsideConnection, ConnectionLane
     using Game.Objects;           // Moving, Stopped, Unspawned
     using Game.Prefabs;           // BicycleData
     using Game.Tools;             // Temp
     using Game.Vehicles;          // Car, CarCurrentLane, ParkedCar
-    using System.Collections.Generic;
-    using System.Text;
     using Unity.Collections;
     using Unity.Entities;
-
     public sealed partial class FastBikeSystem
     {
         private const int kSampleMax = 10;
 
         private void DumpCarGroupInstancesReport( )
         {
-            Mod.LogSafe(( ) =>
+            LogUtils.Info(( ) =>
                 "\n==================== [FB] CAR GROUP INSTANCES (LIVE) ====================\n" +
                 "Meaning: PersonalCar instances excluding BicycleData prefabs.\n" +
                 "Status classification:\n" +
@@ -184,7 +184,7 @@ namespace FastBikes
                 }
             }
 
-            Mod.LogSafe(( ) =>
+            LogUtils.Info(( ) =>
             {
                 StringBuilder sb = new System.Text.StringBuilder();
 
@@ -211,7 +211,7 @@ namespace FastBikes
 
         private void DumpBikeInstancesReport( )
         {
-            Mod.LogSafe(( ) =>
+            LogUtils.Info(( ) =>
                 "\n==================== [FB] BIKE INSTANCES (LIVE) ====================\n" +
                 "Meaning: live BicycleData vehicles (bikes + e-scooters).\n" +
                 "Live excludes: Deleted, Temp, Destroyed.\n" +
@@ -250,7 +250,7 @@ namespace FastBikes
 
             if (groupPrefabs.Count == 0)
             {
-                Mod.LogSafe(( ) => "[FB] Bike instances: BicycleData prefab set is empty.");
+                LogUtils.Info(( ) => "[FB] Bike instances: BicycleData prefab set is empty.");
                 return;
             }
 
@@ -351,7 +351,7 @@ namespace FastBikes
                 }
             }
 
-            Mod.LogSafe(( ) =>
+            LogUtils.Info(( ) =>
             {
                 StringBuilder sb = new System.Text.StringBuilder();
 

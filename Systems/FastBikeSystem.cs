@@ -15,6 +15,7 @@ namespace FastBikes
 {
     using System.Collections.Generic;     // Dictionary
     using Colossal.Serialization.Entities; // Purpose
+    using CS2Shared.RiverMochi;     // LogUtils
     using Game;                           // GameSystemBase, GameMode
     using Game.Common;                    // Deleted, Overridden
     using Game.Prefabs;                   // PrefabSystem, PrefabBase, BicyclePrefab, BicycleData, CarData, PrefabData, SwayingData
