@@ -14,14 +14,11 @@ namespace FastBikes
     using System.Collections.Generic; // List
     using System.Text;                // StringBuilder used by gen. partial system
     using CS2Shared.RiverMochi;       // LogUtils
-    using Game.Citizens;              // BicycleOwner, CarKeeper, Citizen
     using Game.Common;                // Deleted, Overridden
     using Game.Prefabs;               // PathwayPrefab, PathwayData, PathwayComposition, NetCompositionData, RoadData, PrefabBase, PrefabData, PrefabRef
-    using Game.Tools;                 // Temp
     using Game.Vehicles;              // Car, ParkedCar
     using Unity.Collections;          // Allocator, NativeArray
     using Unity.Entities;             // Entity, EntityQuery, SystemAPI, RefRO
-    using Unity.Mathematics;          // math
 
     public sealed partial class FastBikeSystem
     {
