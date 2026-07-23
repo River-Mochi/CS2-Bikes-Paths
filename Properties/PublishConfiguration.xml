@@ -29,8 +29,8 @@
 - Safe to remove (Reset button first for fast return to game defaults, then save city, and uninstall). If you don't reset, it's not a problem, you keep the changed paths until you replace your paths since they are vanilla paths.
 
 ### Support and Feedback
-- If the mod helps, drop a Like, it's free + easy to do :)
-- Report issues on Github / Discord.
+- If you enjoy free volunteer made mods, don't forget to click Like, top right button. Players can find the mod easier, we get nothing else for it.
+- Report issues on Github or Discord, link icons on the right.
 
 ### Design + Performance
 - Bikes + Paths is built to be lightweight. It's partly why this was made; to have a mod that does not have parts that run in the city per-frame all the time.
@@ -74,8 +74,8 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 </ChangeLog>
 	<!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
 	<ExternalLink Type="" Url="" />
+    <ExternalLink Type="github" Url="https://github.com/River-Mochi/CS2-Fastbikes" />
 	<ExternalLink Type="discord" Url="https://discord.gg/gwXgvtyhjc" />
-	<ExternalLink Type="github" Url="https://github.com/River-Mochi/CS2-Fastbikes" />
 	<!--Supported values Public, Private, Unlisted-->
 	<AccessLevel Value="Public" />
 </Publish>
