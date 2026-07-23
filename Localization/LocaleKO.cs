@@ -72,16 +72,16 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StiffnessScalar)), "강성" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "강성" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
     //                "**흔들림 진폭** 배율입니다.\n" +
     //                "**높을수록 = 덜 기울어짐**.\n" +
     //                "**낮을수록 = 더 흔들림**.\n" +
     //                "권장: 고속 안정성은 1.25–1.75."
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "감쇠" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "감쇠" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
     //                "높을수록 = 더 빨리 안정됨(진동 감소).\n" +
     //                "**1.00 = 게임 기본값**\n" +
     //                "권장: 고속 안정성은 1.25–2.00."

@@ -72,16 +72,16 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StiffnessScalar)), "剛性" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "剛性" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
     //                "**揺れ幅** の倍率です。\n" +
     //                "**高いほど = 傾きが少ない**。\n" +
     //                "**低いほど = 揺れが大きい**。\n" +
     //                "推奨: 高速安定性なら 1.25–1.75。"
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "減衰" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "減衰" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
     //                "高いほど = 早く落ち着く（振動が少ない）。\n" +
     //                "**1.00 = ゲーム既定値**\n" +
     //                "推奨: 高速安定性なら 1.25–2.00。"

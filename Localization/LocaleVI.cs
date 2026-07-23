@@ -72,16 +72,16 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StiffnessScalar)), "Độ cứng" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "Độ cứng" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
     //                "Hệ số cho **biên độ lắc**.\n" +
     //                "**Cao hơn = ít nghiêng hơn**.\n" +
     //                "**Thấp hơn = lắc nhiều hơn**.\n" +
     //                "Gợi ý: 1.25–1.75 để ổn định hơn ở tốc độ cao."
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "Giảm chấn" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "Giảm chấn" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
     //                "Cao hơn = ổn định nhanh hơn (ít dao động hơn).\n" +
     //                "**1.00 = mặc định của game**\n" +
     //                "Gợi ý: 1.25–2.00 để ổn định hơn ở tốc độ cao."

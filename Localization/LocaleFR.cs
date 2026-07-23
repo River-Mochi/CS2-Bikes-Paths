@@ -72,16 +72,16 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StiffnessScalar)), "Rigidité" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "Rigidité" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
     //                "Multiplicateur de l’**amplitude de balancement**.\n" +
     //                "**Plus haut = moins d’inclinaison**.\n" +
     //                "**Plus bas = plus de wobble**.\n" +
     //                "Conseil : 1.25–1.75 pour plus de stabilité à haute vitesse."
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "Amortissement" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "Amortissement" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
     //                "Plus haut = se stabilise plus vite (moins d’oscillation).\n" +
     //                "**1.00 = valeur du jeu**\n" +
     //                "Conseil : 1.25–2.00 pour plus de stabilité à haute vitesse."

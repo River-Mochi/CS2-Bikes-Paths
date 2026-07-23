@@ -72,16 +72,16 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.StiffnessScalar)), "Sertlik" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "Sertlik" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
     //                "**Sallanma genliği** için çarpan.\n" +
     //                "**Daha yüksek = daha az yatma**.\n" +
     //                "**Daha düşük = daha çok sallanma**.\n" +
     //                "Öneri: yüksek hız stabilitesi için 1.25–1.75."
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(Setting.DampingScalar)), "Sönümleme" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(Setting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "Sönümleme" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
     //                "Daha yüksek = daha hızlı durulur (daha az salınım).\n" +
     //                "**1.00 = oyun varsayılanı**\n" +
     //                "Öneri: yüksek hız stabilitesi için 1.25–2.00."
