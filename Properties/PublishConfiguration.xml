@@ -70,6 +70,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <ChangeLog>
 - Added Thai and Ukrainian languages.
 - Fixed settings now saves immediately.
+- Internal rename — your settings carry over automatically. If a slider looks reset, just set it once and restart.
 - No changes to bike or path speed tuning.
 </ChangeLog>
 	<!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
