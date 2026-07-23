@@ -16,7 +16,7 @@
 namespace FastBikes
 {
     using System.Collections.Generic; // Dictionary, HashSet, List, used by gen. partial system
-    using System.Text;                // StringBuilder used by gen. partial system
+
     using Game.Common;                // Deleted, Overridden
     using Game.Net;                   // Edge, Road, CarLane, SubLane
     using Game.Prefabs;               // PathwayPrefab, PathwayData, PathwayComposition, PrefabData, PrefabRef, NetCompositionData

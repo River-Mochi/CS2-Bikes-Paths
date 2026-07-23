@@ -12,6 +12,7 @@
 namespace FastBikes
 {
     using System.Collections.Generic; // List
+    using System.Text;                // StringBuilder used by gen. partial system
     using CS2Shared.RiverMochi;       // LogUtils
     using Game.Citizens;              // BicycleOwner, CarKeeper, Citizen
     using Game.Common;                // Deleted, Overridden
