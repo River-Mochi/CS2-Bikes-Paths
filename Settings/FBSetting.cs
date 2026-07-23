@@ -11,6 +11,7 @@
 
 namespace FastBikes
 {
+    using System;
     using Colossal.IO.AssetDatabase; // FileLocation
     using CS2Shared.RiverMochi;      // ShellOpen
     using Game.Modding;              // IMod, ModSetting
@@ -18,6 +19,7 @@ namespace FastBikes
     using Game.UI;                   // Unit
     using Unity.Entities;            // World
     using UnityEngine;               // Application.OpenURL
+
 
     [FileLocation("ModsSettings/FastBikes/FastBikes")]
     [SettingsUITabOrder(ActionsTab, AboutTab)]
