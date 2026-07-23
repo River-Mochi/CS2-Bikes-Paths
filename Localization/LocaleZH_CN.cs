@@ -7,18 +7,18 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocaleZH_CN.cs
-// Purpose: Simplified Chinese entries for FastBikes.
+// Purpose: Simplified Chinese entries for BikeAndPath.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
 
     public sealed class LocaleZH_CN : IDictionarySource
     {
-        private readonly FBSetting m_Setting;
+        private readonly BPSetting m_Setting;
 
-        public LocaleZH_CN(FBSetting setting)
+        public LocaleZH_CN(BPSetting setting)
         {
             m_Setting = setting;
         }
@@ -38,23 +38,23 @@ namespace FastBikes
                 { m_Setting.GetSettingsLocaleID(), title },
 
                 // Tabs
-                { m_Setting.GetOptionTabLocaleID(FBSetting.ActionsTab), "操作" },
-                { m_Setting.GetOptionTabLocaleID(FBSetting.AboutTab),   "关于" },
+                { m_Setting.GetOptionTabLocaleID(BPSetting.ActionsTab), "操作" },
+                { m_Setting.GetOptionTabLocaleID(BPSetting.AboutTab),   "关于" },
 
                 // Groups
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsSpeedGrp),      "速度" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStabilityGrp),  "稳定性" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsResetGrp),      "重置" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStatusGrp),     "个人车辆状态" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsPathSpeedGrp),  "路径" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "速度" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "稳定性" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "重置" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "个人车辆状态" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "路径" },
 
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutInfoGrp),  "模组信息" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutLinksGrp), "链接" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutDebugGrp), "调试" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "模组信息" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "链接" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "调试" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.EnableFastBikes)), "启用 Fast Bikes" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "启用 Fast Bikes" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "开启或关闭此模组 **ON / OFF**。\n" +
                     "关闭后，自行车和滑板车行为会恢复为游戏默认值。\n" +
                     "\n" +
@@ -62,8 +62,8 @@ namespace FastBikes
                 },
 
                 // Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.SpeedScalar)), "自行车和滑板车速度" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.SpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "自行车和滑板车速度" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.SpeedScalar)),
                     "**缩放最高速度**。\n" +
                     "高速时会对加速和刹车做平滑处理，减少突然起步和恐慌刹车的感觉。\n" +
                     "**0.30 = 游戏默认值的 30%**\n" +
@@ -72,24 +72,24 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "刚性" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StiffnessScalar)), "刚性" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StiffnessScalar)),
     //                "**摇摆幅度** 的倍率。\n" +
     //                "**更高 = 倾斜更少**。\n" +
     //                "**更低 = 摇晃更多**。\n" +
     //                "建议：高速稳定性用 1.25–1.75。"
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "阻尼" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DampingScalar)), "阻尼" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DampingScalar)),
     //                "更高 = 更快稳定（振荡更少）。\n" +
     //                "**1.00 = 游戏默认值**\n" +
     //                "建议：高速稳定性用 1.25–2.00。"
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.PathSpeedScalar)), "路径速度限制" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.PathSpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "路径速度限制" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "缩放 **路径** 速度限制（路径不是道路）。\n" +
                     "**1.00 = 游戏默认值**\n" +
                     "影响：自行车道、行人+自行车分隔路径、行人路径。\n" +
@@ -99,48 +99,48 @@ namespace FastBikes
                 },
 
                 // Reset buttons
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToModDefaults)), "模组默认值" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToModDefaults)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToModDefaults)), "模组默认值" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToModDefaults)),
                     "应用此模组的默认调校值。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToVanilla)), "游戏默认值" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToVanilla)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "游戏默认值" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "将所有滑块设为 **100%** 并恢复游戏默认值（vanilla）。"
                 },
 
                 // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary1)), "自行车组" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary1)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "自行车组" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
                     "自行车和电动滑板车。\n" +
                     "**活动** = 当前有车道（正在移动）。\n" +
                     "**总停放** = 包含所有位置的 Parked 标记，不只是停车场。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary2)), "汽车组" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary2)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "汽车组" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
                     "仅个人汽车（不包括自行车组）。\n" +
                     "**活动** = 当前有车道（正在移动）。\n" +
                     "**停放** = 所有 **ParkedCar**，不只是停车场。\n" +
                     "扫描只在选项菜单打开时运行，不在城市正常游玩时运行，因此不用担心 FPS。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary3)), "隐藏停放汽车" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary3)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "隐藏停放汽车" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
                     "**OC 边界总数** = 在 Outside City (OC) 连接处带 ParkedCar 的汽车组车辆。\n" +
                     "有些城市会在 Outside City 连接处显示大量卡住的停放汽车。\n" +
                     "使用 <Log hidden cars> 查看隐藏汽车的示例分类。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.LogBorderHiddenCars)), "记录隐藏汽车" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.LogBorderHiddenCars)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "记录隐藏汽车" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
                     "向 **Logs/FastBikes.log** 写入一次性报告。\n" +
                     "包含总数 + Bucket A/B/C 分类和示例 ID。\n" +
                     "使用 Scene Explorer 模组跳转到列出的 Vehicle 实体 ID 并检查。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromStatus)), "打开日志" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromStatus)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "打开日志" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
                     "如果存在，则打开 **Logs/FastBikes.log**。\n" +
                     "如果尚未找到文件，则改为打开 Logs 文件夹。"
                 },
@@ -158,26 +158,26 @@ namespace FastBikes
                 { "FAST_STATS_CARS_ROW3",  "{0} 在 OC 边界隐藏 | 更新 {1}" },
 
                 // About: Info
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutName)),    "模组" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutName)),     "显示名称。" },
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutVersion)), "版本" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutVersion)),  "当前版本。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AboutName)),    "模组" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.AboutName)),     "显示名称。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AboutVersion)), "版本" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.AboutVersion)),  "当前版本。" },
 
                 // Links
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenParadoxMods)), "Paradox Mods" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenParadoxMods)),  "打开作者的 Paradox Mods 页面。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "打开作者的 Paradox Mods 页面。" },
 
                 // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DumpBicyclePrefabs)), "自行车调试报告" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DumpBicyclePrefabs)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "自行车调试报告" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
                     "<正常游玩不需要>。\n" +
                     "用于调试或游戏补丁日检查的一次性详细日志报告。\n" +
                     "请先加载城市。\n" +
                     "输出位置：**Logs/FastBikes.log**"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromDebug)), "打开日志" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromDebug)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "打开日志" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
                     "如果存在，则打开 **Logs/FastBikes.log**。\n" +
                     "如果尚未找到文件，则改为打开 Logs 文件夹。"
                 }

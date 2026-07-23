@@ -1,4 +1,4 @@
-// <copyright file="FastBikeSystem.cs" company="River-Mochi">
+// <copyright file="BikeAndPathSystem.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,12 +6,12 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/FastBikeSystem.cs
+// File: Systems/BikeAndPathSystem.cs
 // Purpose: On-demand bicycle tuning on prefab entities (speed + accel/brake scaling) + pathway speed scaling.
 // Notes:
 // - Stability (SwayingData) tuning is intentionally disabled for compatibility.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Collections.Generic;     // Dictionary
     using Colossal.Serialization.Entities; // Purpose
@@ -23,7 +23,7 @@ namespace FastBikes
     using Unity.Entities;                 // Entity, RefRW, SystemAPI
     using Unity.Mathematics;              // math.*
 
-    public sealed partial class FastBikeSystem : GameSystemBase
+    public sealed partial class BikeAndPathSystem : GameSystemBase
     {
         // Dirty flags schedule work into the next OnUpdate.
         // System remains disabled when no work is queued.
@@ -121,14 +121,14 @@ namespace FastBikes
         protected override void OnUpdate( )
         {
             // Fast exit: no scheduled work and no active batch.
-            // Dump can run without apply (m_Dump lives in FastBikeSystem.Dump.*).
+            // Dump can run without apply (m_Dump lives in BikeAndPathSystem.Dump.*).
             if (!m_BikeDirty && !m_PathDirty && !m_ResetVanilla && !m_Dump && !IsPathBatchActive())
             {
                 Enabled = false;
                 return;
             }
 
-            FBSetting? setting = Mod.Settings;
+            BPSetting? setting = Mod.Settings;
             if (setting == null)
             {
                 // Settings not available: clear all work and stop.
@@ -190,7 +190,7 @@ namespace FastBikes
             catch (System.Exception ex)
             {
                 LogUtils.WarnOnce("FB_SYSTEM_EXCEPTION", ( ) =>
-                    $"[FB] FastBikeSystem failed: {ex.GetType().Name}: {ex.Message}");
+                    $"[FB] BikeAndPathSystem failed: {ex.GetType().Name}: {ex.Message}");
 
                 DisposePathBatch();
             }

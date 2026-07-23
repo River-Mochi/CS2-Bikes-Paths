@@ -9,7 +9,7 @@
 // File: Mod.cs
 // Entry point for Bikes + Paths.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Reflection;
     using Colossal.IO.AssetDatabase;
@@ -34,7 +34,7 @@ namespace FastBikes
         public static readonly ILog s_Log =
             LogManager.GetLogger(ModId).SetShowsErrorsInUI(false);
 
-        public static FBSetting? Settings
+        public static BPSetting? Settings
         {
             get; private set;
         }
@@ -50,7 +50,7 @@ namespace FastBikes
                 LogUtils.Info($"{ModName} {ModTag} v{ModVersion} OnLoad");
             }
 
-            FBSetting setting = new FBSetting(this);
+            BPSetting setting = new BPSetting(this);
             Settings = setting;
 
             LocalizationManager? lm = GameManager.instance?.localizationManager;
@@ -77,10 +77,10 @@ namespace FastBikes
                 LogUtils.Warn($"{ModTag} LocalizationManager is null; skipping locale registration.");
             }
 
-            AssetDatabase.global.LoadSettings(ModId, setting, new FBSetting(this));
+            AssetDatabase.global.LoadSettings(ModId, setting, new BPSetting(this));
             setting.RegisterInOptionsUI();
 
-            updateSystem.UpdateAfter<FastBikeSystem>(SystemUpdatePhase.PrefabUpdate);
+            updateSystem.UpdateAfter<BikeAndPathSystem>(SystemUpdatePhase.PrefabUpdate);
         }
 
         public void OnDispose()

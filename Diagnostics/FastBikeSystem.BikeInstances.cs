@@ -6,11 +6,11 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Diagnostics/FastBikeSystem.BikeInstances.cs
+// File: Diagnostics/BikeAndPathSystem.BikeInstances.cs
 // Purpose: Dump bicycle-group instance counts and car-group runtime classification (incl. OC-hidden split).
 // Notes: Read-only.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Collections.Generic;
     using System.Text;
@@ -23,7 +23,7 @@ namespace FastBikes
     using Game.Vehicles;          // Car, CarCurrentLane, ParkedCar
     using Unity.Collections;
     using Unity.Entities;
-    public sealed partial class FastBikeSystem
+    public sealed partial class BikeAndPathSystem
     {
         private const int kSampleMax = 10;
 

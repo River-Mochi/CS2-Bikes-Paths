@@ -9,9 +9,9 @@
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 	<!--LongDescription Value="Fast Bikes" /-->
 	<LongDescription>
-🚴 **Path speed limit** - YES - now you can adjust bike paths (paths are independent of road speed limits) !
-🚲 *Fast Bikes* speeds up bicycles + scooters. Speed can be disabled [x] if you just want the paths.
-🚴 *Status report* - compare Bike count versus Cars count and usage (Stats can be used without enabling Fast Bikes or Path speed checkbox at all).
+🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits) !
+🚲 **Bike speeds** increase or decrease bicycles + scooters. Speed can be disabled [x] if you just want the paths.
+🚴 **Status report** - compare Bike count versus Cars count and usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
 - road speed mods don't let you set "path" speed limits, so that is unique to this mod.
 
 ### Features
@@ -59,7 +59,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.1.3" />
+	<ModVersion Value="1.1.4" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.6.*" />
 	<!--Dependency for the mod, can be set multiple times-->

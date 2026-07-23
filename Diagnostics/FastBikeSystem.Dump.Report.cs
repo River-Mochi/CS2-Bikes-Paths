@@ -6,10 +6,10 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Diagnostics/FastBikeSystem.Dump.Report.cs
+// File: Diagnostics/BikeAndPathSystem.Dump.Report.cs
 // Purpose: Dump sub-reports (Path speeds, Scooter01 instances, citizen eligibility stats).
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Collections.Generic; // List
     using System.Text;                // StringBuilder used by gen. partial system
@@ -20,7 +20,7 @@ namespace FastBikes
     using Unity.Collections;          // Allocator, NativeArray
     using Unity.Entities;             // Entity, EntityQuery, SystemAPI, RefRO
 
-    public sealed partial class FastBikeSystem
+    public sealed partial class BikeAndPathSystem
     {
         private void DumpCitizenVehicleEligibilityReport( )
         {

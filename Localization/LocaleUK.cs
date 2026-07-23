@@ -7,18 +7,18 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocaleUK.cs
-// Purpose: Ukrainian entries for FastBikes.
+// Purpose: Ukrainian entries for BikeAndPath.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
 
     public sealed class LocaleUK : IDictionarySource
     {
-        private readonly FBSetting m_Setting;
+        private readonly BPSetting m_Setting;
 
-        public LocaleUK(FBSetting setting)
+        public LocaleUK(BPSetting setting)
         {
             m_Setting = setting;
         }
@@ -38,31 +38,31 @@ namespace FastBikes
                 { m_Setting.GetSettingsLocaleID(), title },
 
                 // Tabs
-                { m_Setting.GetOptionTabLocaleID(FBSetting.ActionsTab), "Дії" },
-                { m_Setting.GetOptionTabLocaleID(FBSetting.AboutTab),   "Про мод" },
+                { m_Setting.GetOptionTabLocaleID(BPSetting.ActionsTab), "Дії" },
+                { m_Setting.GetOptionTabLocaleID(BPSetting.AboutTab),   "Про мод" },
 
                 // Groups
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsSpeedGrp),      "Швидкість" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStabilityGrp),  "Стабільність" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsResetGrp),      "Скидання" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsStatusGrp),     "Стан особистого транспорту" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.ActionsPathSpeedGrp),  "Доріжки" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "Швидкість" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "Стабільність" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "Скидання" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "Стан особистого транспорту" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "Доріжки" },
 
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutInfoGrp),  "Інформація про мод" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutLinksGrp), "Посилання" },
-                { m_Setting.GetOptionGroupLocaleID(FBSetting.AboutDebugGrp), "Налагодження" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "Інформація про мод" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "Посилання" },
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Налагодження" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.EnableFastBikes)), "Увімкнути Fast Bikes" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Увімкнути Fast Bikes" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "**Вмикає / вимикає** мод.\n" +
                     "Коли мод вимкнено, поведінка велосипедів і самокатів повертається до стандартних налаштувань гри.\n\n" +
                     "Інформація про стан нижче доступна, навіть якщо Fast Bikes вимкнено."
                 },
 
                 // Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.SpeedScalar)), "Швидкість велосипедів і самокатів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.SpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "Швидкість велосипедів і самокатів" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.SpeedScalar)),
                     "**Масштабує максимальну швидкість**.\n" +
                     "На високій швидкості прискорення й гальмування згладжуються, щоб уникнути різких стартів і панічного гальмування.\n" +
                     "**0.30 = 30%** від стандартного значення гри\n" +
@@ -71,24 +71,24 @@ namespace FastBikes
                 },
 
                 // Stability
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StiffnessScalar)), "Жорсткість" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StiffnessScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StiffnessScalar)), "Жорсткість" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StiffnessScalar)),
     //                "Множник **амплітуди розгойдування**.\n" +
     //                "**Вище = менший нахил**.\n" +
     //                "**Нижче = більше хитання**.\n" +
     //                "Рекомендовано: 1.25–1.75 для стабільності на високій швидкості."
     //            },
     //
-    //            { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DampingScalar)), "Демпфування" },
-    //            { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DampingScalar)),
+    //            { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DampingScalar)), "Демпфування" },
+    //            { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DampingScalar)),
     //                "Вище = швидше стабілізується (менше коливань).\n" +
     //                "**1.00 = стандартне значення гри**\n" +
     //                "Рекомендовано: 1.25–2.00 для стабільності на високій швидкості."
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.PathSpeedScalar)), "Обмеження швидкості доріжок" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.PathSpeedScalar)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Обмеження швидкості доріжок" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "Масштабує обмеження швидкості **доріжок** (доріжки не є дорогами).\n" +
                     "**1.00 = стандартне значення гри**\n" +
                     "Впливає на: велодоріжки, розділені пішохідно-велосипедні доріжки та пішохідні доріжки.\n\n" +
@@ -97,48 +97,48 @@ namespace FastBikes
                 },
 
                 // Reset buttons
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToModDefaults)), "Стандартні налаштування мода" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToModDefaults)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToModDefaults)), "Стандартні налаштування мода" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToModDefaults)),
                     "Застосовує стандартні значення налаштувань мода."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.ResetToVanilla)), "Стандартні налаштування гри" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.ResetToVanilla)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Стандартні налаштування гри" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Установлює всі повзунки на **100%** і відновлює стандартні налаштування гри (vanilla)."
                 },
 
                 // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary1)), "Група велосипедів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary1)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "Група велосипедів" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
                     "Велосипеди та електричні самокати.\n" +
                     "**Активні** = мають поточну смугу (рухаються).\n" +
                     "**Усього припарковано** = включає всі прапорці Parked звідусіль, а не лише з паркінгів."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary2)), "Група автомобілів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary2)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "Група автомобілів" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
                     "Лише особисті автомобілі (без групи велосипедів).\n" +
                     "**Активні** = мають поточну смугу (рухаються).\n" +
                     "**Припарковані** = усі **ParkedCar**, а не лише автомобілі на паркінгах.\n " +
                     "Сканування виконується лише тоді, коли відкрито меню параметрів, а не під час гри в місті, тому на FPS це не впливає."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.StatusSummary3)), "Приховані припарковані автомобілі" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.StatusSummary3)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "Приховані припарковані автомобілі" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
                     "**Усього на межі OC** = автомобілі групи з ParkedCar на з'єднанні Outside City (OC).\n" +
                     "У деяких містах багато автомобілів застрягають припаркованими на з'єднанні Outside City.\n" +
                     "Скористайтеся <Записати приховані авто в журнал>, щоб переглянути приклади розподілу прихованих автомобілів.\n"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.LogBorderHiddenCars)), "Записати приховані авто в журнал" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.LogBorderHiddenCars)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Записати приховані авто в журнал" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
                     "Записує одноразовий звіт у **Logs/FastBikes.log**.\n" +
                     "Містить загальну кількість + розподіл Bucket A/B/C і приклади номерів ID.\n" +
                     "У моді Scene Explorer скористайтеся Jump To, щоб перейти до наведених ID сутностей Vehicle та перевірити їх."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromStatus)), "Відкрити журнал" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromStatus)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Відкрити журнал" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
                     "Відкриває **Logs/FastBikes.log**, якщо файл існує.\n" +
                     "Якщо файл ще не знайдено, натомість відкриває папку Logs."
                 },
@@ -156,26 +156,26 @@ namespace FastBikes
                 { "FAST_STATS_CARS_ROW3",  "{0} приховано на межі OC | оновлено {1}" },
 
                 // About: Info
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutName)),    "Мод" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutName)),     "Назва для відображення." },
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.AboutVersion)), "Версія" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.AboutVersion)),  "Поточна версія." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AboutName)),    "Мод" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.AboutName)),     "Назва для відображення." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AboutVersion)), "Версія" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.AboutVersion)),  "Поточна версія." },
 
                 // Links
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenParadoxMods)), "Paradox Mods" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenParadoxMods)),  "Відкриває сторінку автора на Paradox Mods." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "Відкриває сторінку автора на Paradox Mods." },
 
                 // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.DumpBicyclePrefabs)), "Звіт налагодження велосипедів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.DumpBicyclePrefabs)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "Звіт налагодження велосипедів" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
                     "<Не потрібно для звичайної гри>.\n" +
                     "Одноразовий докладний звіт журналу для налагодження або перевірки в день оновлення гри.\n" +
                     "Спочатку завантажте місто.\n" +
                     "Розташування файлу: **Logs/FastBikes.log**"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(FBSetting.OpenLogFromDebug)), "Відкрити журнал" },
-                { m_Setting.GetOptionDescLocaleID(nameof(FBSetting.OpenLogFromDebug)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Відкрити журнал" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
                     "Відкриває **Logs/FastBikes.log**, якщо файл існує.\n" +
                     "Якщо файл ще не знайдено, натомість відкриває папку Logs."
                 }

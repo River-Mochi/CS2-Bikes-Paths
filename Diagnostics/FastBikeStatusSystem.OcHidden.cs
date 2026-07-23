@@ -9,7 +9,7 @@
 // File: Diagnostics/FastBikeStatusSystem.OcHidden.cs
 // Purpose: On-demand outside-connection hidden-car bucket reports.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace FastBikes
     using Unity.Collections;
     using Unity.Entities;
 
-    public sealed partial class FastBikeStatusSystem
+    public sealed partial class BikeAndPathStatusSystem
     {
         private readonly struct OcHiddenCarOwned
         {

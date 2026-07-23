@@ -1,4 +1,4 @@
-// <copyright file="FastBikeStatus.cs" company="River-Mochi">
+// <copyright file="BikeAndPathStatus.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,10 +6,10 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/FastBikeStatus.cs
+// File: Systems/BikeAndPathStatus.cs
 // Purpose: UI-facing cached status lines for Options UI.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System;                 // DateTime, TimeSpan
     using CS2Shared.RiverMochi;   // LocaleUtils
@@ -18,7 +18,7 @@ namespace FastBikes
     using Unity.Entities;         // World
     using UnityEngine;            // Time.frameCount
 
-    public static class FastBikeStatus
+    public static class BikeAndPathStatus
     {
         public static int RefreshIntervalSeconds { get; set; } = 10;
 
@@ -159,8 +159,8 @@ namespace FastBikes
 
         private static void BuildAndApplySnapshot(World world)
         {
-            FastBikeStatusSystem sys = world.GetOrCreateSystemManaged<FastBikeStatusSystem>();
-            FastBikeStatusSystem.Snapshot snap = sys.BuildSnapshot();
+            BikeAndPathStatusSystem sys = world.GetOrCreateSystemManaged<BikeAndPathStatusSystem>();
+            BikeAndPathStatusSystem.Snapshot snap = sys.BuildSnapshot();
 
             BikesRow = LocaleUtils.SafeFormat(
                 KeyBikesRow,

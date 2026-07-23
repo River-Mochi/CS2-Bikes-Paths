@@ -6,12 +6,12 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Diagnostics/FastBikeSystem.Dump.Core.cs
+// File: Diagnostics/BikeAndPathSystem.Dump.Core.cs
 // Purpose: Dump entrypoint + bicycle prefab sanity + scalar summary.
 // Notes:
 // - Dump is read-only; Debug-only mismatch examples; Release logs counts only.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System;                     // StringComparison
     using System.Collections.Generic; // List, HashSet
@@ -22,7 +22,7 @@ namespace FastBikes
     using Unity.Entities;             // Entity, SystemAPI, RefRO
     using Unity.Mathematics;          // math, float3
 
-    public sealed partial class FastBikeSystem
+    public sealed partial class BikeAndPathSystem
     {
         private bool m_Dump;
 
@@ -88,9 +88,9 @@ namespace FastBikes
 
         private static string FormatPct(float value01) => (value01 * 100f).ToString("0.##") + "%";
 
-        private static bool TryGetSettings(out FBSetting settings)
+        private static bool TryGetSettings(out BPSetting settings)
         {
-            if (Mod.Settings is FBSetting s)
+            if (Mod.Settings is BPSetting s)
             {
                 settings = s;
                 return true;
@@ -113,7 +113,7 @@ namespace FastBikes
             float rawPathSpeed = -1f;
             float pathScalar = 1.0f;
 
-            if (enableFastBikes && TryGetSettings(out FBSetting settings))
+            if (enableFastBikes && TryGetSettings(out BPSetting settings))
             {
                 rawPathSpeed = settings.PathSpeedScalar;
                 pathScalar = Unity.Mathematics.math.clamp(rawPathSpeed, 1.0f, 5.0f);
@@ -408,7 +408,7 @@ namespace FastBikes
             // One-line A/B/C summary matching Actions tab hidden-car report.
             DumpOcHiddenBucketsOneLine();
 
-            // Defined in Systems/FastBikeSystem.BikeInstances.cs (keep logic there).
+            // Defined in Systems/BikeAndPathSystem.BikeInstances.cs (keep logic there).
             DumpBikeInstancesReport();
             DumpCarGroupInstancesReport();
         }
@@ -417,7 +417,7 @@ namespace FastBikes
         {
             try
             {
-                FastBikeStatusSystem sys = World.GetOrCreateSystemManaged<FastBikeStatusSystem>();
+                BikeAndPathStatusSystem sys = World.GetOrCreateSystemManaged<BikeAndPathStatusSystem>();
                 sys.LogOcHiddenBucketsOneLine();
             }
             catch (Exception ex)

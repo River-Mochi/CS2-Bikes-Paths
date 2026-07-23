@@ -1,4 +1,4 @@
-// <copyright file="FastBikeSystem.PathSpeed.cs" company="River-Mochi">
+// <copyright file="BikeAndPathSystem.PathSpeed.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,14 +6,14 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/FastBikeSystem.PathSpeed.cs
+// File: Systems/BikeAndPathSystem.PathSpeed.cs
 // Purpose: Pathway speed-limit scaling for:
 //          - Prefab layer: PathwayData + PathwayComposition (affects newly drawn paths)
 //          - Runtime layer: existing placed path lanes (Game.Net.CarLane) via path-only edges
 // Notes:
 // - Authoring speed limits are km/h; runtime values are m/s.
 
-namespace FastBikes
+namespace BikeAndPath
 {
     using System.Collections.Generic; // Dictionary, HashSet, List, used by gen. partial system
 
@@ -26,7 +26,7 @@ namespace FastBikes
     using Unity.Entities;             // Entity, RefRO, RefRW, SystemAPI, BufferLookup, ComponentLookup
 
 
-    public sealed partial class FastBikeSystem
+    public sealed partial class BikeAndPathSystem
     {
         private const int kEdgeBatchSize = 4096;
 
