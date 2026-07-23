@@ -107,8 +107,8 @@ If settings get corrupted:
 ---
 
 ## Links
-- Discord: https://discord.gg/HTav7ARPs2  
-- GitHub: https://github.com/River-Mochi/CS2-Fastbikes  
+- Discord: https://discord.gg/gwXgvtyhjc
+- GitHub: https://github.com/River-Mochi/CS2-Bikes-Paths
 
 ## Credits
 **River-mochi** — mod author
