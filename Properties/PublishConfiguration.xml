@@ -7,7 +7,7 @@
 	<!--Short description of the mod-->
 	<ShortDescription Value="Adjust Bikes, Path Speed Limits. Detailed Status Report :)" />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
-	<!--LongDescription Value="Fast Bikes" /-->
+	<!--LongDescription Value="Bikes + Paths" /-->
 	<LongDescription>
 🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits) !
 🚲 **Bike speeds** increase or decrease bicycles + scooters. Speed can be disabled [x] if you just want the paths.
@@ -33,7 +33,7 @@
 - Report issues on Github / Discord.
 
 ### Design + Performance
-- Fast Bikes is built to be lightweight. It's partly why this was made; to have a mod that does not have parts that run in the city per-frame all the time.
+- Bikes + Paths is built to be lightweight. It's partly why this was made; to have a mod that does not have parts that run in the city per-frame all the time.
 - No Harmony patch. It works to apply tuning when you change settings (or when a city loads), then goes idle, simple.
 - Status report refreshes only when the Options menu is open (to not affect city gameplay performance).
 - This is a brief idea, there is much more; be sure, effort is made for these details because I like the idea I can run these kind of mods even on an old laptop.

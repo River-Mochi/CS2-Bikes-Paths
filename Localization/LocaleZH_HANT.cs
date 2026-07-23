@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "偵錯" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "啟用 Fast Bikes" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "啟用 Bikes + Paths" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "開啟或關閉此模組 **ON / OFF**。\n" +
                     "關閉時，自行車與滑板車行為會恢復為遊戲預設值。\n" +
                     "\n" +
-                    "即使 Fast Bikes 關閉，下方狀態資訊仍可使用。"
+                    "即使 Bikes + Paths 關閉，下方狀態資訊仍可使用。"
                 },
 
                 // Speed

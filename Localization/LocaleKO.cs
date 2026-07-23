@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "디버그" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Fast Bikes 켜기" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bikes + Paths 켜기" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "모드를 **ON / OFF** 합니다.\n" +
                     "OFF이면 자전거와 스쿠터 동작이 게임 기본값으로 돌아갑니다.\n" +
                     "\n" +
-                    "아래 상태 정보는 Fast Bikes가 OFF여도 사용할 수 있습니다."
+                    "아래 상태 정보는 Bikes + Paths가 OFF여도 사용할 수 있습니다."
                 },
 
                 // Speed

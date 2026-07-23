@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Fast Bikes'i etkinleştir" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bikes + Paths'i etkinleştir" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "Modu **AÇ / KAPAT** yapar.\n" +
                     "Kapalıyken bisiklet ve scooter davranışı oyun varsayılanına döner.\n" +
                     "\n" +
-                    "Fast Bikes kapalı olsa bile aşağıdaki durum bilgisi kullanılabilir."
+                    "Bikes + Paths kapalı olsa bile aşağıdaki durum bilgisi kullanılabilir."
                 },
 
                 // Speed

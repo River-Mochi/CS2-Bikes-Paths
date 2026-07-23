@@ -53,11 +53,11 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Налагодження" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Увімкнути Fast Bikes" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Увімкнути Bikes + Paths" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "**Вмикає / вимикає** мод.\n" +
                     "Коли мод вимкнено, поведінка велосипедів і самокатів повертається до стандартних налаштувань гри.\n\n" +
-                    "Інформація про стан нижче доступна, навіть якщо Fast Bikes вимкнено."
+                    "Інформація про стан нижче доступна, навіть якщо Bikes + Paths вимкнено."
                 },
 
                 // Speed

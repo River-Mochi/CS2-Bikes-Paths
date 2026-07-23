@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Włącz Fast Bikes" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Włącz Bikes + Paths" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "Włącza lub wyłącza mod **ON / OFF**.\n" +
                     "Gdy jest wyłączony, zachowanie rowerów i hulajnóg wraca do wartości gry.\n" +
                     "\n" +
-                    "Status poniżej jest dostępny nawet wtedy, gdy Fast Bikes jest wyłączony."
+                    "Status poniżej jest dostępny nawet wtedy, gdy Bikes + Paths jest wyłączony."
                 },
 
                 // Speed

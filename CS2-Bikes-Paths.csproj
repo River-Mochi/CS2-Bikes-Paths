@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <!-- File: CS2-Bikes-Paths.csproj -->
-  <!-- Purpose: Build configuration for Fast Bikes mod using CSII toolchain.
+  <!-- Purpose: Build configuration for Bikes + Paths mod using CSII toolchain.
 	     Notes: TargetFramework net48, C# LangVersion 9.0, OutputType Library is set by toolchain Mod.props. -->
 
   <PropertyGroup>

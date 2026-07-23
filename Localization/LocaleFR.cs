@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Débogage" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Activer Fast Bikes" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Activer Bikes + Paths" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "Active ou désactive le mod **ON / OFF**.\n" +
                     "Quand il est désactivé, les vélos et scooters reviennent aux valeurs du jeu.\n" +
                     "\n" +
-                    "Les infos d’état ci-dessous restent disponibles même si Fast Bikes est désactivé."
+                    "Les infos d’état ci-dessous restent disponibles même si Bikes + Paths est désactivé."
                 },
 
                 // Speed

@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Gỡ lỗi" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bật Fast Bikes" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bật Bikes + Paths" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "Bật hoặc tắt mod **ON / OFF**.\n" +
                     "Khi tắt, hành vi xe đạp và scooter trở về mặc định của game.\n" +
                     "\n" +
-                    "Thông tin trạng thái bên dưới vẫn dùng được ngay cả khi Fast Bikes tắt."
+                    "Thông tin trạng thái bên dưới vẫn dùng được ngay cả khi Bikes + Paths tắt."
                 },
 
                 // Speed

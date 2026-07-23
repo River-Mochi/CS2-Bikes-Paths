@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "デバッグ" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Fast Bikes を有効化" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bikes + Paths を有効化" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "MOD を **ON / OFF** します。\n" +
                     "OFF の時は、自転車とスクーターの挙動をゲーム既定値に戻します。\n" +
                     "\n" +
-                    "下のステータス情報は、Fast Bikes が OFF でも使用できます。"
+                    "下のステータス情報は、Bikes + Paths が OFF でも使用できます。"
                 },
 
                 // Speed

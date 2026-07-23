@@ -1,6 +1,6 @@
-# Fast Bikes (Cities: Skylines II)
+# Bikes + Paths (Cities: Skylines II)
 
-Fast Bikes speeds up **bicycles** and **electric scooters**.  
+Bikes + Paths increases/lowers **bicycles** and **electric scooters**.  
 It can also raise **path speed limits** so bikes don’t get bottlenecked on paths.
 
 ## Features
@@ -25,7 +25,7 @@ It can also raise **path speed limits** so bikes don’t get bottlenecked on pat
 
 ## Options
 
-### Enable Fast Bikes
+### Enable Bikes + Paths
 Turns the mod ON/OFF.
 
 - **ON**: applies tuning to bike/scooter prefabs and path speed limits.
@@ -57,7 +57,7 @@ Some cities also show lots of cars **hidden at the border (OC / Outside Connecti
 In the Status panel, the row shows **Total at OC border**.
 
 If you want to help investigate:
-1. Open **Options → Fast Bikes → Status**
+1. Open **Options → Bikes + Paths → Status**
 2. Click **Log hidden cars**
 3. Open `Logs/FastBikes.log`
 4. The log prints:
@@ -70,7 +70,7 @@ If you want to help investigate:
 ---
 
 ## Performance notes
-Fast Bikes is built to be lightweight.
+Bikes + Paths is built to be lightweight.
 
 - Applies tuning when settings change (or when a city loads), then goes idle.
 - Status report refreshes only when the Options menu is open.
@@ -85,7 +85,7 @@ Fast Bikes is built to be lightweight.
 
 ## Remove mod (clean uninstall)
 Best uninstall method:
-1. Set **Enable Fast Bikes = OFF**
+1. Set **Enable Bikes + Paths = OFF**
 2. Make sure **Path speed limit = 1.00**
 3. Load the city once, save once
 4. Uninstall the mod
@@ -97,7 +97,7 @@ If you uninstall without resetting Path Speed to 1.00:
 
 ## Troubleshooting
 - Load a city first (don’t test from main menu).
-- Toggle **Enable Fast Bikes** OFF then ON.
+- Toggle **Enable Bikes + Paths** OFF then ON.
 - Run **Bike debug report** and check `Logs/FastBikes.log`.
 
 If settings get corrupted:

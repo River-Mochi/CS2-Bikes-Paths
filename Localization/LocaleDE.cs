@@ -53,12 +53,12 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Fast Bikes aktivieren" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bikes + Paths aktivieren" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "Schaltet den Mod **EIN / AUS**.\n" +
                     "Wenn AUS, werden Fahrrad- und Scooter-Verhalten auf die Spielstandardwerte zurückgesetzt.\n" +
                     "\n" +
-                    "Die Statusinfos unten sind auch verfügbar, wenn Fast Bikes AUS ist."
+                    "Die Statusinfos unten sind auch verfügbar, wenn Bikes + Paths AUS ist."
                 },
 
                 // Speed

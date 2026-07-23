@@ -53,11 +53,11 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "ดีบัก" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "เปิดใช้งาน Fast Bikes" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "เปิดใช้งาน Bikes + Paths" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
                     "**เปิด / ปิด** ม็อด\n" +
                     "เมื่อปิด การทำงานของจักรยานและสกู๊ตเตอร์จะกลับเป็นค่าเริ่มต้นของเกม\n\n" +
-                    "ข้อมูลสถานะด้านล่างยังดูได้แม้จะปิด Fast Bikes"
+                    "ข้อมูลสถานะด้านล่างยังดูได้แม้จะปิด Bikes + Paths"
                 },
 
                 // Speed
