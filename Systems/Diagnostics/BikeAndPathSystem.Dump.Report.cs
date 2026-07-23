@@ -6,7 +6,7 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Diagnostics/BikeAndPathSystem.Dump.Report.cs
+// File: Systems/Diagnostics/BikeAndPathSystem.Dump.Report.cs
 // Purpose: Dump sub-reports (Path speeds, Scooter01 instances, citizen eligibility stats).
 
 namespace BikeAndPath

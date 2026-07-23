@@ -6,7 +6,7 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Diagnostics/BikeAndPathSystem.Dump.Core.cs
+// File: Systems/Diagnostics/BikeAndPathSystem.Dump.Core.cs
 // Purpose: Dump entrypoint + bicycle prefab sanity + scalar summary.
 // Notes:
 // - Dump is read-only; Debug-only mismatch examples; Release logs counts only.
