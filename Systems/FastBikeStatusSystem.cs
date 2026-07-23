@@ -12,6 +12,7 @@
 namespace FastBikes
 {
     using System;              // DateTime, StringComparison
+    using CS2Shared.RiverMochi; // LogUtils
     using Game;                // GameSystemBase
     using Game.Common;         // Deleted, Destroyed, Owner
     using Game.Objects;        // Unspawned

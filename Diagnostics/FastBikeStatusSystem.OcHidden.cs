@@ -14,6 +14,7 @@ namespace FastBikes
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using CS2Shared.RiverMochi;       // LogUtils
     using Game.Citizens;
     using Game.Common;
     using Game.Objects;
@@ -57,7 +58,7 @@ namespace FastBikes
                 out int cOwnerNotHousehold,
                 out int cTouristHousehold);
 
-            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+            LogUtils.Info(( ) =>
                 $"[FB] OC Hidden Cars A/B/C: Total={total}, A={bucketA}, B={bucketB}, C={bucketC}, Check={sum} ({(diff == 0 ? "OK" : "DIFF " + diff)})");
         }
 
@@ -99,7 +100,7 @@ namespace FastBikes
                 out int cOwnerNotHousehold,
                 out int cTouristHousehold);
 
-            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+            LogUtils.Info(( ) =>
             {
                 StringBuilder sb = new StringBuilder();
 

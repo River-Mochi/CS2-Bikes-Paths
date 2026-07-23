@@ -16,6 +16,7 @@ namespace FastBikes
     using System;                     // StringComparison
     using System.Collections.Generic; // List, HashSet
     using System.Text;                // StringBuilder
+    using CS2Shared.RiverMochi;       // LogUtils
     using Game.Common;                // Deleted, Overridden
     using Game.Prefabs;               // BicyclePrefab, BicycleData, CarData, SwayingData, PrefabBase, PrefabData, PrefabRef
     using Game.Tools;                 // Temp
@@ -99,7 +100,7 @@ namespace FastBikes
             }
 
             settings = default!;
-            CS2Shared.RiverMochi.LogUtils.WarnOnce("FB_SETTINGS_NULL", ( ) => "[FB] Settings is null; Dump using PathSpeed=1x.");
+            LogUtils.WarnOnce("FB_SETTINGS_NULL", ( ) => "[FB] Settings is null; Dump using PathSpeed=1x.");
             return false;
         }
 
@@ -125,7 +126,7 @@ namespace FastBikes
                 ? $"Path lane batch: RUNNING (EdgesRemaining={m_PathEdgeEntities.Length - m_PathEdgeIndex}/{m_PathEdgeEntities.Length})"
                 : "Path lane batch: IDLE (no queued work)";
 
-            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+            LogUtils.Info(( ) =>
                 "\n==================== [FB] Scalar SUMMARY ====================\n" +
                 "Meaning: quick sanity of scalars + group membership + patch/custom changes.\n" +
                 $"EnableFastBikes={enableFastBikes}\n" +
@@ -306,25 +307,25 @@ namespace FastBikes
 
                 string kind = isScooter ? "Scooter" : "Bicycle";
 
-                CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                LogUtils.Info(( ) =>
                     "-------------------- [FB] BIKE MISMATCH (DEBUG) --------------------\n" +
                     "Meaning: mismatch suggests overwrite-after-run, mod not running, or CO behavior change.\n" +
                     $"Kind={kind} Name='{name}' Type={typeName} Entity={FormatIndexVersion(prefabEntity)}");
 
                 if (hasAuthoring)
                 {
-                    CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                    LogUtils.Info(( ) =>
                         $"AuthoringMax={bikeAuthoring.m_MaxSpeed:0.###} km/h ({KmhToMph(bikeAuthoring.m_MaxSpeed):0.###} mph)\n" +
                         $"ExpectedMax≈{MsToKmh(expectedMaxMs):0.###} km/h ({MsToMph(expectedMaxMs):0.###} mph)");
                 }
                 else
                 {
-                    CS2Shared.RiverMochi.LogUtils.Info(( ) => "Authoring: (missing or not BicyclePrefab)");
+                    LogUtils.Info(( ) => "Authoring: (missing or not BicyclePrefab)");
                 }
 
                 if (hasCarData && hasAuthoring)
                 {
-                    CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                    LogUtils.Info(( ) =>
                         $"CarDataMax={MsToKmh(car.m_MaxSpeed):0.###} km/h ({MsToMph(car.m_MaxSpeed):0.###} mph)\n" +
                         $"Diffs: Speed={FormatPct(RelativeDiff(expectedMaxMs, car.m_MaxSpeed))}, " +
                         $"Accel={FormatPct(RelativeDiff(expectedAccel, car.m_Acceleration))}, " +
@@ -332,19 +333,19 @@ namespace FastBikes
                 }
                 else if (!hasCarData)
                 {
-                    CS2Shared.RiverMochi.LogUtils.Info(( ) => "CarData: (missing)");
+                    LogUtils.Info(( ) => "CarData: (missing)");
                 }
 
                 if (hasSway)
                 {
-                    CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                    LogUtils.Info(( ) =>
                         $"SwayBaselineCached={baselineCached}\n" +
                         $"Baseline MaxPos={F3(baselineSw.m_MaxPosition)} Damping={F3(baselineSw.m_DampingFactors)}\n" +
                         $"Current  MaxPos={F3(sw.m_MaxPosition)} Damping={F3(sw.m_DampingFactors)}");
 
                     if (baselineCached)
                     {
-                        CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                        LogUtils.Info(( ) =>
                             $"Expected MaxPos≈{F3(expectedMaxPos)} Damping≈{F3(expectedDamping)}\n" +
                             $"Diffs: MaxPos(max)={FormatPct(RelativeDiffMax(expectedMaxPos, sw.m_MaxPosition))}, " +
                             $"Damping(max)={FormatPct(RelativeDiffMax(expectedDamping, sw.m_DampingFactors))}");
@@ -373,13 +374,13 @@ namespace FastBikes
 
             if (clean)
             {
-                CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                LogUtils.Info(( ) =>
                     $"[FB] BIKE SUMMARY: ALL GOOD (Total={total}, Bicycles={bikes}, Scooters={scooters}).");
             }
             else
             {
 #if DEBUG
-                CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                LogUtils.Info(( ) =>
                 {
                     var sb = new System.Text.StringBuilder();
                     sb.AppendLine("==================== [FB] BIKE SUMMARY (DEBUG) ====================");
@@ -398,7 +399,7 @@ namespace FastBikes
                     return sb.ToString();
                 });
 #else
-                CS2Shared.RiverMochi.LogUtils.Info(( ) =>
+                LogUtils.Info(( ) =>
                     $"[FB] BIKE SUMMARY: ISSUES (Total={total}, MissingExpected={missingExpected.Count}, MissingPrefabBase={missingPrefabBase}, MissingCarData={missingCarData}, MissingSwayingData={missingSwaying}).");
 #endif
             }
@@ -424,7 +425,7 @@ namespace FastBikes
             }
             catch (Exception ex)
             {
-                CS2Shared.RiverMochi.LogUtils.Info(( ) => $"[FB] OC Hidden Cars A/B/C: failed ({ex.GetType().Name})");
+                LogUtils.Info(( ) => $"[FB] OC Hidden Cars A/B/C: failed ({ex.GetType().Name})");
             }
         }
 
