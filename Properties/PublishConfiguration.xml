@@ -67,7 +67,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<!--Required DLC, can be set multiple times. Supported values are "Landmark Buildings", "San Fransisco Set", "Beach Properties", "Urban Promenades", "Modern Architecture"-->
 	<RequiredDLC Value="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog>
+<ChangeLog>
 - fixed settings update instantly.
 - no changes to existing bike or path speed tuning.
 </ChangeLog>
