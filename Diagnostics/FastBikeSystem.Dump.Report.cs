@@ -6,13 +6,12 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/FastBikeSystem.Dump.Reports.cs
+// File: Diagnostics/FastBikeSystem.Dump.Report.cs
 // Purpose: Dump sub-reports (Path speeds, Scooter01 instances, citizen eligibility stats).
 
 namespace FastBikes
 {
     using System.Collections.Generic; // List
-    using CS2Shared.RiverMochi;     // LogUtils
     using Game.Citizens;              // BicycleOwner, CarKeeper, Citizen
     using Game.Common;                // Deleted, Overridden
     using Game.Prefabs;               // PathwayPrefab, PathwayData, PathwayComposition, NetCompositionData, RoadData, PrefabBase, PrefabData, PrefabRef
@@ -26,7 +25,7 @@ namespace FastBikes
     {
         private void DumpCitizenVehicleEligibilityReport( )
         {
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n==================== [FB] CITIZEN VEHICLE ELIGIBILITY ====================\n" +
                 "Meaning: counts citizens and whether BicycleOwner / CarKeeper components are present+enabled.\n" +
                 "This does NOT measure bike usage; it only shows eligibility flags.\n");
@@ -120,7 +119,7 @@ namespace FastBikes
                 }
             }
 
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
             {
                 var sb = new System.Text.StringBuilder();
 
@@ -171,7 +170,7 @@ namespace FastBikes
 
         private void DumpScooter01Report( )
         {
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n==================== [FB] SCOOTER01 (FUEL) ====================\n" +
                 "Usage: locate Scooter01 prefab by name, count live instances, log up to 10 samples for SE Mod.");
 
@@ -197,7 +196,7 @@ namespace FastBikes
 
             if (scooterPrefabEntity == Entity.Null)
             {
-                LogUtils.Info(( ) => "[FB] Scooter01 prefab not found (PrefabSystem).");
+                CS2Shared.RiverMochi.LogUtils.Info(( ) => "[FB] Scooter01 prefab not found (PrefabSystem).");
                 return;
             }
 
@@ -237,7 +236,7 @@ namespace FastBikes
                 }
             }
 
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
             {
                 var sb = new System.Text.StringBuilder();
                 sb.AppendLine($"[FB] Scooter01 prefab entity={FormatIndexVersion(scooterPrefabEntity)}");
@@ -269,7 +268,7 @@ namespace FastBikes
 
         private void DumpPathSpeedReport(float pathScalar)
         {
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n==================== [FB] PATH SPEED SUMMARY ====================\n" +
                 "Meaning: PathwayData speed limit tracks authoring * scalar.\n" +
                 $"Path Scalar={pathScalar:0.##}");
@@ -336,7 +335,7 @@ namespace FastBikes
                     {
                         prefabMismatchExamples++;
 
-                        LogUtils.Info(( ) =>
+                        CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                             "-------------------- [FB] PATH PREFAB MISMATCH (DEBUG) --------------------\n" +
                             $"Name='{prefabBase.name}'\n" +
                             $"Authoring={pathPrefab.m_SpeedLimit:0.###} km/h\n" +
@@ -348,7 +347,7 @@ namespace FastBikes
                 }
             }
 
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n-------------------- [FB] PATH PREFABS --------------------\n" +
                 $"Count={prefabs}\n" +
                 $"SpeedMin={MsToKmh(prefabMin):0.###} km/h, SpeedMax={MsToKmh(prefabMax):0.###} km/h\n" +
@@ -391,7 +390,7 @@ namespace FastBikes
                 }
             }
 
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n-------------------- [FB] PATH COMPOSITIONS --------------------\n" +
                 $"Count={comps}\n" +
                 $"SpeedMin={MsToKmh(compMin):0.###} km/h, SpeedMax={MsToKmh(compMax):0.###} km/h\n" +
@@ -400,3 +399,4 @@ namespace FastBikes
         }
     }
 }
+

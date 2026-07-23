@@ -14,7 +14,6 @@ namespace FastBikes
 {
     using System.Collections.Generic;
     using System.Text;
-    using CS2Shared.RiverMochi;     // LogUtils
     using Game.Common;            // Deleted, Destroyed, Overridden, Owner
   //  using Game.Net;                  // OutsideConnection, ConnectionLane
     using Game.Objects;           // Moving, Stopped, Unspawned
@@ -29,7 +28,7 @@ namespace FastBikes
 
         private void DumpCarGroupInstancesReport( )
         {
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n==================== [FB] CAR GROUP INSTANCES (LIVE) ====================\n" +
                 "Meaning: PersonalCar instances excluding BicycleData prefabs.\n" +
                 "Status classification:\n" +
@@ -184,7 +183,7 @@ namespace FastBikes
                 }
             }
 
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
             {
                 StringBuilder sb = new System.Text.StringBuilder();
 
@@ -211,7 +210,7 @@ namespace FastBikes
 
         private void DumpBikeInstancesReport( )
         {
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
                 "\n==================== [FB] BIKE INSTANCES (LIVE) ====================\n" +
                 "Meaning: live BicycleData vehicles (bikes + e-scooters).\n" +
                 "Live excludes: Deleted, Temp, Destroyed.\n" +
@@ -250,7 +249,7 @@ namespace FastBikes
 
             if (groupPrefabs.Count == 0)
             {
-                LogUtils.Info(( ) => "[FB] Bike instances: BicycleData prefab set is empty.");
+                CS2Shared.RiverMochi.LogUtils.Info(( ) => "[FB] Bike instances: BicycleData prefab set is empty.");
                 return;
             }
 
@@ -351,7 +350,7 @@ namespace FastBikes
                 }
             }
 
-            LogUtils.Info(( ) =>
+            CS2Shared.RiverMochi.LogUtils.Info(( ) =>
             {
                 StringBuilder sb = new System.Text.StringBuilder();
 
@@ -446,3 +445,4 @@ namespace FastBikes
         }
     }
 }
+
