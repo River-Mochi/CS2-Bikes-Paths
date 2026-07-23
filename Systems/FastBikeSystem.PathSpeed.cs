@@ -25,6 +25,7 @@ namespace FastBikes
     using Unity.Collections;          // NativeArray, NativeList, Allocator
     using Unity.Entities;             // Entity, RefRO, RefRW, SystemAPI, BufferLookup, ComponentLookup
 
+
     public sealed partial class FastBikeSystem
     {
         private const int kEdgeBatchSize = 4096;
