@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Gizli arabaları günlüğe yaz" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "**Logs/FastBikes.log** içine tek seferlik rapor yazar.\n" +
+                    "**Logs/BikesAndPaths.log** içine tek seferlik rapor yazar.\n" +
                     "Toplam + Bucket A/B/C dökümü ve örnek ID numaralarını içerir.\n" +
                     "Scene Explorer moduyla listelenen Vehicle varlık ID'lerine atlayıp incele."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Günlüğü aç" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Varsa **Logs/FastBikes.log** dosyasını açar.\n" +
+                    "Varsa **Logs/BikesAndPaths.log** dosyasını açar.\n" +
                     "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<Normal oynanış için gerekmez>.\n" +
                     "Debug veya oyun yaması sonrası kontrol için tek seferlik ayrıntılı günlük raporu.\n" +
                     "Önce bir şehir yükle.\n" +
-                    "Çıktı konumu: **Logs/FastBikes.log**"
+                    "Çıktı konumu: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Günlüğü aç" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Varsa **Logs/FastBikes.log** dosyasını açar.\n" +
+                    "Varsa **Logs/BikesAndPaths.log** dosyasını açar.\n" +
                     "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

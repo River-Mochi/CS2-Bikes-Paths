@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "숨겨진 차량 로그" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "**Logs/FastBikes.log**에 1회 보고서를 작성합니다.\n" +
+                    "**Logs/BikesAndPaths.log**에 1회 보고서를 작성합니다.\n" +
                     "총합 + Bucket A/B/C 분류와 샘플 ID 번호를 포함합니다.\n" +
                     "Scene Explorer 모드로 나열된 Vehicle 엔티티 ID로 이동해 확인하세요."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "로그 열기" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "**Logs/FastBikes.log**가 있으면 엽니다.\n" +
+                    "**Logs/BikesAndPaths.log**가 있으면 엽니다.\n" +
                     "파일이 아직 없으면 대신 Logs 폴더를 엽니다."
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<일반 플레이에는 필요 없습니다>.\n" +
                     "디버그 또는 게임 패치 후 확인용 1회 상세 로그 보고서입니다.\n" +
                     "먼저 도시를 불러오세요.\n" +
-                    "출력 위치: **Logs/FastBikes.log**"
+                    "출력 위치: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "로그 열기" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "**Logs/FastBikes.log**가 있으면 엽니다.\n" +
+                    "**Logs/BikesAndPaths.log**가 있으면 엽니다.\n" +
                     "파일이 아직 없으면 대신 Logs 폴더를 엽니다."
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

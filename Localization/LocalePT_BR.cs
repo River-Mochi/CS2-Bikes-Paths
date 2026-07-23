@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Registrar carros ocultos" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Escreve um relatório único em **Logs/FastBikes.log**.\n" +
+                    "Escreve um relatório único em **Logs/BikesAndPaths.log**.\n" +
                     "Inclui total + detalhamento Bucket A/B/C e números de ID de exemplo.\n" +
                     "Use o mod Scene Explorer para ir aos IDs de entidade Vehicle listados e investigar."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Abrir log" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Abre **Logs/FastBikes.log** se existir.\n" +
+                    "Abre **Logs/BikesAndPaths.log** se existir.\n" +
                     "Se o arquivo ainda não existir, abre a pasta Logs."
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<Não é necessário para gameplay normal>.\n" +
                     "Relatório detalhado único para debug ou verificação em dia de patch do jogo.\n" +
                     "Carregue uma cidade primeiro.\n" +
-                    "Local de saída: **Logs/FastBikes.log**"
+                    "Local de saída: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Abrir log" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Abre **Logs/FastBikes.log** se existir.\n" +
+                    "Abre **Logs/BikesAndPaths.log** se existir.\n" +
                     "Se o arquivo ainda não existir, abre a pasta Logs."
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

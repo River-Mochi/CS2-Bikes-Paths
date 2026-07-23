@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "隠れた車をログ出力" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "**Logs/FastBikes.log** に 1 回だけレポートを書き込みます。\n" +
+                    "**Logs/BikesAndPaths.log** に 1 回だけレポートを書き込みます。\n" +
                     "合計 + Bucket A/B/C の内訳とサンプル ID 番号を含みます。\n" +
                     "Scene Explorer mod で一覧の Vehicle エンティティ ID へジャンプして調査できます。"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "ログを開く" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "**Logs/FastBikes.log** があれば開きます。\n" +
+                    "**Logs/BikesAndPaths.log** があれば開きます。\n" +
                     "ファイルがまだ見つからない場合は、代わりに Logs フォルダーを開きます。"
                 },
 
@@ -151,8 +151,8 @@ namespace BikeAndPath
                 { "FAST_STATS_CARS_NOT_AVAIL",  "データ取得のため、都市を数分動かしてください。" },
 
                 // Status rows
-                { "FAST_STATS_BIKES_ROW1", "{0} active | {1} bikes | {2} scooters | {3} / {4} parked/total" },
-                { "FAST_STATS_CARS_ROW2",  "{0} active | {1} parked | {2} total | {3} trailers" },
+                { "FAST_STATS_BIKES_ROW1", "{0} 稼働中 | 自転車 {1} | スクーター {2} | 駐車/合計 {3} / {4}" },
+                { "FAST_STATS_CARS_ROW2",  "{0} 稼働中 | 駐車 {1} | 合計 {2} | トレーラー {3}" },
 
                 // Row3 shows TOTAL OC hidden
                 { "FAST_STATS_CARS_ROW3",  "{0} OC 境界で非表示 | 更新 {1}" },
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<通常プレイには不要です>。\n" +
                     "デバッグやゲームパッチ後の確認用に、詳細ログレポートを 1 回出力します。\n" +
                     "先に都市を読み込んでください。\n" +
-                    "出力先: **Logs/FastBikes.log**"
+                    "出力先: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "ログを開く" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "**Logs/FastBikes.log** があれば開きます。\n" +
+                    "**Logs/BikesAndPaths.log** があれば開きます。\n" +
                     "ファイルがまだ見つからない場合は、代わりに Logs フォルダーを開きます。"
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

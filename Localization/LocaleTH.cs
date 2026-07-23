@@ -132,14 +132,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "บันทึกรถที่ซ่อนอยู่" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "เขียนรายงานหนึ่งครั้งไปยัง **Logs/FastBikes.log**\n" +
+                    "เขียนรายงานหนึ่งครั้งไปยัง **Logs/BikesAndPaths.log**\n" +
                     "มีจำนวนรวม + การแบ่ง Bucket A/B/C และหมายเลข ID ตัวอย่าง\n" +
                     "ใช้ม็อด Scene Explorer เพื่อ Jump To ไปยัง ID เอนทิตี Vehicle ที่แสดงไว้และตรวจสอบ"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "เปิดไฟล์บันทึก" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "เปิด **Logs/FastBikes.log** หากมีไฟล์นี้\n" +
+                    "เปิด **Logs/BikesAndPaths.log** หากมีไฟล์นี้\n" +
                     "หากยังไม่พบไฟล์ จะเปิดโฟลเดอร์ Logs แทน"
                 },
 
@@ -171,12 +171,12 @@ namespace BikeAndPath
                     "<ไม่จำเป็นสำหรับการเล่นตามปกติ>\n" +
                     "รายงานบันทึกแบบละเอียดหนึ่งครั้งสำหรับการดีบักหรือตรวจสอบในวันที่เกมอัปเดต\n" +
                     "โหลดเมืองก่อน\n" +
-                    "ตำแหน่งไฟล์: **Logs/FastBikes.log**"
+                    "ตำแหน่งไฟล์: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "เปิดไฟล์บันทึก" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "เปิด **Logs/FastBikes.log** หากมีไฟล์นี้\n" +
+                    "เปิด **Logs/BikesAndPaths.log** หากมีไฟล์นี้\n" +
                     "หากยังไม่พบไฟล์ จะเปิดโฟลเดอร์ Logs แทน"
                 }
             };
@@ -187,3 +187,4 @@ namespace BikeAndPath
         }
     }
 }
+

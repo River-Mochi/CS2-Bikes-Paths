@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "記錄隱藏汽車" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "向 **Logs/FastBikes.log** 寫入一次性報告。\n" +
+                    "向 **Logs/BikesAndPaths.log** 寫入一次性報告。\n" +
                     "包含總數 + Bucket A/B/C 分類與範例 ID。\n" +
                     "使用 Scene Explorer 模組跳到列出的 Vehicle 實體 ID 並檢查。"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "開啟日誌" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "如果存在，開啟 **Logs/FastBikes.log**。\n" +
+                    "如果存在，開啟 **Logs/BikesAndPaths.log**。\n" +
                     "如果尚未找到檔案，則改為開啟 Logs 資料夾。"
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<正常遊玩不需要>。\n" +
                     "用於偵錯或遊戲更新後檢查的一次性詳細日誌報告。\n" +
                     "請先載入城市。\n" +
-                    "輸出位置：**Logs/FastBikes.log**"
+                    "輸出位置：**Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "開啟日誌" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "如果存在，開啟 **Logs/FastBikes.log**。\n" +
+                    "如果存在，開啟 **Logs/BikesAndPaths.log**。\n" +
                     "如果尚未找到檔案，則改為開啟 Logs 資料夾。"
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

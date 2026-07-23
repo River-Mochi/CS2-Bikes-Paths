@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "记录隐藏汽车" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "向 **Logs/FastBikes.log** 写入一次性报告。\n" +
+                    "向 **Logs/BikesAndPaths.log** 写入一次性报告。\n" +
                     "包含总数 + Bucket A/B/C 分类和示例 ID。\n" +
                     "使用 Scene Explorer 模组跳转到列出的 Vehicle 实体 ID 并检查。"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "打开日志" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "如果存在，则打开 **Logs/FastBikes.log**。\n" +
+                    "如果存在，则打开 **Logs/BikesAndPaths.log**。\n" +
                     "如果尚未找到文件，则改为打开 Logs 文件夹。"
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<正常游玩不需要>。\n" +
                     "用于调试或游戏补丁日检查的一次性详细日志报告。\n" +
                     "请先加载城市。\n" +
-                    "输出位置：**Logs/FastBikes.log**"
+                    "输出位置：**Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "打开日志" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "如果存在，则打开 **Logs/FastBikes.log**。\n" +
+                    "如果存在，则打开 **Logs/BikesAndPaths.log**。\n" +
                     "如果尚未找到文件，则改为打开 Logs 文件夹。"
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

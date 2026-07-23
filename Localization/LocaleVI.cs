@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Ghi log xe ẩn" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Ghi báo cáo một lần vào **Logs/FastBikes.log**.\n" +
+                    "Ghi báo cáo một lần vào **Logs/BikesAndPaths.log**.\n" +
                     "Có tổng số + phân nhóm Bucket A/B/C và số ID mẫu.\n" +
                     "Dùng mod Scene Explorer để nhảy tới ID thực thể Vehicle được liệt kê và kiểm tra."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Mở log" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Mở **Logs/FastBikes.log** nếu có.\n" +
+                    "Mở **Logs/BikesAndPaths.log** nếu có.\n" +
                     "Nếu chưa tìm thấy file, sẽ mở thư mục Logs."
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<Không cần cho chơi bình thường>.\n" +
                     "Báo cáo log chi tiết một lần để gỡ lỗi hoặc kiểm tra sau ngày patch.\n" +
                     "Hãy tải thành phố trước.\n" +
-                    "Nơi xuất: **Logs/FastBikes.log**"
+                    "Nơi xuất: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Mở log" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Mở **Logs/FastBikes.log** nếu có.\n" +
+                    "Mở **Logs/BikesAndPaths.log** nếu có.\n" +
                     "Nếu chưa tìm thấy file, sẽ mở thư mục Logs."
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

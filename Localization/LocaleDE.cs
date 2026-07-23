@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Versteckte Autos loggen" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Schreibt einen einmaligen Bericht nach **Logs/FastBikes.log**.\n" +
+                    "Schreibt einen einmaligen Bericht nach **Logs/BikesAndPaths.log**.\n" +
                     "Enthält Gesamtzahl + Bucket-A/B/C-Aufschlüsselung und Beispiel-IDs.\n" +
                     "Nutze den Scene Explorer Mod, um zu den gelisteten Vehicle-Entity-IDs zu springen und zu prüfen."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Log öffnen" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Öffnet **Logs/FastBikes.log**, falls vorhanden.\n" +
+                    "Öffnet **Logs/BikesAndPaths.log**, falls vorhanden.\n" +
                     "Wenn die Datei noch nicht gefunden wird, wird stattdessen der Logs-Ordner geöffnet."
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<Für normales Gameplay nicht nötig>.\n" +
                     "Einmaliger Detailbericht zum Debuggen oder Prüfen nach einem Spielpatch.\n" +
                     "Zuerst eine Stadt laden.\n" +
-                    "Ausgabeort: **Logs/FastBikes.log**"
+                    "Ausgabeort: **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Log öffnen" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Öffnet **Logs/FastBikes.log**, falls vorhanden.\n" +
+                    "Öffnet **Logs/BikesAndPaths.log**, falls vorhanden.\n" +
                     "Wenn die Datei noch nicht gefunden wird, wird stattdessen der Logs-Ordner geöffnet."
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+

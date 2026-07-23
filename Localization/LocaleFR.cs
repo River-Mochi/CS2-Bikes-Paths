@@ -134,14 +134,14 @@ namespace BikeAndPath
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Journaliser les voitures cachées" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Écrit un rapport unique dans **Logs/FastBikes.log**.\n" +
+                    "Écrit un rapport unique dans **Logs/BikesAndPaths.log**.\n" +
                     "Inclut le total + le détail Bucket A/B/C et des exemples d’ID.\n" +
                     "Utilisez le mod Scene Explorer pour aller aux ID d’entité Vehicle listés et enquêter."
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Ouvrir le journal" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Ouvre **Logs/FastBikes.log** s’il existe.\n" +
+                    "Ouvre **Logs/BikesAndPaths.log** s’il existe.\n" +
                     "Si le fichier n’existe pas encore, ouvre le dossier Logs à la place."
                 },
 
@@ -173,12 +173,12 @@ namespace BikeAndPath
                     "<Pas nécessaire pour le jeu normal>.\n" +
                     "Rapport détaillé unique pour le debug ou la vérification après une mise à jour du jeu.\n" +
                     "Chargez d’abord une ville.\n" +
-                    "Emplacement de sortie : **Logs/FastBikes.log**"
+                    "Emplacement de sortie : **Logs/BikesAndPaths.log**"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Ouvrir le journal" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Ouvre **Logs/FastBikes.log** s’il existe.\n" +
+                    "Ouvre **Logs/BikesAndPaths.log** s’il existe.\n" +
                     "Si le fichier n’existe pas encore, ouvre le dossier Logs à la place."
                 }
             };
@@ -189,3 +189,4 @@ namespace BikeAndPath
         }
     }
 }
+
