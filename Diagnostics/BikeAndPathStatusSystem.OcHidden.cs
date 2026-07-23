@@ -6,7 +6,7 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Diagnostics/FastBikeStatusSystem.OcHidden.cs
+// File: Diagnostics/BikeAndPathStatusSystem.OcHidden.cs
 // Purpose: On-demand outside-connection hidden-car bucket reports.
 
 namespace BikeAndPath
