@@ -85,6 +85,8 @@ namespace FastBikes
             AddLocaleSource("zh-HANT", new LocaleZH_HANT(setting));  // Traditional Chinese
             AddLocaleSource("tr-TR", new LocaleTR(setting));         // Turkish
             AddLocaleSource("vi-VN", new LocaleVI(setting));         // Vietnamese
+            AddLocaleSource("th-TH", new LocaleTH(setting));  // Thai
+            AddLocaleSource("uk-UA", new LocaleUK(setting));  // Ukrainian
 
             try
             {

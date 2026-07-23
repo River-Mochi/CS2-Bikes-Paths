@@ -111,12 +111,12 @@ namespace FastBikes
         // ------------------------
         // Kept for settings compatibility; no Options UI attributes on purpose.
 
-        public float StiffnessScalar
+        internal float StiffnessScalar
         {
             get; set;
         }
 
-        public float DampingScalar
+        internal float DampingScalar
         {
             get; set;
         }
