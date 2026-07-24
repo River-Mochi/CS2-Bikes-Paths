@@ -7,9 +7,9 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocaleZH_CN.cs
-// Purpose: Simplified Chinese entries for BikeAndPath.
+// Purpose: Simplified Chinese entries for BikesAndPaths.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
@@ -53,8 +53,8 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "调试" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "启用 Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "启用 Bikes + Paths" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
                     "开启或关闭此模组 **ON / OFF**。\n" +
                     "关闭后，自行车和滑板车行为会恢复为游戏默认值。\n" +
                     "\n" +

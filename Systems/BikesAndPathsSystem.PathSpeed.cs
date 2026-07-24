@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathSystem.PathSpeed.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsSystem.PathSpeed.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,14 +6,14 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/BikeAndPathSystem.PathSpeed.cs
+// File: Systems/BikesAndPathsSystem.PathSpeed.cs
 // Purpose: Pathway speed-limit scaling for:
 //          - Prefab layer: PathwayData + PathwayComposition (affects newly drawn paths)
 //          - Runtime layer: existing placed path lanes (Game.Net.CarLane) via path-only edges
 // Notes:
 // - Authoring speed limits are km/h; runtime values are m/s.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using Game.Common;                // Deleted, Overridden
     using Game.Net;                   // Edge, Road, CarLane, SubLane
@@ -23,7 +23,7 @@ namespace BikeAndPath
     using Unity.Entities;             // Entity, RefRO, RefRW, SystemAPI, BufferLookup, ComponentLookup
 
 
-    public sealed partial class BikeAndPathSystem
+    public sealed partial class BikesAndPathsSystem
     {
         private const int kEdgeBatchSize = 4096;
 

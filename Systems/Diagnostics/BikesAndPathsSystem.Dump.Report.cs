@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathSystem.Dump.Report.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsSystem.Dump.Report.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,10 +6,10 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/Diagnostics/BikeAndPathSystem.Dump.Report.cs
+// File: Systems/Diagnostics/BikesAndPathsSystem.Dump.Report.cs
 // Purpose: Dump sub-reports (Path speeds, Scooter01 instances, citizen eligibility stats).
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic; // List
     using CS2Shared.RiverMochi;       // LogUtils
@@ -19,7 +19,7 @@ namespace BikeAndPath
     using Unity.Collections;          // Allocator, NativeArray
     using Unity.Entities;             // Entity, EntityQuery, SystemAPI, RefRO
 
-    public sealed partial class BikeAndPathSystem
+    public sealed partial class BikesAndPathsSystem
     {
         private void DumpCitizenVehicleEligibilityReport( )
         {

@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathSystem.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsSystem.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,12 +6,12 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/BikeAndPathSystem.cs
+// File: Systems/BikesAndPathsSystem.cs
 // Purpose: On-demand bicycle tuning on prefab entities (speed + accel/brake scaling) + pathway speed scaling.
 // Notes:
 // - Stability (SwayingData) tuning is intentionally disabled for compatibility.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;     // Dictionary
     using Colossal.Serialization.Entities;  // Purpose
@@ -25,7 +25,7 @@ namespace BikeAndPath
     using Unity.Entities;                   // Entity, RefRW, SystemAPI
     using Unity.Mathematics;                // math.*
 
-    public sealed partial class BikeAndPathSystem : GameSystemBase
+    public sealed partial class BikesAndPathsSystem : GameSystemBase
     {
         // Dirty flags schedule work into the next OnUpdate.
         // System remains disabled when no work is queued.
@@ -123,7 +123,7 @@ namespace BikeAndPath
         protected override void OnUpdate( )
         {
             // Fast exit: no scheduled work and no active batch.
-            // Dump can run without apply (m_Dump lives in BikeAndPathSystem.Dump.*).
+            // Dump can run without apply (m_Dump lives in BikesAndPathsSystem.Dump.*).
             if (!m_BikeDirty && !m_PathDirty && !m_ResetVanilla && !m_Dump && !IsPathBatchActive())
             {
                 Enabled = false;
@@ -152,15 +152,15 @@ namespace BikeAndPath
 
                     // Dump keeps the signature for compatibility.
                     DumpBicyclePrefabs(
-                        enableFastBikes: setting.EnableFastBikes,
+                        enableFastBikes: setting.EnableBikesAndPaths,
                         speedScalar: setting.SpeedScalar,
                         stiffnessScalar: setting.StiffnessScalar,
                         dampingScalar: setting.DampingScalar);
                 }
 
                 // Reset must win over all other state.
-                // Disable (EnableFastBikes=false) also forces vanilla.
-                bool forceVanilla = m_ResetVanilla || !setting.EnableFastBikes;
+                // Disable (EnableBikesAndPaths=false) also forces vanilla.
+                bool forceVanilla = m_ResetVanilla || !setting.EnableBikesAndPaths;
                 m_ResetVanilla = false;
 
                 float speedScalar = forceVanilla ? 1.0f : math.clamp(setting.SpeedScalar, 0.30f, 10.0f);
@@ -192,7 +192,7 @@ namespace BikeAndPath
             catch (System.Exception ex)
             {
                 LogUtils.WarnOnce("FB_SYSTEM_EXCEPTION", ( ) =>
-                    $"[FB] BikeAndPathSystem failed: {ex.GetType().Name}: {ex.Message}");
+                    $"[FB] BikesAndPathsSystem failed: {ex.GetType().Name}: {ex.Message}");
 
                 DisposePathBatch();
             }

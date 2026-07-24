@@ -7,9 +7,9 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocaleEN.cs
-// Purpose: English entries for BikeAndPath.
+// Purpose: English entries for BikesAndPaths.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
@@ -53,8 +53,8 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Enable Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Enable Bikes + Paths" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
                     "Turns the mod **ON / OFF**.\n" +
                     "When OFF, bicycle and scooter behavior is restored to game defaults.\n\n" +
                     "And you can still get Status info below even if you have Bikes + Paths Off."

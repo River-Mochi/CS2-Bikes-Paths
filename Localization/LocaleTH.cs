@@ -7,9 +7,9 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocaleTH.cs
-// Purpose: Thai entries for BikeAndPath.
+// Purpose: Thai entries for BikesAndPaths.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
@@ -53,8 +53,8 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "ดีบัก" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "เปิดใช้งาน Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "เปิดใช้งาน Bikes + Paths" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
                     "**เปิด / ปิด** ม็อด\n" +
                     "เมื่อปิด การทำงานของจักรยานและสกู๊ตเตอร์จะกลับเป็นค่าเริ่มต้นของเกม\n\n" +
                     "ข้อมูลสถานะด้านล่างยังดูได้แม้จะปิด Bikes + Paths"

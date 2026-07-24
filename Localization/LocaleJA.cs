@@ -7,9 +7,9 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocaleJA.cs
-// Purpose: Japanese entries for BikeAndPath.
+// Purpose: Japanese entries for BikesAndPaths.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
@@ -53,8 +53,8 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "デバッグ" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Bikes + Paths を有効化" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Bikes + Paths を有効化" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
                     "MOD を **ON / OFF** します。\n" +
                     "OFF の時は、自転車とスクーターの挙動をゲーム既定値に戻します。\n" +
                     "\n" +

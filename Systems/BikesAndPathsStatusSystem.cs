@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathStatusSystem.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsStatusSystem.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,10 +6,10 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/BikeAndPathStatusSystem.cs
+// File: Systems/BikesAndPathsStatusSystem.cs
 // Purpose: Snapshot counts for the Options UI.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System;               // DateTime, StringComparison
     using CS2Shared.RiverMochi; // LogUtils
@@ -22,7 +22,7 @@ namespace BikeAndPath
     using Unity.Collections;    // Allocator, NativeArray
     using Unity.Entities;       // Entity, EntityQuery, SystemAPI
 
-    public sealed partial class BikeAndPathStatusSystem : GameSystemBase
+    public sealed partial class BikesAndPathsStatusSystem : GameSystemBase
     {
         public readonly struct Snapshot
         {

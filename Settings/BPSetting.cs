@@ -7,9 +7,9 @@
 // ================= </copyright> ======================
 
 // File: Settings/BPSetting.cs
-// Purpose: Options UI + live apply triggers for BikeAndPath.
+// Purpose: Options UI + live apply triggers for BikesAndPaths.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System;
     using Colossal.IO.AssetDatabase; // FileLocation
@@ -68,7 +68,7 @@ namespace BikeAndPath
 
         public BPSetting(IMod mod) : base(mod)
         {
-            EnableFastBikes = DefaultEnabled;
+            EnableBikesAndPaths = DefaultEnabled;
             SpeedScalar = DefaultSpeed;
 
             // Kept for settings compatibility; unused while Stability is disabled.
@@ -83,8 +83,8 @@ namespace BikeAndPath
         // ----------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
-        [SettingsUISetter(typeof(BPSetting), nameof(SetEnableFastBikes))]
-        public bool EnableFastBikes
+        [SettingsUISetter(typeof(BPSetting), nameof(SetEnableBikesAndPaths))]
+        public bool EnableBikesAndPaths
         {
             get; set;
         }
@@ -94,7 +94,7 @@ namespace BikeAndPath
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
         [SettingsUISlider(min = 0.30f, max = 10.00f, step = 0.10f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(BPSetting), nameof(SetSpeedScalar))]
         public float SpeedScalar
@@ -122,7 +122,7 @@ namespace BikeAndPath
         // -----------------------------
 
         [SettingsUISection(ActionsTab, ActionsPathSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
         [SettingsUISlider(min = 1.00f, max = 5.00f, step = 0.25f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(BPSetting), nameof(SetPathSpeedScalar))]
         public float PathSpeedScalar
@@ -135,7 +135,7 @@ namespace BikeAndPath
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToModDefaults
@@ -152,7 +152,7 @@ namespace BikeAndPath
         }
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableFastBikes), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToVanilla
@@ -178,7 +178,7 @@ namespace BikeAndPath
             get
             {
                 RefreshStatusSafe();
-                return BikeAndPathStatus.BikesRow ?? string.Empty;
+                return BikesAndPathsStatus.BikesRow ?? string.Empty;
             }
         }
 
@@ -188,7 +188,7 @@ namespace BikeAndPath
             get
             {
                 RefreshStatusSafe();
-                return BikeAndPathStatus.CarsRow ?? string.Empty;
+                return BikesAndPathsStatus.CarsRow ?? string.Empty;
             }
         }
 
@@ -198,7 +198,7 @@ namespace BikeAndPath
             get
             {
                 RefreshStatusSafe();
-                return BikeAndPathStatus.CarsRow3 ?? string.Empty;
+                return BikesAndPathsStatus.CarsRow3 ?? string.Empty;
             }
         }
 
@@ -220,7 +220,7 @@ namespace BikeAndPath
                     return;
                 }
 
-                world.GetOrCreateSystemManaged<BikeAndPathStatusSystem>()
+                world.GetOrCreateSystemManaged<BikesAndPathsStatusSystem>()
                     .LogBorderParkedSamples(headCount: 10, tailCount: 10);
             }
         }
@@ -319,7 +319,7 @@ namespace BikeAndPath
 
         public override void SetDefaults( )
         {
-            EnableFastBikes = DefaultEnabled;
+            EnableBikesAndPaths = DefaultEnabled;
             SpeedScalar = DefaultSpeed;
 
             // Kept for settings compatibility; unused while Stability is disabled.
@@ -337,7 +337,7 @@ namespace BikeAndPath
         {
             try
             {
-                BikeAndPathStatus.RefreshIfNeeded();
+                BikesAndPathsStatus.RefreshIfNeeded();
             }
             catch
             {
@@ -355,7 +355,7 @@ namespace BikeAndPath
             return world;
         }
 
-        private static BikeAndPathSystem? GetSystem( )
+        private static BikesAndPathsSystem? GetSystem( )
         {
             World? world = GetWorld();
             if (world == null)
@@ -363,16 +363,16 @@ namespace BikeAndPath
                 return null;
             }
 
-            return world.GetOrCreateSystemManaged<BikeAndPathSystem>();
+            return world.GetOrCreateSystemManaged<BikesAndPathsSystem>();
         }
 
         // ------------------------------------------------
         // UI setter handlers
         // ------------------------------------------------
 
-        private void SetEnableFastBikes(bool value)
+        private void SetEnableBikesAndPaths(bool value)
         {
-            if (EnableFastBikes == value)
+            if (EnableBikesAndPaths == value)
             {
                 return;
             }
@@ -394,7 +394,7 @@ namespace BikeAndPath
                 return;
             }
 
-            if (EnableFastBikes)
+            if (EnableBikesAndPaths)
             {
                 GetSystem()?.ScheduleApplyBicyclesAndStability();
             }
@@ -408,7 +408,7 @@ namespace BikeAndPath
                 return;
             }
 
-            if (EnableFastBikes)
+            if (EnableBikesAndPaths)
             {
                 GetSystem()?.ScheduleApplyBicyclesAndStability();
             }
@@ -422,7 +422,7 @@ namespace BikeAndPath
                 return;
             }
 
-            if (EnableFastBikes)
+            if (EnableBikesAndPaths)
             {
                 GetSystem()?.ScheduleApplyBicyclesAndStability();
             }
@@ -435,7 +435,7 @@ namespace BikeAndPath
                 return;
             }
 
-            if (EnableFastBikes)
+            if (EnableBikesAndPaths)
             {
                 GetSystem()?.ScheduleApplyPaths();
             }

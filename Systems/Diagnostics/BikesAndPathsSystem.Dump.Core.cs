@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathSystem.Dump.Core.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsSystem.Dump.Core.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,12 +6,12 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/Diagnostics/BikeAndPathSystem.Dump.Core.cs
+// File: Systems/Diagnostics/BikesAndPathsSystem.Dump.Core.cs
 // Purpose: Dump entrypoint + bicycle prefab sanity + scalar summary.
 // Notes:
 // - Dump is read-only; Debug-only mismatch examples; Release logs counts only.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System;                     // StringComparison
     using System.Collections.Generic; // List, HashSet
@@ -22,7 +22,7 @@ namespace BikeAndPath
     using Unity.Entities;             // Entity, SystemAPI, RefRO
     using Unity.Mathematics;          // math, float3
 
-    public sealed partial class BikeAndPathSystem
+    public sealed partial class BikesAndPathsSystem
     {
         private bool m_Dump;
 
@@ -126,7 +126,7 @@ namespace BikeAndPath
             LogUtils.Info(( ) =>
                 "\n==================== [FB] Scalar SUMMARY ====================\n" +
                 "Meaning: quick sanity of scalars + group membership + patch/custom changes.\n" +
-                $"EnableFastBikes={enableFastBikes}\n" +
+                $"EnableBikesAndPaths={enableFastBikes}\n" +
                 $"Bike Speed Scalar={speedScalar:0.##} (Effective={effectiveSpeed:0.##})\n" +
                 $"Stiffness Scalar={stiffnessScalar:0.##} (Effective={effectiveStiff:0.##})\n" +
                 $"Damping Scalar={dampingScalar:0.##} (Effective={effectiveDamp:0.##})\n" +
@@ -408,7 +408,7 @@ namespace BikeAndPath
             // One-line A/B/C summary matching Actions tab hidden-car report.
             DumpOcHiddenBucketsOneLine();
 
-            // Defined in Systems/BikeAndPathSystem.BikeInstances.cs (keep logic there).
+            // Defined in Systems/BikesAndPathsSystem.BikeInstances.cs (keep logic there).
             DumpBikeInstancesReport();
             DumpCarGroupInstancesReport();
         }
@@ -417,7 +417,7 @@ namespace BikeAndPath
         {
             try
             {
-                BikeAndPathStatusSystem sys = World.GetOrCreateSystemManaged<BikeAndPathStatusSystem>();
+                BikesAndPathsStatusSystem sys = World.GetOrCreateSystemManaged<BikesAndPathsStatusSystem>();
                 sys.LogOcHiddenBucketsOneLine();
             }
             catch (Exception ex)

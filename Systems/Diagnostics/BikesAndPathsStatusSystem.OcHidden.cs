@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathStatusSystem.OcHidden.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsStatusSystem.OcHidden.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,10 +6,10 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/Diagnostics/BikeAndPathStatusSystem.OcHidden.cs
+// File: Systems/Diagnostics/BikesAndPathsStatusSystem.OcHidden.cs
 // Purpose: On-demand outside-connection hidden-car bucket reports.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace BikeAndPath
     using Unity.Collections;
     using Unity.Entities;
 
-    public sealed partial class BikeAndPathStatusSystem
+    public sealed partial class BikesAndPathsStatusSystem
     {
         private readonly struct OcHiddenCarOwned
         {

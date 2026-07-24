@@ -1,4 +1,4 @@
-// <copyright file="BikeAndPathSystem.BikeInstances.cs" company="River-Mochi">
+// <copyright file="BikesAndPathsSystem.BikeInstances.cs" company="River-Mochi">
 // Copyright (c) 2026 River-Mochi. All rights reserved.
 // Licensed under the MIT License. You may not use this file except in compliance with this License.
 // See LICENSE file in the project root for full license information.
@@ -6,11 +6,11 @@
 // all copies or substantial portions of this code.
 // ================= </copyright> ======================
 
-// File: Systems/Diagnostics/BikeAndPathSystem.BikeInstances.cs
+// File: Systems/Diagnostics/BikesAndPathsSystem.BikeInstances.cs
 // Purpose: Dump bicycle-group instance counts and car-group runtime classification (incl. OC-hidden split).
 // Notes: Read-only.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;
     using CS2Shared.RiverMochi;   // LogUtils
@@ -21,7 +21,7 @@ namespace BikeAndPath
     using Game.Vehicles;          // Car, CarCurrentLane, ParkedCar
     using Unity.Collections;
     using Unity.Entities;
-    public sealed partial class BikeAndPathSystem
+    public sealed partial class BikesAndPathsSystem
     {
         private const int kSampleMax = 10;
 

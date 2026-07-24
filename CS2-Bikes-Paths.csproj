@@ -13,7 +13,7 @@
 
     <!-- DLL name and default namespace -->
     <AssemblyName>BikesAndPaths</AssemblyName>
-    <RootNamespace>BikeAndPath</RootNamespace>
+    <RootNamespace>BikesAndPaths</RootNamespace>
 
     <!-- Enable nullable reference types project-wide -->
     <Nullable>enable</Nullable>

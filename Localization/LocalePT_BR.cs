@@ -7,9 +7,9 @@
 // ================= </copyright> ======================
 
 // File: Localization/LocalePT_BR.cs
-// Purpose: Portuguese (Brazil) entries for BikeAndPath.
+// Purpose: Portuguese (Brazil) entries for BikesAndPaths.
 
-namespace BikeAndPath
+namespace BikesAndPaths
 {
     using System.Collections.Generic;  // IEnumerable, Dictionary, KeyValuePair
     using Colossal;                    // IDictionarySource, IDictionaryEntryError
@@ -53,8 +53,8 @@ namespace BikeAndPath
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
 
                 // Master toggle
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableFastBikes)), "Ativar Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableFastBikes)),
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Ativar Bikes + Paths" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
                     "Liga ou desliga o mod **ON / OFF**.\n" +
                     "Quando desligado, bicicletas e scooters voltam aos padrões do jogo.\n" +
                     "\n" +
