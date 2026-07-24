@@ -19,6 +19,8 @@ namespace BikesAndPaths
     using Game.Common;                // Deleted, Overridden
     using Game.Prefabs;               // BicyclePrefab, BicycleData, CarData, SwayingData,PrefabData
     using Game.Tools;                 // Temp
+    using Game.Vehicles;              // ParkedCar - required by generated system partial (sibling queries)
+    using Unity.Collections;          // NativeArray, NativeList - required by generated system partial
     using Unity.Entities;             // Entity, SystemAPI, RefRO
     using Unity.Mathematics;          // math, float3
 
