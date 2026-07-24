@@ -12,10 +12,8 @@
 
 namespace BikesAndPaths
 {
-    using System;                     // Exception, StringComparison, Type
+    using System;                     // Exception, StringComparison
     using System.IO;                  // Directory, File, Path
-    using Colossal;                   // Hash128
-    using Colossal.IO.AssetDatabase;  // AssetDatabase, AssetDataPath, SettingAsset, SourceMeta, IDataSourceProvider, EscapeStrategy
     using Colossal.PSI.Environment;   // EnvPath
     using CS2Shared.RiverMochi;       // LogUtils
 
@@ -30,98 +28,39 @@ namespace BikesAndPaths
         private const string LegacyEnableKey = "\"EnableFastBikes\"";
         private const string CurrentEnableKey = "\"EnableBikesAndPaths\"";
 
-        // Copies the legacy .coc to the new path (rewriting its section header + renamed key),
-        // remaps its Asset Database entry, and deletes the old file. Runs in OnLoad before
-        // LoadSettings so the current session reads settings from the new location.
+        // Moves the old FastBikes .coc to the new BikesAndPaths location, rewriting its section header
+        // (old ModId -> new ModId) and the one renamed key so saved values carry over. Runs in OnLoad
+        // BEFORE LoadSettings, which reads the file at the [FileLocation] path directly -- so we touch
+        // ONLY the file, never the Asset Database. (An AssetDatabase remap makes the game re-open the
+        // file mid-load, which fails if anything else has it open, and adds a second handle that breaks
+        // saving. The official CS2 migration guide also just moves the file.)
         private static void MigrateLegacySettingsFile()
         {
             try
             {
                 string oldLocation = Path.Combine(
-                    EnvPath.kUserDataPath,
-                    "ModsSettings",
-                    LegacyModId,
-                    $"{LegacyModId}.coc");
+                    EnvPath.kUserDataPath, "ModsSettings", LegacyModId, $"{LegacyModId}.coc");
 
                 if (!File.Exists(oldLocation))
                 {
                     return;
                 }
 
-                string directory = Path.Combine(
-                    EnvPath.kUserDataPath,
-                    "ModsSettings",
-                    ModId);
+                string directory = Path.Combine(EnvPath.kUserDataPath, "ModsSettings", ModId);
+                string correctLocation = Path.Combine(directory, $"{ModId}.coc");
 
-                string correctLocation = Path.Combine(
-                    directory,
-                    $"{ModId}.coc");
-
-                // Two files are ambiguous. Do not overwrite either one automatically.
+                // New settings already exist (already migrated, or set on the new build): just remove
+                // the stale old file so this never runs again. Never overwrite the new file.
                 if (File.Exists(correctLocation))
                 {
-#if DEBUG
-                    // Benign: settings already exist at the new location, so there is nothing to migrate.
-                    LogUtils.Info(() =>
-                        "BikesAndPaths settings file already exists; skipping migration of the old FastBikes file.");
-#endif
+                    TryDeleteLegacyFileAndFolder(oldLocation);
                     return;
                 }
 
-                IDataSourceProvider dataSource = AssetDatabase.user.dataSource;
-                string normalizedOldLocation = Path.GetFullPath(oldLocation);
-
-                bool oldEntryFound = false;
-                Hash128 oldGuid = default;
-
-                foreach ((Type type, Hash128 hash) entry in dataSource.Enumerate())
-                {
-                    if (entry.type != typeof(SettingAsset))
-                    {
-                        continue;
-                    }
-
-                    SourceMeta meta = dataSource.GetMeta(entry.hash);
-                    if (string.IsNullOrEmpty(meta.path))
-                    {
-                        continue;
-                    }
-
-                    string candidateLocation = Path.GetFullPath(meta.path);
-                    if (!string.Equals(
-                            candidateLocation,
-                            normalizedOldLocation,
-                            StringComparison.OrdinalIgnoreCase))
-                    {
-                        continue;
-                    }
-
-                    oldGuid = entry.hash;
-                    oldEntryFound = true;
-                    break;
-                }
-
-                if (!oldEntryFound)
-                {
-                    // The old file exists on disk but the game did not load it as a settings asset
-                    // this session, so there is nothing to remap. The player just re-sets the sliders
-                    // once and the new BikesAndPaths file is written on the next save. Kept at Info so
-                    // a curious player understands why their old options did not carry over.
-                    LogUtils.Info(() =>
-                        "Old FastBikes settings file found but not loaded as a settings asset; skipping migration.");
-                    return;
-                }
-
-                Directory.CreateDirectory(directory);
-
-                // Write the file to the new location first, so the settings data is safe even if the
-                // Asset Database remap below were to throw.
-                //
-                // The .coc's first line is the section header, and it equals the OLD LoadSettings name
-                // (LegacyModId). LoadSettings(ModId, ...) matches on that header, so a plain copy would
-                // keep "FastBikes" and the values would NOT load (they would silently reset). Rewrite the
-                // header to the new ModId, and rename the one renamed key, so saved values carry over.
                 string coc = File.ReadAllText(oldLocation);
+
+                // The .coc's first line is the section header = the old LoadSettings name. LoadSettings
+                // (ModId, ...) matches on it, so rewrite it to the new ModId or the values would reset.
                 if (coc.StartsWith(LegacyModId, StringComparison.Ordinal))
                 {
                     coc = ModId + coc.Substring(LegacyModId.Length);
@@ -129,25 +68,12 @@ namespace BikesAndPaths
 
                 coc = coc.Replace(LegacyEnableKey, CurrentEnableKey);
 
+                Directory.CreateDirectory(directory);
                 File.WriteAllText(correctLocation, coc);
 
-                // Keep the same AssetDatabase GUID, but remap it from the old physical path to the new
-                // path for this running session.
-                dataSource.DeleteEntryFromDatabase(oldGuid);
-                dataSource.AddEntryFromDatabase(
-                    AssetDataPath.Create(
-                        $"ModsSettings/{ModId}/{ModId}.coc",
-                        EscapeStrategy.None),
-                    typeof(SettingAsset),
-                    oldGuid);
-
-                // Remap succeeded, so the old file is now safe to remove. Deleting it keeps ModsSettings
-                // clean and prevents the "already exists" skip on future loads. Done last, and in its own
-                // guard, so a delete failure cannot lose settings.
                 TryDeleteLegacyFileAndFolder(oldLocation);
 
-                LogUtils.Info(() =>
-                    $"Migrated settings to ModsSettings/{ModId}/{ModId}.coc file.");
+                LogUtils.Info(() => $"Migrated settings to ModsSettings/{ModId}/{ModId}.coc.");
             }
             catch (Exception ex)
             {
