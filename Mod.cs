@@ -50,10 +50,9 @@ namespace BikesAndPaths
                 LogUtils.Info($"{ModName} {ModTag} v{ModVersion} OnLoad");
             }
 
-            // Move a player's old FastBikes settings file to the new BikesAndPaths location
-            // before LoadSettings runs, so saved options carry over after the rename.
+            // Note whether this player already has a BikesAndPaths.coc, before anything can write one.
             // (Implementation in Mod.Migration.cs.)
-            MigrateLegacySettingsFile();
+            CaptureSettingsFileState();
 
             BPSetting setting = new BPSetting(this);
             Settings = setting;
@@ -83,6 +82,11 @@ namespace BikesAndPaths
             }
 
             AssetDatabase.global.LoadSettings(ModId, setting, new BPSetting(this));
+
+            // First run after the FastBikes -> BikesAndPaths rename: carry the old values across.
+            // Must run after LoadSettings so the copied values are not overwritten.
+            MigrateLegacySettings(setting);
+
             setting.RegisterInOptionsUI();
 
             updateSystem.UpdateAfter<BikesAndPathsSystem>(SystemUpdatePhase.PrefabUpdate);
