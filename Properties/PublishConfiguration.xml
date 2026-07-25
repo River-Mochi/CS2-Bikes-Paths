@@ -11,7 +11,7 @@
 	<LongDescription>
 🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits).
 
-🚲 **Bike speeds** increase or decrease bicycles + electric scooters. Speed can be disabled [ ] if you just want the Paths.
+🚲 **Bike speeds** decrease or increase bicycles + electric scooters. Speed can be disabled [ ] if you just want the Paths.
 
 🚴 **Status report** - compare Bike count versus Cars count and usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
 - road speed mods don't let you set "path" speed limits, so that is unique to this mod.
@@ -43,6 +43,7 @@
 
 ### Credits
 - River-mochi - author
+- Dog photo by Joe Caione: https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg
 
 tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, change path speed, bike path, slow path, slow cims
 
@@ -54,7 +55,6 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 	<Screenshot Value="Properties/image10-Actions.jpg" />
     <Screenshot Value="Properties/image20-Status.jpg" />
 	<Screenshot Value="Properties/image30-slowBike.jpg" />
-    <Screenshot Value="Properties/image40-PathSpeed.jpg" />
 	<Screenshot Value="Properties/image50-BikesParis.jpg" />
 	<!--Tag, can be set multiple times-->
 	<Tag Value="" />
