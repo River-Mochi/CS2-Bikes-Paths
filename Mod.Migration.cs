@@ -7,8 +7,8 @@
 // ================= </copyright> ======================
 
 // File: Mod.Migration.cs
-// Purpose: One-time carry-over of settings from the old FastBikes.coc into the new BikesAndPaths.coc.
-// Transitional code: once existing players have updated, delete this file and LegacyFastBikesSettings.cs.
+// Purpose: Carry FastBikes settings into BikesAndPaths.
+// Keep while upgrades from FastBikes 1.1.3 are supported.
 
 namespace BikesAndPaths
 {
@@ -20,12 +20,10 @@ namespace BikesAndPaths
 
     public sealed partial class Mod
     {
-        // Settings section name used by the previous release. The old .coc's first line is this name,
-        // and the Asset Database registers the file under it.
+        // Old .coc section name and folder.
         private const string LegacyModId = "FastBikes";
 
-        // True when ModsSettings/BikesAndPaths/BikesAndPaths.coc already existed at startup.
-        // Captured before LoadSettings so migration runs only for a player coming from the old version.
+        // Captured before LoadSettings can create the new mapping.
         private static bool s_NewSettingsFileExisted;
 
         private static string NewSettingsFilePath => Path.Combine(
@@ -34,7 +32,7 @@ namespace BikesAndPaths
         private static string LegacySettingsFilePath => Path.Combine(
             EnvPath.kUserDataPath, "ModsSettings", LegacyModId, $"{LegacyModId}.coc");
 
-        // Must be called at the very start of OnLoad, before anything can write the new file.
+        // Call near the start of OnLoad.
         private static void CaptureSettingsFileState()
         {
             try
@@ -43,64 +41,33 @@ namespace BikesAndPaths
             }
             catch (Exception)
             {
-                // Treat an unreadable path as "already exists" so migration cannot overwrite anything.
+                // Fail closed; never overwrite uncertain settings.
                 s_NewSettingsFileExisted = true;
             }
         }
 
-        // Copies values from the old FastBikes settings into the live BPSetting, then saves.
-        //
-        // Values are migrated, NOT files. The old .coc is left untouched on disk and its Asset Database
-        // mapping is left alone:
-        //  * .coc files are scanned recursively under EnvPath.kUserDataPath before mod OnLoad, so the
-        //    legacy file is already parsed and mapped. Physically moving it would leave that live
-        //    mapping pointing at a path that no longer exists.
-        //  * The read-only LoadSettings<T>(name, Action<T, SourceMeta>) overload only does `new T()` +
-        //    JSON.WriteInto. It never assigns SettingAsset.Fragment.source, and SaveSpecificSetting
-        //    only targets fragments whose source is non-null, so the old file never receives new
-        //    values and never competes with BPSetting for saves. (A full/global save can still
-        //    rewrite it from its already-parsed variant - SettingAsset.SaveWithPersist falls back to
-        //    fragment.variant when source is null - so it stays a frozen snapshot of the old values.
-        //    Harmless; the player can delete the FastBikes folder while the game is closed.)
-        //  * BPSetting's own mapping is created by the game from [FileLocation] when the new file does
-        //    not exist yet, so saves land in ModsSettings/BikesAndPaths/BikesAndPaths.coc.
-        //
-        // Must run AFTER AssetDatabase.global.LoadSettings(ModId, setting, ...) so the copied values
-        // are not overwritten by the load.
+        // Copy values after the normal BikesAndPaths settings load.
         private static void MigrateLegacySettings(BPSetting setting)
         {
             try
             {
-                // Already migrated (or a fresh install that has since saved): nothing to do.
-                if (s_NewSettingsFileExisted)
-                {
-                    return;
-                }
-
-                if (!File.Exists(LegacySettingsFilePath))
+                if (s_NewSettingsFileExisted || !File.Exists(LegacySettingsFilePath))
                 {
                     return;
                 }
 
                 bool migrated = false;
 
-                // Read-only load of the old section; does not register or attach anything.
+                // Read old JSON without attaching another save source.
                 AssetDatabase.global.LoadSettings<LegacyFastBikesSettings>(
                     LegacyModId,
-                    (LegacyFastBikesSettings legacy, SourceMeta meta) =>
+                    (LegacyFastBikesSettings legacy, SourceMeta _) =>
                     {
-                        if (legacy == null)
-                        {
-                            return;
-                        }
-
-                        // Stiffness/Damping are deliberately not carried over: they are disabled,
-                        // internal-only, and never serialized (Colossal's JSON diff walks public
-                        // instance properties only).
                         setting.EnableBikesAndPaths = legacy.EnableFastBikes;
                         setting.SpeedScalar = legacy.SpeedScalar;
                         setting.PathSpeedScalar = legacy.PathSpeedScalar;
 
+                        // Stability is disabled; do not carry its old values forward.
                         migrated = true;
                     });
 
@@ -109,16 +76,16 @@ namespace BikesAndPaths
                     return;
                 }
 
-                // Writes the carried-over values to the new file through the normal save path.
+                // Normal BPSetting save writes BikesAndPaths.coc.
                 setting.ApplyAndSave();
 
                 LogUtils.Info(() =>
-                    $"Carried over previous {LegacyModId} settings to ModsSettings/{ModId}/{ModId}.coc.");
+                    $"Loaded previous {LegacyModId} settings; saving to " +
+                    $"ModsSettings/{ModId}/{ModId}.coc.");
             }
             catch (Exception ex)
             {
-                // Migration failure must not prevent the mod from loading. Worst case the player sets
-                // the two sliders once and the new file is written normally.
+                // Harmless fallback: the new settings still work.
                 LogUtils.Info(() =>
                     $"Settings carry-over from {LegacyModId} failed: {ex.GetType().Name}: {ex.Message}.\n" +
                     $"Set the sliders once in Options and the new " +
