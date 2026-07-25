@@ -130,8 +130,7 @@ namespace BikesAndPaths
                 "Meaning: quick sanity of scalars + group membership + patch/custom changes.\n" +
                 $"EnableBikesAndPaths={enableFastBikes}\n" +
                 $"Bike Speed Scalar={speedScalar:0.##} (Effective={effectiveSpeed:0.##})\n" +
-                $"Stiffness Scalar={stiffnessScalar:0.##} (Effective={effectiveStiff:0.##})\n" +
-                $"Damping Scalar={dampingScalar:0.##} (Effective={effectiveDamp:0.##})\n" +
+                "Stability tuning=DISABLED\n" +
                 $"Path Speed Scalar={rawPathSpeed:0.##} (Effective={pathScalar:0.##})\n" +
                 pathBatchLine);
 
