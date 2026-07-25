@@ -13,15 +13,13 @@ namespace BikesAndPaths
 {
     // Plain data class: no ModSetting registration or FileLocation.
     // Names and defaults must match FastBikes 1.1.3.
+    // Only the values actually carried forward are declared; the old file's Stiffness/Damping keys
+    // are ignored, since the decoder skips JSON keys with no matching member.
     internal sealed class LegacyFastBikesSettings
     {
         public bool EnableFastBikes { get; set; } = true;
 
         public float SpeedScalar { get; set; } = 2.0f;
-
-        public float StiffnessScalar { get; set; } = 1.50f;
-
-        public float DampingScalar { get; set; } = 1.50f;
 
         public float PathSpeedScalar { get; set; } = 2.0f;
     }
