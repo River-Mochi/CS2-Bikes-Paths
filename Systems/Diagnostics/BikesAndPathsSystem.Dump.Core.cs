@@ -99,7 +99,7 @@ namespace BikesAndPaths
             }
 
             settings = default!;
-            LogUtils.WarnOnce("FB_SETTINGS_NULL", ( ) => "[FB] Settings is null; Dump using PathSpeed=1x.");
+            LogUtils.WarnOnce("FB_SETTINGS_NULL", ( ) => "[BaP] Settings is null; Dump using PathSpeed=1x.");
             return false;
         }
 
@@ -126,7 +126,7 @@ namespace BikesAndPaths
                 : "Path lane batch: IDLE (no queued work)";
 
             LogUtils.Info(( ) =>
-                "\n==================== [FB] Scalar SUMMARY ====================\n" +
+                "\n==================== [BaP] Scalar SUMMARY ====================\n" +
                 "Meaning: quick sanity of scalars + group membership + patch/custom changes.\n" +
                 $"EnableBikesAndPaths={enableFastBikes}\n" +
                 $"Bike Speed Scalar={speedScalar:0.##} (Effective={effectiveSpeed:0.##})\n" +
@@ -307,7 +307,7 @@ namespace BikesAndPaths
                 string kind = isScooter ? "Scooter" : "Bicycle";
 
                 LogUtils.Info(( ) =>
-                    "-------------------- [FB] BIKE MISMATCH (DEBUG) --------------------\n" +
+                    "-------------------- [BaP] BIKE MISMATCH (DEBUG) --------------------\n" +
                     "Meaning: mismatch suggests overwrite-after-run, mod not running, or CO behavior change.\n" +
                     $"Kind={kind} Name='{name}' Type={typeName} Entity={FormatIndexVersion(prefabEntity)}");
 
@@ -374,7 +374,7 @@ namespace BikesAndPaths
             if (clean)
             {
                 LogUtils.Info(( ) =>
-                    $"[FB] BIKE SUMMARY: ALL GOOD (Total={total}, Bicycles={bikes}, Scooters={scooters}).");
+                    $"[BaP] BIKE SUMMARY: ALL GOOD (Total={total}, Bicycles={bikes}, Scooters={scooters}).");
             }
             else
             {
@@ -382,7 +382,7 @@ namespace BikesAndPaths
                 LogUtils.Info(( ) =>
                 {
                     var sb = new System.Text.StringBuilder();
-                    sb.AppendLine("==================== [FB] BIKE SUMMARY (DEBUG) ====================");
+                    sb.AppendLine("==================== [BaP] BIKE SUMMARY (DEBUG) ====================");
                     sb.AppendLine("Meaning: group membership + missing expected names + mismatch counts.");
                     sb.AppendLine($"Total={total} (Bicycles={bikes}, Scooters={scooters})");
                     sb.AppendLine($"BicycleGroupNames={string.Join(", ", groupNames)}");
@@ -399,7 +399,7 @@ namespace BikesAndPaths
                 });
 #else
                 LogUtils.Info(( ) =>
-                    $"[FB] BIKE SUMMARY: ISSUES (Total={total}, MissingExpected={missingExpected.Count}, MissingPrefabBase={missingPrefabBase}, MissingCarData={missingCarData}, MissingSwayingData={missingSwaying}).");
+                    $"[BaP] BIKE SUMMARY: ISSUES (Total={total}, MissingExpected={missingExpected.Count}, MissingPrefabBase={missingPrefabBase}, MissingCarData={missingCarData}, MissingSwayingData={missingSwaying}).");
 #endif
             }
 
@@ -424,7 +424,7 @@ namespace BikesAndPaths
             }
             catch (Exception ex)
             {
-                LogUtils.Info(( ) => $"[FB] OC Hidden Cars A/B/C: failed ({ex.GetType().Name})");
+                LogUtils.Info(( ) => $"[BaP] OC Hidden Cars A/B/C: failed ({ex.GetType().Name})");
             }
         }
 

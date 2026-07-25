@@ -24,7 +24,7 @@ namespace BikesAndPaths
         private void DumpCitizenVehicleEligibilityReport( )
         {
             LogUtils.Info(( ) =>
-                "\n==================== [FB] CITIZEN VEHICLE ELIGIBILITY ====================\n" +
+                "\n==================== [BaP] CITIZEN VEHICLE ELIGIBILITY ====================\n" +
                 "Meaning: counts citizens and whether BicycleOwner / CarKeeper components are present+enabled.\n" +
                 "This does NOT measure bike usage; it only shows eligibility flags.\n");
 
@@ -121,22 +121,22 @@ namespace BikesAndPaths
             {
                 var sb = new System.Text.StringBuilder();
 
-                sb.AppendLine($"[FB] Citizens: Total={citizenTotal}");
+                sb.AppendLine($"[BaP] Citizens: Total={citizenTotal}");
 
-                sb.AppendLine($"[FB] BicycleOwner: Present={bicycleOwnerPresent}, Enabled={bicycleOwnerEnabled}, EnabledWithNullBike={bicycleOwnerEnabledNullBike}");
-                sb.AppendLine($"[FB] CarKeeper: Present={carKeeperPresent}, Enabled={carKeeperEnabled}");
+                sb.AppendLine($"[BaP] BicycleOwner: Present={bicycleOwnerPresent}, Enabled={bicycleOwnerEnabled}, EnabledWithNullBike={bicycleOwnerEnabledNullBike}");
+                sb.AppendLine($"[BaP] CarKeeper: Present={carKeeperPresent}, Enabled={carKeeperEnabled}");
 
-                sb.AppendLine($"[FB] Both components: Present={bothPresent}, BothEnabled={bothEnabled}");
+                sb.AppendLine($"[BaP] Both components: Present={bothPresent}, BothEnabled={bothEnabled}");
 
-                sb.Append("[FB] Sample BicycleOwner Enabled (Citizen Index:Version): ");
+                sb.Append("[BaP] Sample BicycleOwner Enabled (Citizen Index:Version): ");
                 AppendEntitySamples(sb, sampleBikeEnabled);
                 sb.AppendLine();
 
-                sb.Append("[FB] Sample CarKeeper Enabled (Citizen Index:Version): ");
+                sb.Append("[BaP] Sample CarKeeper Enabled (Citizen Index:Version): ");
                 AppendEntitySamples(sb, sampleCarEnabled);
                 sb.AppendLine();
 
-                sb.Append("[FB] Sample BothEnabled (Citizen Index:Version): ");
+                sb.Append("[BaP] Sample BothEnabled (Citizen Index:Version): ");
                 AppendEntitySamples(sb, sampleBothEnabled);
                 sb.AppendLine();
 
@@ -169,7 +169,7 @@ namespace BikesAndPaths
         private void DumpScooter01Report( )
         {
             LogUtils.Info(( ) =>
-                "\n==================== [FB] SCOOTER01 (FUEL) ====================\n" +
+                "\n==================== [BaP] SCOOTER01 (FUEL) ====================\n" +
                 "Usage: locate Scooter01 prefab by name, count live instances, log up to 10 samples for SE Mod.");
 
             const int kMaxSamples = 10;
@@ -194,7 +194,7 @@ namespace BikesAndPaths
 
             if (scooterPrefabEntity == Entity.Null)
             {
-                LogUtils.Info(( ) => "[FB] Scooter01 prefab not found (PrefabSystem).");
+                LogUtils.Info(( ) => "[BaP] Scooter01 prefab not found (PrefabSystem).");
                 return;
             }
 
@@ -237,10 +237,10 @@ namespace BikesAndPaths
             LogUtils.Info(( ) =>
             {
                 var sb = new System.Text.StringBuilder();
-                sb.AppendLine($"[FB] Scooter01 prefab entity={FormatIndexVersion(scooterPrefabEntity)}");
-                sb.AppendLine($"[FB] Scooter01 instances: Total={total}, Active={active}, Parked={parked}, Other={other}");
+                sb.AppendLine($"[BaP] Scooter01 prefab entity={FormatIndexVersion(scooterPrefabEntity)}");
+                sb.AppendLine($"[BaP] Scooter01 instances: Total={total}, Active={active}, Parked={parked}, Other={other}");
 
-                sb.Append("[FB] Scooter01 sample Index:Version = ");
+                sb.Append("[BaP] Scooter01 sample Index:Version = ");
                 if (samples.Count == 0)
                 {
                     sb.AppendLine("<none>");
@@ -267,7 +267,7 @@ namespace BikesAndPaths
         private void DumpPathSpeedReport(float pathScalar)
         {
             LogUtils.Info(( ) =>
-                "\n==================== [FB] PATH SPEED SUMMARY ====================\n" +
+                "\n==================== [BaP] PATH SPEED SUMMARY ====================\n" +
                 "Meaning: PathwayData speed limit tracks authoring * scalar.\n" +
                 $"Path Scalar={pathScalar:0.##}");
 
@@ -334,7 +334,7 @@ namespace BikesAndPaths
                         prefabMismatchExamples++;
 
                         LogUtils.Info(( ) =>
-                            "-------------------- [FB] PATH PREFAB MISMATCH (DEBUG) --------------------\n" +
+                            "-------------------- [BaP] PATH PREFAB MISMATCH (DEBUG) --------------------\n" +
                             $"Name='{prefabBase.name}'\n" +
                             $"Authoring={pathPrefab.m_SpeedLimit:0.###} km/h\n" +
                             $"Expected={MsToKmh(expectedMs):0.###} km/h\n" +
@@ -346,7 +346,7 @@ namespace BikesAndPaths
             }
 
             LogUtils.Info(( ) =>
-                "\n-------------------- [FB] PATH PREFABS --------------------\n" +
+                "\n-------------------- [BaP] PATH PREFABS --------------------\n" +
                 $"Count={prefabs}\n" +
                 $"SpeedMin={MsToKmh(prefabMin):0.###} km/h, SpeedMax={MsToKmh(prefabMax):0.###} km/h\n" +
                 $"MissingPrefabBase={prefabMissingBase}, NotPathwayPrefab={prefabNotPathwayPrefab}, InvalidAuthoring={prefabInvalidAuthoring}\n" +
@@ -389,7 +389,7 @@ namespace BikesAndPaths
             }
 
             LogUtils.Info(( ) =>
-                "\n-------------------- [FB] PATH COMPOSITIONS --------------------\n" +
+                "\n-------------------- [BaP] PATH COMPOSITIONS --------------------\n" +
                 $"Count={comps}\n" +
                 $"SpeedMin={MsToKmh(compMin):0.###} km/h, SpeedMax={MsToKmh(compMax):0.###} km/h\n" +
                 $"MissingPathwayDataOnPrefabRef={compMissingPathwayData}\n" +

@@ -192,7 +192,7 @@ namespace BikesAndPaths
             catch (System.Exception ex)
             {
                 LogUtils.WarnOnce("FB_SYSTEM_EXCEPTION", ( ) =>
-                    $"[FB] BikesAndPathsSystem failed: {ex.GetType().Name}: {ex.Message}");
+                    $"[BaP] BikesAndPathsSystem failed: {ex.GetType().Name}: {ex.Message}");
 
                 DisposePathBatch();
             }

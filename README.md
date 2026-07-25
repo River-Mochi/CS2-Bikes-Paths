@@ -79,7 +79,7 @@ Bikes + Paths is built to be lightweight.
 ---
 
 ## Languages
-- Supports **11 languages**
+- Supports **12+ languages**
 
 ---
 

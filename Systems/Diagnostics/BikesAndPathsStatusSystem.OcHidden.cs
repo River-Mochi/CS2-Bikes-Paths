@@ -59,7 +59,7 @@ namespace BikesAndPaths
                 out int cTouristHousehold);
 
             LogUtils.Info(( ) =>
-                $"[FB] OC Hidden Cars A/B/C: Total={total}, A={bucketA}, B={bucketB}, C={bucketC}, Check={sum} ({(diff == 0 ? "OK" : "DIFF " + diff)})");
+                $"[BaP] OC Hidden Cars A/B/C: Total={total}, A={bucketA}, B={bucketB}, C={bucketC}, Check={sum} ({(diff == 0 ? "OK" : "DIFF " + diff)})");
         }
 
         // Full bucket report with head/tail sample IDs for A and B.
@@ -105,7 +105,7 @@ namespace BikesAndPaths
                 StringBuilder sb = new StringBuilder();
 
                 sb.AppendLine();
-                sb.AppendLine("==================== [FB] OC HIDDEN CARS (3 BUCKETS) ====================");
+                sb.AppendLine("==================== [BaP] OC HIDDEN CARS (3 BUCKETS) ====================");
                 sb.AppendLine("OC = outside city");
                 sb.AppendLine("Hidden = ParkedCar + Unspawned (mesh not shown)");
                 sb.AppendLine();

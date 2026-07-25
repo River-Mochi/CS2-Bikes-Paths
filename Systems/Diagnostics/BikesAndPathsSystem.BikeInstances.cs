@@ -28,7 +28,7 @@ namespace BikesAndPaths
         private void DumpCarGroupInstancesReport( )
         {
             LogUtils.Info(( ) =>
-                "\n==================== [FB] CAR GROUP INSTANCES (LIVE) ====================\n" +
+                "\n==================== [BaP] CAR GROUP INSTANCES (LIVE) ====================\n" +
                 "Meaning: PersonalCar instances excluding BicycleData prefabs.\n" +
                 "Status classification:\n" +
                 "  Parked  = ParkedCar\n" +
@@ -186,20 +186,20 @@ namespace BikesAndPaths
             {
                 var sb = new System.Text.StringBuilder();
 
-                sb.AppendLine($"[FB] Trailers: Total={trailerTotal}, Unspawned={trailerUnspawned}");
-                sb.AppendLine($"[FB] CarGroup AllLive: Total={allLiveTotal}, Parked={parked}, Active={active}, Pending={pending}");
-                sb.AppendLine($"[FB] CarGroup StatusTotal(Parked+Active)={statusTotal}");
+                sb.AppendLine($"[BaP] Trailers: Total={trailerTotal}, Unspawned={trailerUnspawned}");
+                sb.AppendLine($"[BaP] CarGroup AllLive: Total={allLiveTotal}, Parked={parked}, Active={active}, Pending={pending}");
+                sb.AppendLine($"[BaP] CarGroup StatusTotal(Parked+Active)={statusTotal}");
 
-                sb.AppendLine($"[FB] Unspawned: Total={unspawnedTotal}, WithOwner={unspawnedWithOwner}");
+                sb.AppendLine($"[BaP] Unspawned: Total={unspawnedTotal}, WithOwner={unspawnedWithOwner}");
 
-                sb.AppendLine($"[FB] Parked&&Unspawned&&Owner: Total={parkedUnspawnedTotal}");
-                sb.AppendLine($"[FB] Hidden split: Buildings={hiddenInBuildings}, BorderOC={hiddenAtBorderOc}");
+                sb.AppendLine($"[BaP] Parked&&Unspawned&&Owner: Total={parkedUnspawnedTotal}");
+                sb.AppendLine($"[BaP] Hidden split: Buildings={hiddenInBuildings}, BorderOC={hiddenAtBorderOc}");
 
-                sb.Append("[FB] BorderOC samples Head (Index:Version): ");
+                sb.Append("[BaP] BorderOC samples Head (Index:Version): ");
                 AppendEntitySamples(sb, hiddenAtBorderHead);
                 sb.AppendLine();
 
-                sb.Append("[FB] BorderOC samples Tail (Index:Version): ");
+                sb.Append("[BaP] BorderOC samples Tail (Index:Version): ");
                 AppendEntitySamples(sb, hiddenAtBorderTail);
                 sb.AppendLine();
 
@@ -210,7 +210,7 @@ namespace BikesAndPaths
         private void DumpBikeInstancesReport( )
         {
             LogUtils.Info(( ) =>
-                "\n==================== [FB] BIKE INSTANCES (LIVE) ====================\n" +
+                "\n==================== [BaP] BIKE INSTANCES (LIVE) ====================\n" +
                 "Meaning: live BicycleData vehicles (bikes + e-scooters).\n" +
                 "Live excludes: Deleted, Temp, Destroyed.\n" +
                 "Classification:\n" +
@@ -248,7 +248,7 @@ namespace BikesAndPaths
 
             if (groupPrefabs.Count == 0)
             {
-                LogUtils.Info(( ) => "[FB] Bike instances: BicycleData prefab set is empty.");
+                LogUtils.Info(( ) => "[BaP] Bike instances: BicycleData prefab set is empty.");
                 return;
             }
 
@@ -353,10 +353,10 @@ namespace BikesAndPaths
             {
                 var sb = new System.Text.StringBuilder();
 
-                sb.AppendLine($"[FB] Bicycle-group prefabs: Count={groupPrefabCount}, MissingPrefabBase={missingPrefabBase}");
-                sb.AppendLine($"[FB] BikeGroup: Total={total}, Active={active}, Parked={parked}, Other={other}");
-                sb.AppendLine($"[FB] Split: Bikes={bikesTotal} (A={bikesActive}, P={bikesParked}), Scooters={scootersTotal} (A={scootersActive}, P={scootersParked})");
-                sb.AppendLine($"[FB] Unspawned: Total={unspawnedTotal}, Parked={parkedUnspawned}, Active={activeUnspawned}");
+                sb.AppendLine($"[BaP] Bicycle-group prefabs: Count={groupPrefabCount}, MissingPrefabBase={missingPrefabBase}");
+                sb.AppendLine($"[BaP] BikeGroup: Total={total}, Active={active}, Parked={parked}, Other={other}");
+                sb.AppendLine($"[BaP] Split: Bikes={bikesTotal} (A={bikesActive}, P={bikesParked}), Scooters={scootersTotal} (A={scootersActive}, P={scootersParked})");
+                sb.AppendLine($"[BaP] Unspawned: Total={unspawnedTotal}, Parked={parkedUnspawned}, Active={activeUnspawned}");
                 return sb.ToString();
             });
         }
