@@ -57,8 +57,11 @@ namespace BikesAndPaths
         //    mapping pointing at a path that no longer exists.
         //  * The read-only LoadSettings<T>(name, Action<T, SourceMeta>) overload only does `new T()` +
         //    JSON.WriteInto. It never assigns SettingAsset.Fragment.source, and SaveSpecificSetting
-        //    only targets fragments whose source is non-null, so the legacy file can never be written
-        //    to again. It is inert, not a duplicate that competes for saves.
+        //    only targets fragments whose source is non-null, so the old file never receives new
+        //    values and never competes with BPSetting for saves. (A full/global save can still
+        //    rewrite it from its already-parsed variant - SettingAsset.SaveWithPersist falls back to
+        //    fragment.variant when source is null - so it stays a frozen snapshot of the old values.
+        //    Harmless; the player can delete the FastBikes folder while the game is closed.)
         //  * BPSetting's own mapping is created by the game from [FileLocation] when the new file does
         //    not exist yet, so saves land in ModsSettings/BikesAndPaths/BikesAndPaths.coc.
         //
@@ -91,10 +94,11 @@ namespace BikesAndPaths
                             return;
                         }
 
+                        // Stiffness/Damping are deliberately not carried over: they are disabled,
+                        // internal-only, and never serialized (Colossal's JSON diff walks public
+                        // instance properties only).
                         setting.EnableBikesAndPaths = legacy.EnableFastBikes;
                         setting.SpeedScalar = legacy.SpeedScalar;
-                        setting.StiffnessScalar = legacy.StiffnessScalar;
-                        setting.DampingScalar = legacy.DampingScalar;
                         setting.PathSpeedScalar = legacy.PathSpeedScalar;
 
                         migrated = true;

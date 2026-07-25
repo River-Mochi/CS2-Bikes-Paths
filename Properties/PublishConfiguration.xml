@@ -9,22 +9,22 @@
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 	<!--LongDescription Value="Bikes + Paths" /-->
 	<LongDescription>
-🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits) !
+🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits).
 
-🚲 **Bike speeds** increase or decrease bicycles + scooters. Speed can be disabled [x] if you just want the paths.
+🚲 **Bike speeds** increase or decrease bicycles + electric scooters. Speed can be disabled [ ] if you just want the Paths.
 
 🚴 **Status report** - compare Bike count versus Cars count and usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
 - road speed mods don't let you set "path" speed limits, so that is unique to this mod.
 
 ### Features
 - ✅ Speed ⬆️ ⬇️
-- ✅ Smoothing math for acceleration + braking (no teleport and panic braking)
+- ✅ Smoothing math for acceleration + braking (no teleport or panic braking)
 - ✅ One-click Reset buttons.
 
 ---
 
 ## Tech notes
-- Road speed limits and game conditions may still cap speeds on bikes in roads.
+- Road speed limits and game conditions may still cap speeds on bikes in normal roads.
 - Path speed limit - for both bike and pedestrian paths.
 - Compatible with "Road Speed Adjuster" mod (as that does normal roads and not Paths).
 - To disable the mod without uninstalling, uncheck [ ] the enable box.
