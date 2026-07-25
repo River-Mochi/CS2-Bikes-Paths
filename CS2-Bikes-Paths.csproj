@@ -71,10 +71,6 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="docs\" />
-  </ItemGroup>
-
   <!-- AUTO UPDATE PublishConfiguration GameVersion + ModVersion + nested mod.json "version" from $(Version).
          remove BOM, make EOL=LF, and left-align text -->
   <Target Name="UpdatePublishConfigVersion" BeforeTargets="PrepareForBuild" Condition="Exists('$(PublishConfigScript)') AND Exists('$(MSBuildProjectDirectory)\$(PublishConfigurationPath)')">
