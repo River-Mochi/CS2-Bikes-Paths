@@ -24,7 +24,7 @@ namespace BikesAndPaths
     {
         public const string ModId = "BikesAndPaths";
         public const string ModName = "Bikes + Paths";
-        public const string ModTag = "[BP]";
+        public const string ModTag = "[BaP]";
 
         private static bool s_BannerLogged;
 
