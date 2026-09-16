@@ -13,7 +13,8 @@
 
 🚲 **Bike speeds** decrease or increase bicycles + electric scooters. Speed can be disabled [ ] if you just want the Paths.
 
-🚴 **Status report** - compare Bike count versus Cars count and usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
+🚴 **Status report** - compare Bike count versus Cars count + usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
+
 - road speed mods don't let you set "path" speed limits, so that is unique to this mod.
 
 ### Features
@@ -31,7 +32,7 @@
 - Safe to remove (Reset button first for fast return to game defaults, then save city, and uninstall). If you don't reset, it's not a problem, you keep the changed paths until you replace your paths since they are vanilla paths.
 
 ### Support and Feedback
-- If you enjoy free volunteer made mods, don't forget to click Like, top right button. Players can find the mod easier, we get nothing else for it.
+- Suppoer by clicking the Like 👍 button (top right).
 - Report issues on Github or Discord, link icons on the right.
 
 ### Design + Performance
@@ -39,7 +40,8 @@
 - No Harmony patch. It works to apply tuning when you change settings (or when a city loads), then goes idle, simple.
 - Status report refreshes only when the Options menu is open (to not affect city gameplay performance).
 - This is a brief idea, there is much more; be sure, effort is made for these details because I like the idea I can run these kind of mods even on an old laptop.
-- Supports 11+ languages: Hello, Bonjour, Hola, Hallo, Ciao, こんにちは, 안녕하세요, Cześć, Olá, 你好, 你好, Merhaba, Xin chào
+
+#### Supports 11+ languages: Hello, Bonjour, Hola, Hallo, Ciao, こんにちは, 안녕하세요, Cześć, Olá, 你好, 你好, Merhaba, Xin chào
 
 ### Credits
 - River-mochi - author
@@ -61,7 +63,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <!--Link to the forum post where the mod can be discussed-->
 <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 <!--Version of the mod-->
-<ModVersion Value="1.1.4" />
+<ModVersion Value="1.1.5" />
 <!--Recommended version of the base game to use the mod-->
 <GameVersion Value="1.6.*" />
 <!--Dependency for the mod, can be set multiple times-->
@@ -70,9 +72,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <RequiredDLC Value="" />
 <!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 <ChangeLog>
-- Added Thai and Ukrainian.
-- Settings now use ModsSettings/BikesAndPaths; existing FastBikes settings carry over automatically. If a slider looks reset, just set it once and restart.
-- No changes to bike or path speed tuning.
+- Updated for 1.6.2
 </ChangeLog>
 <!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
 <ExternalLink Type="" Url="" />
