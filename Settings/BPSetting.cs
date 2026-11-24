@@ -83,6 +83,7 @@ namespace BikesAndPaths
         // ----------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
         [SettingsUISetter(typeof(BPSetting), nameof(SetEnableBikesAndPaths))]
         public bool EnableBikesAndPaths
         {
@@ -94,7 +95,7 @@ namespace BikesAndPaths
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideBikeSpeed))]
         [SettingsUISlider(min = 0.30f, max = 10.00f, step = 0.10f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(BPSetting), nameof(SetSpeedScalar))]
         public float SpeedScalar
@@ -122,7 +123,7 @@ namespace BikesAndPaths
         // -----------------------------
 
         [SettingsUISection(ActionsTab, ActionsPathSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HidePathSpeed))]
         [SettingsUISlider(min = 1.00f, max = 5.00f, step = 0.25f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(BPSetting), nameof(SetPathSpeedScalar))]
         public float PathSpeedScalar
@@ -130,12 +131,33 @@ namespace BikesAndPaths
             get; set;
         }
 
+        [SettingsUISection(ActionsTab, ActionsPathSpeedGrp)]
+        [SettingsUIButton]
+        public bool OpenAllSpeedLimits
+        {
+            set
+            {
+                if (value)
+                {
+                    Application.OpenURL("https://mods.paradoxplaza.com/mods/149990/Windows");
+                }
+            }
+        }
+
+        private bool HideBikeSpeed() => !EnableBikesAndPaths || AslOwnership.OwnsBicycles(GetWorld());
+
+        private bool HidePathSpeed() => !EnableBikesAndPaths || AslOwnership.OwnsPaths(GetWorld());
+
+        private bool HideAllTuning() => AslOwnership.OwnsPaths(GetWorld()) && AslOwnership.OwnsBicycles(GetWorld());
+
+        private bool HideResetButtons() => !EnableBikesAndPaths || HideAllTuning();
+
         // ------------------------
         // Actions: Reset buttons
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideResetButtons))]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToModDefaults
@@ -152,7 +174,7 @@ namespace BikesAndPaths
         }
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideResetButtons))]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToVanilla
@@ -443,13 +465,19 @@ namespace BikesAndPaths
 
         private void DoResetToVanilla( )
         {
-            SpeedScalar = Vanilla;
+            if (!AslOwnership.OwnsBicycles(GetWorld()))
+            {
+                SpeedScalar = Vanilla;
+            }
 
             // Kept for settings compatibility; unused while Stability is disabled.
             StiffnessScalar = Vanilla;
             DampingScalar = Vanilla;
 
-            PathSpeedScalar = Vanilla;
+            if (!AslOwnership.OwnsPaths(GetWorld()))
+            {
+                PathSpeedScalar = Vanilla;
+            }
 
             ApplyAndSave();
             GetSystem()?.ScheduleResetVanillaAll();
@@ -457,13 +485,19 @@ namespace BikesAndPaths
 
         private void DoResetToModDefaults( )
         {
-            SpeedScalar = DefaultSpeed;
+            if (!AslOwnership.OwnsBicycles(GetWorld()))
+            {
+                SpeedScalar = DefaultSpeed;
+            }
 
             // Kept for settings compatibility; unused while Stability is disabled.
             StiffnessScalar = DefaultStiffness;
             DampingScalar = DefaultDamping;
 
-            PathSpeedScalar = DefaultPathSpeedScalar;
+            if (!AslOwnership.OwnsPaths(GetWorld()))
+            {
+                PathSpeedScalar = DefaultPathSpeedScalar;
+            }
 
             ApplyAndSave();
             GetSystem()?.ScheduleApplyAll();
