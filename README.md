@@ -1,5 +1,12 @@
 # Bikes + Paths (Cities: Skylines II)
 
+## Transition to ASL
+[Get Adjust All Speed Limits (ASL)](https://mods.paradoxplaza.com/mods/149990/Windows).
+
+ASL 1.3.0 adds separate Bike and Pedestrian pathway scales. B+P keeps its standalone features but automatically stops writing paths when ASL's path system is present, and stops tuning bicycle prefabs when ASL's bicycle system is present. This includes reset actions. B+P settings stay saved and status reports remain available.
+
+Before switching, run B+P alone, reset its Path speed to 1.00, let it finish and save. This helps restore legacy pathway changes, including hidden vehicle paths. Then install ASL and choose the desired percentages (2.00 = 200%). Do not run older versions of both mods together.
+
 Bikes + Paths increases/lowers **bicycles** and **electric scooters**.  
 It can also raise **path speed limits** so bikes don’t get bottlenecked on paths.
 

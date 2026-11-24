@@ -5,17 +5,29 @@
 <!--Name of the mod to display to players-->
 <DisplayName Value="Bikes + Paths" />
 <!--Short description of the mod-->
-<ShortDescription Value="Adjust Bikes and Path Speed Limits. Detailed Status Report :)" />
+<ShortDescription Value="Bike and scooter tuning. Moving path controls to Adjust All Speed Limits (ASL)." />
 <!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 <!--LongDescription Value="Bikes + Paths" /-->
 <LongDescription>
+## Moving to Adjust All Speed Limits (ASL)
+
+**[Get Adjust All Speed Limits](https://mods.paradoxplaza.com/mods/149990/Windows)**
+
+ASL 1.3.0 adds independent Bike and Pedestrian path speed controls in its in-city Paths tab.
+
+- B+P keeps its existing tuning if you use it alone.
+- With ASL's new Paths feature installed, B+P automatically leaves path speed limits to ASL, even during resets.
+- When ASL provides bike and scooter vehicle speed tuning, B+P leaves that to ASL too.
+- B+P sliders remain saved. For matching speeds, 2.00 in B+P = 200% in ASL.
+- Before switching, load your city with B+P alone, set Path speed limit to 1.00, let it finish and save. This helps restore legacy path changes, including hidden vehicle paths. Then install ASL and set your desired speeds.
+- B+P's status reports remain available.
+
 🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits).
 
 🚲 **Bike speeds** decrease or increase bicycles + electric scooters. Speed can be disabled [ ] if you just want the Paths.
 
 🚴 **Status report** - compare Bike count versus Cars count + usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
 
-- road speed mods don't let you set "path" speed limits, so that is unique to this mod.
 
 ### Features
 - ✅ Speed ⬆️ ⬇️
@@ -27,7 +39,7 @@
 ## Tech notes
 - Road speed limits and game conditions may still cap speeds on bikes in normal roads.
 - Path speed limit - for both bike and pedestrian paths.
-- Compatible with "Road Speed Adjuster" mod (as that does normal roads and not Paths).
+- When ASL controls a speed category, B+P does not write or reset that category.
 - To disable the mod without uninstalling, uncheck [ ] the enable box.
 - Safe to remove (Reset button first for fast return to game defaults, then save city, and uninstall). If you don't reset, it's not a problem, you keep the changed paths until you replace your paths since they are vanilla paths.
 
@@ -63,7 +75,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <!--Link to the forum post where the mod can be discussed-->
 <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 <!--Version of the mod-->
-<ModVersion Value="1.1.5" />
+<ModVersion Value="1.1.6" />
 <!--Recommended version of the base game to use the mod-->
 <GameVersion Value="1.6.*" />
 <!--Dependency for the mod, can be set multiple times-->
@@ -72,7 +84,8 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <RequiredDLC Value="" />
 <!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 <ChangeLog>
-- Updated for 1.6.2
+- Transition to ASL: automatically relinquishes overlapping speed tuning, including resets.
+- New direct ASL link in Options. Existing standalone settings remain available.
 </ChangeLog>
 <!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
 <ExternalLink Type="" Url="" />
