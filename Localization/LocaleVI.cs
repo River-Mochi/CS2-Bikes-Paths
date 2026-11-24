@@ -88,6 +88,9 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Giới hạn tốc độ đường xe đạp và lối đi bộ nằm trong ASL. B+P nhường các chức năng đã có trong ASL." },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Giới hạn tốc độ đường đi" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "Nhân giới hạn tốc độ của **đường đi** (đường đi không phải đường xe chạy).\n" +

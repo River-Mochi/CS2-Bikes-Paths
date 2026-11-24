@@ -88,6 +88,9 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "自行車道及行人道限速請在 ASL 中設定。ASL 已有的功能由 ASL 管理。" },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "路徑速度限制" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "縮放 **路徑** 速度限制（路徑不是道路）。\n" +

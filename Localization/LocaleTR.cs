@@ -88,6 +88,9 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Bisiklet ve yaya yolu hız sınırları ASL'de. B+P, ASL'deki ayarları ona bırakır." },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Patika hız sınırı" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "**Patika** hız sınırlarını ölçekler (patikalar yol değildir).\n" +

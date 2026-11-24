@@ -87,6 +87,9 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Обмеження швидкості велодоріжок і пішохідних шляхів — в ASL. B+P передає ASL доступні там налаштування." },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Обмеження швидкості доріжок" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "Масштабує обмеження швидкості **доріжок** (доріжки не є дорогами).\n" +

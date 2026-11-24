@@ -88,6 +88,9 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Os limites de ciclovias e caminhos de pedestres estão no ASL. B+P deixa ao ASL os ajustes que ele oferece." },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Limite de velocidade dos caminhos" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "Escala os limites de velocidade dos **caminhos** (caminhos não são vias).\n" +

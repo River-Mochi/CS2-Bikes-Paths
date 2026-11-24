@@ -87,6 +87,9 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ตั้งขีดจำกัดความเร็วทางจักรยานและทางเดินใน ASL โดย B+P จะให้ ASL ควบคุมฟังก์ชันที่มีอยู่ใน ASL" },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "ขีดจำกัดความเร็วของทางเดิน" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "ปรับสัดส่วนขีดจำกัดความเร็วของ **ทางเดิน** (ทางเดินไม่ใช่ถนน)\n" +
