@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths nie jest już rozwijany.\n\n" +
-                    "Dziękuję za korzystanie z moda! Wszystkie funkcje są teraz w Adjust All Speed Limits (ASL), z bardziej rozbudowanym panelem w mieście dla ścieżek rowerowych i pieszych. Przejdź do ASL przyciskiem poniżej.\n\n" +
+                    "Dziękuję za korzystanie z moda! Wszystkie funkcje są teraz w Adjust All Speed Limits (ASL), z bardziej rozbudowanym panelem w mieście dla ścieżek rowerowych i pieszych.\n\n" +
                     "ASL już zarządza ustawieniami prędkości. Możesz usunąć B+P bez resetowania.\n\n" +
                     "Dziękuję, River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = domyślna wartość gry**\n" +
                     "Dotyczy: ścieżek rowerowych, dzielonych pieszy+rower oraz ścieżek pieszych.\n" +
                     "\n" +
-                    "Przed odinstalowaniem: ustaw 1.00 lub użyj resetu, zapisz miasto, potem odinstaluj.\n" +
-                    "Jeśli zapomnisz, stare ścieżki zachowają zmienioną prędkość, a nowe będą używać wartości vanilla."
+                    "Opcjonalnie: przywróć ustawienia gry i zapisz przed usunięciem moda. Inaczej istniejące ścieżki mogą zachować zmienione limity."
                 },
 
                 // Reset buttons

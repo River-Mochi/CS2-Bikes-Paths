@@ -54,14 +54,14 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths is retired.\n\n" +
-                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits (ASL), with a more advanced in-city panel for bike and pedestrian paths. Please switch to ASL using the button below.\n\n" +
-                    "You can safely remove B+P anytime. To restore vanilla values right away, use Reset to Game Defaults, let the changes finish and save your city. This is optional.\n\n" +
+                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths. Please switch to ASL using the button below.\n\n" +
+                    "You can safely remove Bikes + Paths anytime. To restore vanilla values right away, use Reset to Game Defaults, let the changes finish and save your city. This is optional.\n\n" +
                     "Thank you, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths is retired.\n\n" +
-                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits (ASL), with a more advanced in-city panel for bike and pedestrian paths. Please switch to ASL using the button below.\n\n" +
-                    "ASL already manages your speed settings. You can safely remove B+P now. No reset is required.\n\n" +
+                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths.\n\n" +
+                    "ASL already manages these features. You can safely remove Bikes + Paths now. No reset is required.\n\n" +
                     "Thank you, River-mochi"
                 },
 
@@ -104,8 +104,7 @@ namespace BikesAndPaths
                     "Scales **Path** speed limits (paths are not roads).\n" +
                     "**1.00 = game default**\n" +
                     "Affects: bike paths, divided pedestrian+bike, and pedestrian paths.\n\n" +
-                    "Uninstall note: set to 1.00 or use reset button, save city, then uninstall.\n" +
-                    "If you forget, then old paths simply keep the modded speed and new paths are vanilla game defaults."
+                    "Optional: reset to game defaults and save before removing. Otherwise existing paths may retain modified speeds."
                 },
 
                 // Reset buttons

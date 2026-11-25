@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths wird nicht mehr weiterentwickelt.\n\n" +
-                    "Danke, dass du den Mod genutzt hast! Alle Funktionen sind jetzt in Adjust All Speed Limits (ASL), mit einem erweiterten Stadt-Panel für Rad- und Fußwege. Wechsle bitte über die Schaltfläche unten zu ASL.\n\n" +
+                    "Danke, dass du den Mod genutzt hast! Alle Funktionen sind jetzt in Adjust All Speed Limits (ASL), mit einem erweiterten Stadt-Panel für Rad- und Fußwege.\n\n" +
                     "ASL verwaltet deine Geschwindigkeitseinstellungen bereits. Du kannst B+P jetzt entfernen. Zurücksetzen ist nicht nötig.\n\n" +
                     "Danke, River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = Spielstandard**\n" +
                     "Betrifft: Fahrradwege, getrennte Fußgänger+Fahrrad-Wege und Fußwege.\n" +
                     "\n" +
-                    "Deinstallationshinweis: auf 1.00 setzen oder Reset-Button nutzen, Stadt speichern, dann deinstallieren.\n" +
-                    "Falls du es vergisst, behalten alte Wege einfach die Mod-Geschwindigkeit und neue Wege nutzen Vanilla-Standardwerte."
+                    "Optional: Spielstandard wiederherstellen und vor dem Entfernen speichern. Sonst können bestehende Wege ihr geändertes Tempo behalten."
                 },
 
                 // Reset buttons

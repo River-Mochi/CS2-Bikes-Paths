@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths は開発を終了しました。\n\n" +
-                    "ご利用ありがとうございました！すべての機能は Adjust All Speed Limits (ASL) に統合され、自転車道と歩道をより便利な都市内パネルで調整できます。下のボタンから ASL に移行してください。\n\n" +
+                    "ご利用ありがとうございました！すべての機能は Adjust All Speed Limits (ASL) に統合され、自転車道と歩道をより便利な都市内パネルで調整できます。\n\n" +
                     "速度設定はすでに ASL が管理しています。リセットせずに B+P を削除できます。\n\n" +
                     "ありがとう、River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = ゲーム既定値**\n" +
                     "対象: 自転車道、歩行者＋自転車の分離パス、歩道パス。\n" +
                     "\n" +
-                    "アンインストール時: 1.00 に戻すかリセットボタンを使い、都市を保存してからアンインストールしてください。\n" +
-                    "忘れても、古いパスは変更後の速度を保持し、新しいパスは vanilla の既定値になります。"
+                    "任意：削除前にゲーム既定値へ戻して保存できます。リセットしない場合、既存の道は変更後の速度制限を保持することがあります。"
                 },
 
                 // Reset buttons

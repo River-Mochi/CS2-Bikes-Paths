@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths đã ngừng phát triển.\n\n" +
-                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ. Hãy chuyển sang ASL bằng nút bên dưới.\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ.\n\n" +
                     "ASL đã quản lý tốc độ. Bạn có thể gỡ B+P mà không cần đặt lại.\n\n" +
                     "Cảm ơn, River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = mặc định của game**\n" +
                     "Ảnh hưởng: đường xe đạp, đường tách người đi bộ+xe đạp, và đường đi bộ.\n" +
                     "\n" +
-                    "Gỡ mod: đặt về 1.00 hoặc dùng nút đặt lại, lưu thành phố, rồi gỡ mod.\n" +
-                    "Nếu quên, đường cũ vẫn giữ tốc độ đã chỉnh, còn đường mới dùng mặc định vanilla."
+                    "Không bắt buộc: khôi phục mặc định game và lưu trước khi gỡ. Nếu không, đường hiện có có thể giữ giới hạn đã chỉnh."
                 },
 
                 // Reset buttons

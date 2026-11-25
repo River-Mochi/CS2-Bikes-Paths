@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths 已停止維護。\n\n" +
-                    "感謝使用本模組！所有功能現已整合到 Adjust All Speed Limits (ASL)，並提供更方便的城市內面板，可調整自行車道和行人道限速。請點擊下方按鈕移轉至 ASL。\n\n" +
+                    "感謝使用本模組！所有功能現已整合到 Adjust All Speed Limits (ASL)，並提供更方便的城市內面板，可調整自行車道和行人道限速。\n\n" +
                     "ASL 已接管速度設定。現在可直接移除 B+P，無需重設。\n\n" +
                     "謝謝，River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = 遊戲預設值**\n" +
                     "影響：自行車道、行人+自行車分隔路徑、行人路徑。\n" +
                     "\n" +
-                    "解除安裝提示：設為 1.00 或使用重設按鈕，儲存城市，然後解除安裝。\n" +
-                    "如果忘記，舊路徑會保留修改後的速度，新路徑會使用 vanilla 遊戲預設值。"
+                    "可選：移除前恢復遊戲預設值並儲存城市。否則已有路徑可能保留修改後的速限。"
                 },
 
                 // Reset buttons

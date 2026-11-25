@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths foi descontinuado.\n\n" +
-                    "Obrigado por usar este mod! Todos os recursos estão agora em Adjust All Speed Limits (ASL), com um painel na cidade mais completo para ciclovias e caminhos de pedestres. Migre para o ASL pelo botão abaixo.\n\n" +
+                    "Obrigado por usar este mod! Todos os recursos estão agora em Adjust All Speed Limits (ASL), com um painel na cidade mais completo para ciclovias e caminhos de pedestres.\n\n" +
                     "O ASL já gerencia suas velocidades. Você pode remover o B+P sem precisar restaurar nada.\n\n" +
                     "Obrigado, River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = padrão do jogo**\n" +
                     "Afeta: ciclovias, caminhos divididos pedestre+bike e caminhos de pedestres.\n" +
                     "\n" +
-                    "Nota para desinstalar: coloque em 1.00 ou use o botão de reset, salve a cidade e então desinstale.\n" +
-                    "Se esquecer, os caminhos antigos mantêm a velocidade modificada e os novos usam os padrões vanilla."
+                    "Opcional: restaure os padrões do jogo e salve antes de remover. Caso contrário, caminhos existentes podem manter os limites modificados."
                 },
 
                 // Reset buttons

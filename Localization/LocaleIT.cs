@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths è stato ritirato.\n\n" +
-                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali. Passa ad ASL con il pulsante qui sotto.\n\n" +
+                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali.\n\n" +
                     "ASL gestisce già le tue impostazioni di velocità. Puoi rimuovere B+P senza ripristinare nulla.\n\n" +
                     "Grazie, River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = valore del gioco**\n" +
                     "Influisce su: piste ciclabili, percorsi separati pedoni+bici e percorsi pedonali.\n" +
                     "\n" +
-                    "Nota disinstallazione: imposta 1.00 o usa il pulsante di reset, salva la città, poi disinstalla.\n" +
-                    "Se te ne dimentichi, i vecchi percorsi restano alla velocità modificata e i nuovi usano i valori vanilla."
+                    "Facoltativo: ripristina i valori di gioco e salva prima di rimuovere la mod. Altrimenti i percorsi esistenti possono conservare i limiti modificati."
                 },
 
                 // Reset buttons

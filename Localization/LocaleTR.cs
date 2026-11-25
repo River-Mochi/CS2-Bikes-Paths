@@ -60,7 +60,7 @@ namespace BikesAndPaths
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
                     "❤️ Bikes + Paths artık geliştirilmiyor.\n\n" +
-                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var. Aşağıdaki düğmeyle ASL'ye geçebilirsin.\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var.\n\n" +
                     "ASL hız ayarlarını zaten yönetiyor. B+P'yi sıfırlama yapmadan kaldırabilirsin.\n\n" +
                     "Teşekkürler, River-mochi"
                 },
@@ -105,8 +105,7 @@ namespace BikesAndPaths
                     "**1.00 = oyun varsayılanı**\n" +
                     "Etkiler: bisiklet yolları, ayrılmış yaya+bisiklet yolları ve yaya patikaları.\n" +
                     "\n" +
-                    "Kaldırma notu: 1.00 yap veya sıfırlama düğmesini kullan, şehri kaydet, sonra kaldır.\n" +
-                    "Unutursan eski patikalar modlu hızda kalır, yeni patikalar vanilla oyun varsayılanını kullanır."
+                    "İsteğe bağlı: modu kaldırmadan önce oyun varsayılanlarına dön ve kaydet. Aksi halde mevcut yollar değiştirilen sınırları koruyabilir."
                 },
 
                 // Reset buttons
