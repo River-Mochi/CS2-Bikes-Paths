@@ -6,9 +6,9 @@ Thank you for using this mod! Its features are now in [Adjust All Speed Limits (
 
 ### Migration
 
-1. Load your city with B+P alone, use **Game defaults**, let the changes finish and save the city. This helps restore legacy pathway changes, including hidden vehicle pathways.
-2. Remove B+P and install ASL.
-3. Set your preferred speeds in ASL. For matching values, 2.00 in B+P = 200% in ASL.
+You can safely remove B+P anytime. Install ASL and set your preferred speeds (2.00 in B+P = 200% in ASL). If ASL already controls both speed features, simply remove B+P; no reset is required.
+
+**Optional:** To restore vanilla values right away, use **Reset to Game Defaults** with B+P alone, let the changes finish and save your city. Existing paths, including legacy hidden vehicle pathways that ASL excludes from global path tuning, may otherwise retain modified limits. You do not need to revisit old saves.
 
 B+P 1.1.6 automatically leaves overlapping speed tuning (including resets) to ASL. Standalone tuning and reset controls remain available when ASL does not manage them, so existing players can restore legacy settings. The old status and debug controls have moved to ASL. Saved B+P settings are retained; they are not automatically imported into ASL.
 

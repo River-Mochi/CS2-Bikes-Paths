@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths is retired.\n\n" +
                     "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits (ASL), with a more advanced in-city panel for bike and pedestrian paths. Please switch to ASL using the button below.\n\n" +
-                    "Before switching, use Game defaults with B+P alone, let the changes finish and save your city. Then remove B+P and install ASL.\n\n" +
+                    "You can safely remove B+P anytime. To restore vanilla values right away, use Reset to Game Defaults, let the changes finish and save your city. This is optional.\n\n" +
+                    "Thank you, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths is retired.\n\n" +
+                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits (ASL), with a more advanced in-city panel for bike and pedestrian paths. Please switch to ASL using the button below.\n\n" +
+                    "ASL already manages your speed settings. You can safely remove B+P now. No reset is required.\n\n" +
                     "Thank you, River-mochi"
                 },
 
@@ -108,7 +114,7 @@ namespace BikesAndPaths
                     "Applies the mod’s default tuning values."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Game defaults" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Reset to Game Defaults" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Sets all sliders to **100%** and restores game defaults (vanilla)."
                 },

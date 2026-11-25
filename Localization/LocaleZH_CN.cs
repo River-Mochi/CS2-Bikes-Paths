@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths 已停止维护。\n\n" +
                     "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。请点击下方按钮迁移至 ASL。\n\n" +
-                    "迁移前，请单独启用 B+P，恢复游戏默认值，等待调整完成并保存城市。然后卸载 B+P，安装 ASL。\n\n" +
+                    "B+P 可随时卸载。如想立即恢复游戏默认值，请点击恢复游戏默认值，等待调整完成后保存城市。此步骤并非必需。\n\n" +
+                    "谢谢，River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths 已停止维护。\n\n" +
+                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。请点击下方按钮迁移至 ASL。\n\n" +
+                    "ASL 已接管速度设置。现在可直接卸载 B+P，无需重置。\n\n" +
                     "谢谢，River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "应用此模组的默认调校值。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "游戏默认值" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "恢复游戏默认值" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "将所有滑块设为 **100%** 并恢复游戏默认值（vanilla）。"
                 },

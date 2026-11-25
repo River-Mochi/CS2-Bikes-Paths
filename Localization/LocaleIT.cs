@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths è stato ritirato.\n\n" +
                     "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali. Passa ad ASL con il pulsante qui sotto.\n\n" +
-                    "Prima di passare ad ASL, usa solo B+P, ripristina i valori di gioco, attendi la fine delle modifiche e salva la città. Poi rimuovi B+P e installa ASL.\n\n" +
+                    "Puoi rimuovere B+P in qualsiasi momento. Per tornare subito ai valori del gioco, usa Ripristina valori di gioco, attendi la fine delle modifiche e salva la città. È facoltativo.\n\n" +
+                    "Grazie, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths è stato ritirato.\n\n" +
+                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali. Passa ad ASL con il pulsante qui sotto.\n\n" +
+                    "ASL gestisce già le tue impostazioni di velocità. Puoi rimuovere B+P senza ripristinare nulla.\n\n" +
                     "Grazie, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "Applica i valori predefiniti della mod."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Predefiniti gioco" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Ripristina valori di gioco" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Imposta tutti gli slider al **100%** e ripristina i valori del gioco (vanilla)."
                 },

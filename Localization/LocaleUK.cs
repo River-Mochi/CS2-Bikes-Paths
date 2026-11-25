@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Розробку Bikes + Paths завершено.\n\n" +
                     "Дякую, що користувалися модом! Усі функції тепер є в Adjust All Speed Limits (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів. Перейдіть до ASL за кнопкою нижче.\n\n" +
-                    "Перед переходом запустіть місто лише з B+P, відновіть стандартні значення гри, дочекайтеся завершення змін і збережіть місто. Потім видаліть B+P та встановіть ASL.\n\n" +
+                    "B+P можна видалити будь-коли. Щоб одразу повернути стандартні значення гри, натисніть кнопку відновлення, дочекайтеся завершення змін і збережіть місто. Це необов’язково.\n\n" +
+                    "Дякую, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Розробку Bikes + Paths завершено.\n\n" +
+                    "Дякую, що користувалися модом! Усі функції тепер є в Adjust All Speed Limits (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів. Перейдіть до ASL за кнопкою нижче.\n\n" +
+                    "ASL уже керує швидкістю. Можна видалити B+P без скидання.\n\n" +
                     "Дякую, River-mochi"
                 },
 
@@ -108,7 +114,7 @@ namespace BikesAndPaths
                     "Застосовує стандартні значення налаштувань мода."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Стандартні налаштування гри" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Відновити стандартні значення" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Установлює всі повзунки на **100%** і відновлює стандартні налаштування гри (vanilla)."
                 },

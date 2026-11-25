@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths đã ngừng phát triển.\n\n" +
                     "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ. Hãy chuyển sang ASL bằng nút bên dưới.\n\n" +
-                    "Trước khi chuyển, hãy dùng riêng B+P, khôi phục mặc định của game, chờ áp dụng xong và lưu thành phố. Sau đó gỡ B+P rồi cài ASL.\n\n" +
+                    "Bạn có thể gỡ B+P bất cứ lúc nào. Nếu muốn khôi phục ngay mặc định của game, hãy dùng nút khôi phục, chờ áp dụng xong và lưu thành phố. Không bắt buộc.\n\n" +
+                    "Cảm ơn, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths đã ngừng phát triển.\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ. Hãy chuyển sang ASL bằng nút bên dưới.\n\n" +
+                    "ASL đã quản lý tốc độ. Bạn có thể gỡ B+P mà không cần đặt lại.\n\n" +
                     "Cảm ơn, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "Áp dụng các giá trị chỉnh mặc định của mod."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Mặc định game" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Khôi phục mặc định game" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Đặt tất cả thanh trượt về **100%** và khôi phục mặc định của game (vanilla)."
                 },

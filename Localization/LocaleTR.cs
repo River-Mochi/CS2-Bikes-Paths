@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths artık geliştirilmiyor.\n\n" +
                     "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var. Aşağıdaki düğmeyle ASL'ye geçebilirsin.\n\n" +
-                    "Geçmeden önce yalnızca B+P ile şehri aç, oyun varsayılanlarını geri yükle, işlemin bitmesini bekle ve kaydet. Ardından B+P'yi kaldırıp ASL'yi yükle.\n\n" +
+                    "B+P'yi istediğin zaman kaldırabilirsin. Oyun varsayılanlarına hemen dönmek için sıfırlama düğmesini kullan, işlemin bitmesini bekle ve şehri kaydet. Bu isteğe bağlıdır.\n\n" +
+                    "Teşekkürler, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths artık geliştirilmiyor.\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var. Aşağıdaki düğmeyle ASL'ye geçebilirsin.\n\n" +
+                    "ASL hız ayarlarını zaten yönetiyor. B+P'yi sıfırlama yapmadan kaldırabilirsin.\n\n" +
                     "Teşekkürler, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "Modun varsayılan ayar değerlerini uygular."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Oyun varsayılanları" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Oyun varsayılanlarına dön" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Tüm kaydırıcıları **%100** yapar ve oyun varsayılanlarını (vanilla) geri yükler."
                 },

@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths ยุติการพัฒนาแล้ว\n\n" +
                     "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม เปลี่ยนไปใช้ ASL ได้จากปุ่มด้านล่าง\n\n" +
-                    "ก่อนย้าย ให้ใช้ B+P เพียงม็อดเดียว คืนค่าเริ่มต้นของเกม รอให้เสร็จแล้วบันทึกเมือง จากนั้นลบ B+P และติดตั้ง ASL\n\n" +
+                    "ลบ B+P ได้ทุกเมื่อ หากต้องการคืนค่าเริ่มต้นของเกมทันที ให้กดปุ่มคืนค่า รอให้เสร็จแล้วบันทึกเมือง ขั้นตอนนี้ไม่บังคับ\n\n" +
+                    "ขอบคุณ River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths ยุติการพัฒนาแล้ว\n\n" +
+                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม เปลี่ยนไปใช้ ASL ได้จากปุ่มด้านล่าง\n\n" +
+                    "ASL จัดการความเร็วอยู่แล้ว ลบ B+P ได้เลยโดยไม่ต้องคืนค่า\n\n" +
                     "ขอบคุณ River-mochi"
                 },
 
@@ -108,7 +114,7 @@ namespace BikesAndPaths
                     "ใช้ค่าปรับแต่งเริ่มต้นของม็อด"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "ค่าเริ่มต้นของเกม" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "คืนค่าเริ่มต้นของเกม" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "ตั้งแถบเลื่อนทั้งหมดเป็น **100%** และคืนค่าเริ่มต้นของเกม (vanilla)"
                 },

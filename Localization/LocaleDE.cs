@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths wird nicht mehr weiterentwickelt.\n\n" +
                     "Danke, dass du den Mod genutzt hast! Alle Funktionen sind jetzt in Adjust All Speed Limits (ASL), mit einem erweiterten Stadt-Panel für Rad- und Fußwege. Wechsle bitte über die Schaltfläche unten zu ASL.\n\n" +
-                    "Vor dem Wechsel B+P allein nutzen, Spielstandard wiederherstellen, Änderungen abwarten und die Stadt speichern. Dann B+P entfernen und ASL installieren.\n\n" +
+                    "Du kannst B+P jederzeit entfernen. Für sofortige Spielstandardwerte nutze die Zurücksetzen-Schaltfläche, warte auf die Änderungen und speichere die Stadt. Das ist freiwillig.\n\n" +
+                    "Danke, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths wird nicht mehr weiterentwickelt.\n\n" +
+                    "Danke, dass du den Mod genutzt hast! Alle Funktionen sind jetzt in Adjust All Speed Limits (ASL), mit einem erweiterten Stadt-Panel für Rad- und Fußwege. Wechsle bitte über die Schaltfläche unten zu ASL.\n\n" +
+                    "ASL verwaltet deine Geschwindigkeitseinstellungen bereits. Du kannst B+P jetzt entfernen. Zurücksetzen ist nicht nötig.\n\n" +
                     "Danke, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "Wendet die Standardwerte des Mods an."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Spielstandardwerte" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Auf Spielstandard zurücksetzen" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Setzt alle Regler auf **100 %** und stellt die Spielstandardwerte (Vanilla) wieder her."
                 },

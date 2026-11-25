@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths foi descontinuado.\n\n" +
                     "Obrigado por usar este mod! Todos os recursos estão agora em Adjust All Speed Limits (ASL), com um painel na cidade mais completo para ciclovias e caminhos de pedestres. Migre para o ASL pelo botão abaixo.\n\n" +
-                    "Antes de migrar, use apenas o B+P, restaure os padrões do jogo, espere as alterações terminarem e salve a cidade. Depois remova o B+P e instale o ASL.\n\n" +
+                    "Você pode remover o B+P a qualquer momento. Para restaurar os padrões do jogo imediatamente, use Restaurar padrões do jogo, aguarde as alterações e salve a cidade. É opcional.\n\n" +
+                    "Obrigado, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths foi descontinuado.\n\n" +
+                    "Obrigado por usar este mod! Todos os recursos estão agora em Adjust All Speed Limits (ASL), com um painel na cidade mais completo para ciclovias e caminhos de pedestres. Migre para o ASL pelo botão abaixo.\n\n" +
+                    "O ASL já gerencia suas velocidades. Você pode remover o B+P sem precisar restaurar nada.\n\n" +
                     "Obrigado, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "Aplica os valores padrão de ajuste do mod."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Padrões do jogo" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Restaurar padrões do jogo" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Coloca todos os sliders em **100%** e restaura os padrões do jogo (vanilla)."
                 },

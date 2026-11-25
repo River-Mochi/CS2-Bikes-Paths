@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths nie jest już rozwijany.\n\n" +
                     "Dziękuję za korzystanie z moda! Wszystkie funkcje są teraz w Adjust All Speed Limits (ASL), z bardziej rozbudowanym panelem w mieście dla ścieżek rowerowych i pieszych. Przejdź do ASL przyciskiem poniżej.\n\n" +
-                    "Przed zmianą uruchom miasto tylko z B+P, przywróć ustawienia gry, poczekaj na zakończenie zmian i zapisz miasto. Następnie usuń B+P i zainstaluj ASL.\n\n" +
+                    "B+P możesz usunąć w każdej chwili. Aby od razu przywrócić ustawienia gry, użyj przycisku przywracania, poczekaj na zakończenie zmian i zapisz miasto. To opcjonalne.\n\n" +
+                    "Dziękuję, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths nie jest już rozwijany.\n\n" +
+                    "Dziękuję za korzystanie z moda! Wszystkie funkcje są teraz w Adjust All Speed Limits (ASL), z bardziej rozbudowanym panelem w mieście dla ścieżek rowerowych i pieszych. Przejdź do ASL przyciskiem poniżej.\n\n" +
+                    "ASL już zarządza ustawieniami prędkości. Możesz usunąć B+P bez resetowania.\n\n" +
                     "Dziękuję, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "Stosuje domyślne wartości strojenia moda."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Domyślne gry" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Przywróć ustawienia gry" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Ustawia wszystkie suwaki na **100%** i przywraca domyślne wartości gry (vanilla)."
                 },

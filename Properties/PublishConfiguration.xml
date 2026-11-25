@@ -14,8 +14,9 @@
 Thank you for using this mod! Its features are now in **[Adjust All Speed Limits (ASL)](https://mods.paradoxplaza.com/mods/149990/Windows)**, with a more advanced in-city panel for bike and pedestrian paths, separate bicycle and scooter speed tuning, and personal vehicle stats.
 
 ### Moving to ASL
-- Before switching, load your city with B+P alone, use **Game defaults**, let the changes finish and save your city. This helps restore legacy path changes, including hidden vehicle pathways.
-- Remove B+P, install ASL 1.3.0 or newer, and set your desired speeds. 2.00 in B+P = 200% in ASL.
+- You can safely remove B+P anytime and switch to ASL 1.3.0 or newer. No reset is required. 2.00 in B+P = 200% in ASL.
+- Optional: if you want to restore vanilla values right away, use **Reset to Game Defaults** with B+P alone, let the changes finish and save your city. Existing paths (including legacy hidden vehicle pathways) may retain modified limits otherwise. No need to revisit old saves.
+- If ASL already controls both speed features, simply remove B+P. ASL does not globally change hidden vehicle-only pathways.
 - B+P 1.1.6 automatically leaves overlapping speed tuning to ASL. Existing standalone tuning/reset controls remain available for migration when ASL does not manage them.
 - The old status and debug controls have moved to ASL. This mod remains available for the transition.
 

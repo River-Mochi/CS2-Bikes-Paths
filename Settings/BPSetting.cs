@@ -73,10 +73,16 @@ namespace BikesAndPaths
             PathSpeedScalar = DefaultPathSpeedScalar;
         }
 
-        // Retirement and migration notice (always visible).
+        // Show the appropriate retirement notice for the active speed owner.
         [SettingsUIMultilineText]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
         [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
         public string MigrationText => string.Empty;
+
+        [SettingsUIMultilineText]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAslMigrationText))]
+        [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
+        public string AslMigrationText => string.Empty;
 
         [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
         [SettingsUIButton]
@@ -150,6 +156,8 @@ namespace BikesAndPaths
 
         private bool HideAllTuning() => AslOwnership.OwnsPaths(GetWorld()) && AslOwnership.OwnsBicycles(GetWorld());
 
+        private bool HideAslMigrationText() => !HideAllTuning();
+
         private bool HideResetButtons() => !EnableBikesAndPaths || HideAllTuning();
 
         // ------------------------
@@ -174,7 +182,7 @@ namespace BikesAndPaths
         }
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideResetButtons))]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToVanilla

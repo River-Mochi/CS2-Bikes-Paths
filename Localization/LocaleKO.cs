@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths 지원이 종료되었습니다.\n\n" +
                     "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다. 아래 버튼으로 ASL로 이동하세요.\n\n" +
-                    "전환 전 B+P만 사용해 게임 기본값으로 복원하고 작업이 끝나면 도시를 저장하세요. 이후 B+P를 제거하고 ASL을 설치하세요.\n\n" +
+                    "B+P는 언제든 제거할 수 있습니다. 바로 게임 기본값으로 복원하려면 기본값 복원 버튼을 누르고 작업이 끝난 뒤 도시를 저장하세요. 선택 사항입니다.\n\n" +
+                    "감사합니다, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths 지원이 종료되었습니다.\n\n" +
+                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다. 아래 버튼으로 ASL로 이동하세요.\n\n" +
+                    "ASL이 이미 속도 설정을 관리합니다. 초기화 없이 B+P를 제거해도 됩니다.\n\n" +
                     "감사합니다, River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "모드의 기본 튜닝 값을 적용합니다."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "게임 기본값" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "게임 기본값 복원" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "모든 슬라이더를 **100%**로 설정하고 게임 기본값(vanilla)을 복원합니다."
                 },

@@ -55,7 +55,13 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "❤️ Bikes + Paths は開発を終了しました。\n\n" +
                     "ご利用ありがとうございました！すべての機能は Adjust All Speed Limits (ASL) に統合され、自転車道と歩道をより便利な都市内パネルで調整できます。下のボタンから ASL に移行してください。\n\n" +
-                    "移行前に B+P のみで都市を読み込み、ゲーム既定値に戻して処理完了後に保存してください。その後 B+P を削除し、ASL を導入してください。\n\n" +
+                    "B+P はいつでも削除できます。すぐにゲーム既定値へ戻したい場合は、ゲーム既定値に戻すボタンを押し、処理完了後に都市を保存してください。これは任意です。\n\n" +
+                    "ありがとう、River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "❤️ Bikes + Paths は開発を終了しました。\n\n" +
+                    "ご利用ありがとうございました！すべての機能は Adjust All Speed Limits (ASL) に統合され、自転車道と歩道をより便利な都市内パネルで調整できます。下のボタンから ASL に移行してください。\n\n" +
+                    "速度設定はすでに ASL が管理しています。リセットせずに B+P を削除できます。\n\n" +
                     "ありがとう、River-mochi"
                 },
 
@@ -109,7 +115,7 @@ namespace BikesAndPaths
                     "MOD の既定チューニング値を適用します。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "ゲーム既定値" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "ゲーム既定値に戻す" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "すべてのスライダーを **100%** にし、ゲーム既定値（vanilla）に戻します。"
                 },
