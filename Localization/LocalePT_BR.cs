@@ -45,21 +45,23 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "Velocidade" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "Estabilidade" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "Redefinir" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "Status dos veículos pessoais" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "Caminhos" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "Info do mod" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "Links" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "❤️ Bikes + Paths foi descontinuado.\n\n" +
+                    "Obrigado por usar este mod! Todos os recursos estão agora em Adjust All Speed Limits (ASL), com um painel na cidade mais completo para ciclovias e caminhos de pedestres. Migre para o ASL pelo botão abaixo.\n\n" +
+                    "Antes de migrar, use apenas o B+P, restaure os padrões do jogo, espere as alterações terminarem e salve a cidade. Depois remova o B+P e instale o ASL.\n\n" +
+                    "Obrigado, River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Ativar Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "Liga ou desliga o mod **ON / OFF**.\n" +
-                    "Quando desligado, bicicletas e scooters voltam aos padrões do jogo.\n" +
-                    "\n" +
-                    "As informações de status abaixo continuam disponíveis mesmo com Bikes + Paths desligado."
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Liga ou desliga o B+P. Ao desligar, restaura os valores não controlados pelo ASL." },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "Velocidade de bikes e scooters" },
@@ -88,8 +90,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Os limites de ciclovias e caminhos de pedestres estão no ASL. B+P deixa ao ASL os ajustes que ele oferece." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Abre Adjust All Speed Limits no Paradox Mods." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Limite de velocidade dos caminhos" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
@@ -111,43 +113,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Coloca todos os sliders em **100%** e restaura os padrões do jogo (vanilla)."
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "Grupo das bikes" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "Bicicletas e scooters elétricos.\n" +
-                    "**Ativo** = tem uma faixa atual (em movimento).\n" +
-                    "**Total estacionado** = inclui todos os flags Parked de qualquer lugar, não só estacionamentos."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "Grupo dos carros" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "Somente carros pessoais (exclui o grupo das bikes).\n" +
-                    "**Ativo** = tem uma faixa atual (em movimento).\n" +
-                    "**Estacionado** = todos os **ParkedCar**, não só estacionamentos.\n" +
-                    "A varredura só roda enquanto o menu Opções está aberto, não durante o gameplay da cidade, então sem preocupação com FPS."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "Carros estacionados ocultos" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**Total na borda OC** = veículos do grupo de carros com ParkedCar na conexão Outside City (OC).\n" +
-                    "Algumas cidades mostram muitos carros presos estacionados na conexão Outside City.\n" +
-                    "Use <Log hidden cars> para um exemplo de detalhamento dos carros ocultos."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Registrar carros ocultos" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Escreve um relatório único em **Logs/BikesAndPaths.log**.\n" +
-                    "Inclui total + detalhamento Bucket A/B/C e números de ID de exemplo.\n" +
-                    "Use o mod Scene Explorer para ir aos IDs de entidade Vehicle listados e investigar."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Abrir log" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Abre **Logs/BikesAndPaths.log** se existir.\n" +
-                    "Se o arquivo ainda não existir, abre a pasta Logs."
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "Status não carregado." },
                 { "FAST_STATS_NOT_AVAIL",       "Sem cidade... ¯\\_(ツ)_/¯ ...Sem estatísticas" },
@@ -170,20 +135,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "Abre a página do autor no Paradox Mods." },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "Relatório debug de bikes" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<Não é necessário para gameplay normal>.\n" +
-                    "Relatório detalhado único para debug ou verificação em dia de patch do jogo.\n" +
-                    "Carregue uma cidade primeiro.\n" +
-                    "Local de saída: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Abrir log" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Abre **Logs/BikesAndPaths.log** se existir.\n" +
-                    "Se o arquivo ainda não existir, abre a pasta Logs."
-                }
             };
         }
 

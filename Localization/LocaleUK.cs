@@ -45,20 +45,23 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "Швидкість" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "Стабільність" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "Скидання" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "Стан особистого транспорту" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "Доріжки" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "Інформація про мод" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "Посилання" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Налагодження" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "❤️ Розробку Bikes + Paths завершено.\n\n" +
+                    "Дякую, що користувалися модом! Усі функції тепер є в Adjust All Speed Limits (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів. Перейдіть до ASL за кнопкою нижче.\n\n" +
+                    "Перед переходом запустіть місто лише з B+P, відновіть стандартні значення гри, дочекайтеся завершення змін і збережіть місто. Потім видаліть B+P та встановіть ASL.\n\n" +
+                    "Дякую, River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Увімкнути Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "**Вмикає / вимикає** мод.\n" +
-                    "Коли мод вимкнено, поведінка велосипедів і самокатів повертається до стандартних налаштувань гри.\n\n" +
-                    "Інформація про стан нижче доступна, навіть якщо Bikes + Paths вимкнено."
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Вмикає або вимикає B+P. При вимкненні відновлює значення, якими не керує ASL." },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "Швидкість велосипедів і самокатів" },
@@ -87,8 +90,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Обмеження швидкості велодоріжок і пішохідних шляхів — в ASL. B+P передає ASL доступні там налаштування." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Відкриває Adjust All Speed Limits на Paradox Mods." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Обмеження швидкості доріжок" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
@@ -109,43 +112,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Установлює всі повзунки на **100%** і відновлює стандартні налаштування гри (vanilla)."
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "Група велосипедів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "Велосипеди та електричні самокати.\n" +
-                    "**Активні** = мають поточну смугу (рухаються).\n" +
-                    "**Усього припарковано** = включає всі прапорці Parked звідусіль, а не лише з паркінгів."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "Група автомобілів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "Лише особисті автомобілі (без групи велосипедів).\n" +
-                    "**Активні** = мають поточну смугу (рухаються).\n" +
-                    "**Припарковані** = усі **ParkedCar**, а не лише автомобілі на паркінгах.\n " +
-                    "Сканування виконується лише тоді, коли відкрито меню параметрів, а не під час гри в місті, тому на FPS це не впливає."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "Приховані припарковані автомобілі" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**Усього на межі OC** = автомобілі групи з ParkedCar на з'єднанні Outside City (OC).\n" +
-                    "У деяких містах багато автомобілів застрягають припаркованими на з'єднанні Outside City.\n" +
-                    "Скористайтеся <Записати приховані авто в журнал>, щоб переглянути приклади розподілу прихованих автомобілів.\n"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Записати приховані авто в журнал" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Записує одноразовий звіт у **Logs/BikesAndPaths.log**.\n" +
-                    "Містить загальну кількість + розподіл Bucket A/B/C і приклади номерів ID.\n" +
-                    "У моді Scene Explorer скористайтеся Jump To, щоб перейти до наведених ID сутностей Vehicle та перевірити їх."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Відкрити журнал" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Відкриває **Logs/BikesAndPaths.log**, якщо файл існує.\n" +
-                    "Якщо файл ще не знайдено, натомість відкриває папку Logs."
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "Стан не завантажено." },
                 { "FAST_STATS_NOT_AVAIL",       "Немає міста... ¯\\_(ツ)_/¯ ...Немає статистики" },
@@ -168,20 +134,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "Відкриває сторінку автора на Paradox Mods." },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "Звіт налагодження велосипедів" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<Не потрібно для звичайної гри>.\n" +
-                    "Одноразовий докладний звіт журналу для налагодження або перевірки в день оновлення гри.\n" +
-                    "Спочатку завантажте місто.\n" +
-                    "Розташування файлу: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Відкрити журнал" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Відкриває **Logs/BikesAndPaths.log**, якщо файл існує.\n" +
-                    "Якщо файл ще не знайдено, натомість відкриває папку Logs."
-                }
             };
         }
 

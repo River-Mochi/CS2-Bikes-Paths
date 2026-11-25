@@ -45,20 +45,23 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "ความเร็ว" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "ความเสถียร" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "รีเซ็ต" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "สถานะยานพาหนะส่วนบุคคล" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "ทางเดิน" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "ข้อมูลม็อด" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "ลิงก์" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "ดีบัก" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "❤️ Bikes + Paths ยุติการพัฒนาแล้ว\n\n" +
+                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม เปลี่ยนไปใช้ ASL ได้จากปุ่มด้านล่าง\n\n" +
+                    "ก่อนย้าย ให้ใช้ B+P เพียงม็อดเดียว คืนค่าเริ่มต้นของเกม รอให้เสร็จแล้วบันทึกเมือง จากนั้นลบ B+P และติดตั้ง ASL\n\n" +
+                    "ขอบคุณ River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "เปิดใช้งาน Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "**เปิด / ปิด** ม็อด\n" +
-                    "เมื่อปิด การทำงานของจักรยานและสกู๊ตเตอร์จะกลับเป็นค่าเริ่มต้นของเกม\n\n" +
-                    "ข้อมูลสถานะด้านล่างยังดูได้แม้จะปิด Bikes + Paths"
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "เปิดหรือปิด B+P เมื่อปิดจะคืนค่าที่ ASL ไม่ได้ควบคุมเป็นค่าเริ่มต้น" },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "ความเร็วจักรยานและสกู๊ตเตอร์" },
@@ -87,8 +90,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ตั้งขีดจำกัดความเร็วทางจักรยานและทางเดินใน ASL โดย B+P จะให้ ASL ควบคุมฟังก์ชันที่มีอยู่ใน ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "เปิด Adjust All Speed Limits บน Paradox Mods" },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "ขีดจำกัดความเร็วของทางเดิน" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
@@ -109,43 +112,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "ตั้งแถบเลื่อนทั้งหมดเป็น **100%** และคืนค่าเริ่มต้นของเกม (vanilla)"
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "กลุ่มจักรยาน" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "จักรยานและสกู๊ตเตอร์ไฟฟ้า\n" +
-                    "**กำลังใช้งาน** = มีเลนปัจจุบัน (กำลังเคลื่อนที่)\n" +
-                    "**จอดทั้งหมด** = รวมสถานะ Parked จากทุกที่ ไม่ใช่เฉพาะลานจอดรถ"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "กลุ่มรถยนต์" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "เฉพาะรถยนต์ส่วนบุคคล (ไม่รวมกลุ่มจักรยาน)\n" +
-                    "**กำลังใช้งาน** = มีเลนปัจจุบัน (กำลังเคลื่อนที่)\n" +
-                    "**จอดอยู่** = รถที่มีสถานะ **ParkedCar** ทั้งหมด ไม่ใช่เฉพาะในลานจอดรถ\n " +
-                    "การสแกนทำงานเฉพาะเมื่อเปิดเมนูตัวเลือก ไม่ทำงานระหว่างเล่นในเมือง จึงไม่กระทบ FPS"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "รถที่จอดแบบซ่อนอยู่" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**รวมที่ขอบเขต OC** = รถยนต์ในกลุ่มรถที่มี ParkedCar ณ จุดเชื่อมต่อนอกเมือง (OC)\n" +
-                    "บางเมืองอาจมีรถจำนวนมากติดค้างในสถานะจอดที่จุดเชื่อมต่อนอกเมือง\n" +
-                    "ใช้ <บันทึกรถที่ซ่อนอยู่> เพื่อดูตัวอย่างการแบ่งกลุ่มรถที่ซ่อนอยู่\n"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "บันทึกรถที่ซ่อนอยู่" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "เขียนรายงานหนึ่งครั้งไปยัง **Logs/BikesAndPaths.log**\n" +
-                    "มีจำนวนรวม + การแบ่ง Bucket A/B/C และหมายเลข ID ตัวอย่าง\n" +
-                    "ใช้ม็อด Scene Explorer เพื่อ Jump To ไปยัง ID เอนทิตี Vehicle ที่แสดงไว้และตรวจสอบ"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "เปิดไฟล์บันทึก" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "เปิด **Logs/BikesAndPaths.log** หากมีไฟล์นี้\n" +
-                    "หากยังไม่พบไฟล์ จะเปิดโฟลเดอร์ Logs แทน"
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "ยังไม่ได้โหลดสถานะ" },
                 { "FAST_STATS_NOT_AVAIL",       "ไม่มีเมือง... ¯\\_(ツ)_/¯ ...ไม่มีสถิติ" },
@@ -168,20 +134,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "เปิดหน้า Paradox Mods ของผู้สร้าง" },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "รายงานดีบักจักรยาน" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<ไม่จำเป็นสำหรับการเล่นตามปกติ>\n" +
-                    "รายงานบันทึกแบบละเอียดหนึ่งครั้งสำหรับการดีบักหรือตรวจสอบในวันที่เกมอัปเดต\n" +
-                    "โหลดเมืองก่อน\n" +
-                    "ตำแหน่งไฟล์: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "เปิดไฟล์บันทึก" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "เปิด **Logs/BikesAndPaths.log** หากมีไฟล์นี้\n" +
-                    "หากยังไม่พบไฟล์ จะเปิดโฟลเดอร์ Logs แทน"
-                }
             };
         }
 

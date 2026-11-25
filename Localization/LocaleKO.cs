@@ -45,21 +45,23 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "속도" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "안정성" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "초기화" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "개인 차량 상태" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "경로" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "모드 정보" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "링크" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "디버그" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "❤️ Bikes + Paths 지원이 종료되었습니다.\n\n" +
+                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다. 아래 버튼으로 ASL로 이동하세요.\n\n" +
+                    "전환 전 B+P만 사용해 게임 기본값으로 복원하고 작업이 끝나면 도시를 저장하세요. 이후 B+P를 제거하고 ASL을 설치하세요.\n\n" +
+                    "감사합니다, River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Bikes + Paths 켜기" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "모드를 **ON / OFF** 합니다.\n" +
-                    "OFF이면 자전거와 스쿠터 동작이 게임 기본값으로 돌아갑니다.\n" +
-                    "\n" +
-                    "아래 상태 정보는 Bikes + Paths가 OFF여도 사용할 수 있습니다."
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "B+P를 켜거나 끕니다. 끄면 ASL이 관리하지 않는 값을 기본값으로 복원합니다." },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "자전거 & 스쿠터 속도" },
@@ -88,8 +90,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "자전거길과 보행로의 제한 속도는 ASL에서 설정하세요. ASL이 제공하는 설정은 ASL에 맡깁니다." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox Mods에서 Adjust All Speed Limits를 엽니다." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "경로 속도 제한" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
@@ -111,43 +113,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "모든 슬라이더를 **100%**로 설정하고 게임 기본값(vanilla)을 복원합니다."
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "자전거 그룹" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "자전거와 전동 스쿠터.\n" +
-                    "**활성** = 현재 차선이 있음(이동 중).\n" +
-                    "**총 주차** = 주차장뿐 아니라 모든 곳의 Parked 플래그를 포함합니다."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "자동차 그룹" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "개인 자동차만 포함(자전거 그룹 제외).\n" +
-                    "**활성** = 현재 차선이 있음(이동 중).\n" +
-                    "**주차** = 주차장뿐 아니라 모든 **ParkedCar**.\n" +
-                    "스캔은 옵션 메뉴가 열려 있을 때만 실행되며 도시 플레이 중에는 실행되지 않으므로 FPS 걱정이 없습니다."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "숨겨진 주차 차량" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**OC 경계 총합** = Outside City (OC) 연결 지점에서 ParkedCar 상태인 자동차 그룹 차량.\n" +
-                    "일부 도시에서는 Outside City 연결 지점에 주차된 채 멈춘 차량이 많이 보일 수 있습니다.\n" +
-                    "숨겨진 차량의 샘플 분류는 <Log hidden cars>를 사용하세요."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "숨겨진 차량 로그" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "**Logs/BikesAndPaths.log**에 1회 보고서를 작성합니다.\n" +
-                    "총합 + Bucket A/B/C 분류와 샘플 ID 번호를 포함합니다.\n" +
-                    "Scene Explorer 모드로 나열된 Vehicle 엔티티 ID로 이동해 확인하세요."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "로그 열기" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "**Logs/BikesAndPaths.log**가 있으면 엽니다.\n" +
-                    "파일이 아직 없으면 대신 Logs 폴더를 엽니다."
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "상태를 불러오지 않았습니다." },
                 { "FAST_STATS_NOT_AVAIL",       "도시 없음... ¯\\_(ツ)_/¯ ...통계 없음" },
@@ -170,20 +135,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "제작자의 Paradox Mods 페이지를 엽니다." },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "자전거 디버그 보고서" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<일반 플레이에는 필요 없습니다>.\n" +
-                    "디버그 또는 게임 패치 후 확인용 1회 상세 로그 보고서입니다.\n" +
-                    "먼저 도시를 불러오세요.\n" +
-                    "출력 위치: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "로그 열기" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "**Logs/BikesAndPaths.log**가 있으면 엽니다.\n" +
-                    "파일이 아직 없으면 대신 Logs 폴더를 엽니다."
-                }
             };
         }
 

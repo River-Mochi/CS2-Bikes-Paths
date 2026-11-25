@@ -45,21 +45,23 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "速度" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "安定性" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "リセット" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "個人車両ステータス" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "パス" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "MOD情報" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "リンク" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "デバッグ" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "❤️ Bikes + Paths は開発を終了しました。\n\n" +
+                    "ご利用ありがとうございました！すべての機能は Adjust All Speed Limits (ASL) に統合され、自転車道と歩道をより便利な都市内パネルで調整できます。下のボタンから ASL に移行してください。\n\n" +
+                    "移行前に B+P のみで都市を読み込み、ゲーム既定値に戻して処理完了後に保存してください。その後 B+P を削除し、ASL を導入してください。\n\n" +
+                    "ありがとう、River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Bikes + Paths を有効化" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "MOD を **ON / OFF** します。\n" +
-                    "OFF の時は、自転車とスクーターの挙動をゲーム既定値に戻します。\n" +
-                    "\n" +
-                    "下のステータス情報は、Bikes + Paths が OFF でも使用できます。"
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "B+P をオン／オフ。オフにすると ASL が管理していない設定を既定値に戻します。" },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "自転車＆スクーター速度" },
@@ -88,8 +90,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Adjust All Speed Limits (ASL)" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "自転車道と歩道の速度制限はASLへ。ASLにある調整機能はASLに任せます。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox Mods で Adjust All Speed Limits を開きます。" },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "パス速度制限" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
@@ -111,43 +113,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "すべてのスライダーを **100%** にし、ゲーム既定値（vanilla）に戻します。"
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "自転車グループ" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "自転車と電動スクーター。\n" +
-                    "**Active** = 現在のレーンがある（移動中）。\n" +
-                    "**Total Parked** = 駐車場だけでなく、どこにある Parked フラグも含みます。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "車グループ" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "個人車のみ（自転車グループを除く）。\n" +
-                    "**Active** = 現在のレーンがある（移動中）。\n" +
-                    "**Parked** = 駐車場だけでなく、すべての **ParkedCar**。\n" +
-                    "スキャンは Options メニューが開いている時だけ実行され、都市プレイ中は動かないので FPS の心配はありません。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "隠れた駐車車両" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**OC 境界の合計** = Outside City (OC) 接続にある ParkedCar の車グループ車両。\n" +
-                    "都市によっては、Outside City 接続で駐車状態のまま詰まった車が大量に出ることがあります。\n" +
-                    "隠れた車のサンプル内訳は <Log hidden cars> を使ってください。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "隠れた車をログ出力" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "**Logs/BikesAndPaths.log** に 1 回だけレポートを書き込みます。\n" +
-                    "合計 + Bucket A/B/C の内訳とサンプル ID 番号を含みます。\n" +
-                    "Scene Explorer mod で一覧の Vehicle エンティティ ID へジャンプして調査できます。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "ログを開く" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "**Logs/BikesAndPaths.log** があれば開きます。\n" +
-                    "ファイルがまだ見つからない場合は、代わりに Logs フォルダーを開きます。"
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "ステータス未読み込み。" },
                 { "FAST_STATS_NOT_AVAIL",       "都市なし... ¯\\_(ツ)_/¯ ...統計なし" },
@@ -170,20 +135,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "作者の Paradox Mods ページを開きます。" },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "自転車デバッグレポート" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<通常プレイには不要です>。\n" +
-                    "デバッグやゲームパッチ後の確認用に、詳細ログレポートを 1 回出力します。\n" +
-                    "先に都市を読み込んでください。\n" +
-                    "出力先: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "ログを開く" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "**Logs/BikesAndPaths.log** があれば開きます。\n" +
-                    "ファイルがまだ見つからない場合は、代わりに Logs フォルダーを開きます。"
-                }
             };
         }
 
