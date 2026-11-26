@@ -3,7 +3,7 @@
 <!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
 <ModId Value="134067" />
 <!--Name of the mod to display to players-->
-<DisplayName Value="Bikes + Paths" />
+<DisplayName Value="[DEPRECATED] Bikes + Paths" />
 <!--Short description of the mod-->
 <ShortDescription Value="Retired. All features are now in Adjust All Speed Limits (ASL)." />
 <!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
@@ -50,8 +50,8 @@ Thank you, River-mochi
 <RequiredDLC Value="" />
 <!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 <ChangeLog>
-- Retired: all features are now in Adjust All Speed Limits (ASL).
-- Added migration instructions and direct ASL link; removed duplicate status and debug controls.
+- Retired: all features are now in Adjust All Speed Limits (ASL), Please install that mod instead.
+- Added migration instructions and direct ASL web link.
 - Standalone tuning/reset controls remain available for safe migration. Overlapping tuning is delegated to ASL.
 </ChangeLog>
 <!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
