@@ -106,6 +106,23 @@ namespace BikesAndPaths
         // Signature must match call site using named args.
         private void DumpBicyclePrefabs(bool enableFastBikes, float speedScalar, float stiffnessScalar, float dampingScalar)
         {
+            if (AslOwnership.OwnsBicycles(World))
+            {
+                LogUtils.Info("[BaP] Bicycle tuning is managed by ASL; skipping B+P tuning comparisons.");
+                if (!AslOwnership.OwnsPaths(World))
+                {
+                    DumpPathSpeedReport(enableFastBikes && TryGetSettings(out BPSetting pathSettings)
+                        ? Unity.Mathematics.math.clamp(pathSettings.PathSpeedScalar, 1.0f, 5.0f) : 1.0f);
+                }
+
+                DumpScooter01Report();
+                DumpCitizenVehicleEligibilityReport();
+                DumpOcHiddenBucketsOneLine();
+                DumpBikeInstancesReport();
+                DumpCarGroupInstancesReport();
+                return;
+            }
+
             float effectiveSpeed = enableFastBikes ? Unity.Mathematics.math.clamp(speedScalar, 0.30f, 10.0f) : 1.0f;
             float effectiveStiff = enableFastBikes ? Unity.Mathematics.math.clamp(stiffnessScalar, 0.30f, 5.0f) : 1.0f;
             float effectiveDamp = enableFastBikes ? Unity.Mathematics.math.clamp(dampingScalar, 0.30f, 5.0f) : 1.0f;
@@ -402,7 +419,14 @@ namespace BikesAndPaths
 #endif
             }
 
-            DumpPathSpeedReport(pathScalar);
+            if (AslOwnership.OwnsPaths(World))
+            {
+                LogUtils.Info("[BaP] Path tuning is managed by ASL; skipping B+P path comparisons.");
+            }
+            else
+            {
+                DumpPathSpeedReport(pathScalar);
+            }
             DumpScooter01Report();
             DumpCitizenVehicleEligibilityReport();
 

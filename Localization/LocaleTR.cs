@@ -45,21 +45,31 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "Hız" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "Stabilite" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "Sıfırla" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "Kişisel araç durumu" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "Patikalar" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "Mod bilgisi" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "Bağlantılar" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Debug" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "<Bikes + Paths artık geliştirilmiyor.>\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var.\n\n" +
+                    "<Adjust All Speed Limits'i yükle>\n" +
+                    "Aşağıdaki düğmeyi kullan.\n\n" +
+                    "B+P'yi istediğin zaman kaldırabilirsin. Oyun varsayılanlarına hemen dönmek için sıfırlama düğmesini kullan, işlemin bitmesini bekle ve şehri kaydet. Bu isteğe bağlıdır.\n\n" +
+                    "Teşekkürler, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "<Bikes + Paths artık geliştirilmiyor.>\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık <Adjust All Speed Limits> (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var.\n\n" +
+                    "ASL hız ayarlarını zaten yönetiyor. B+P'yi sıfırlama yapmadan kaldırabilirsin.\n\n" +
+                    "Teşekkürler, River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Bikes + Paths'i etkinleştir" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "Modu **AÇ / KAPAT** yapar.\n" +
-                    "Kapalıyken bisiklet ve scooter davranışı oyun varsayılanına döner.\n" +
-                    "\n" +
-                    "Bikes + Paths kapalı olsa bile aşağıdaki durum bilgisi kullanılabilir."
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "B+P'yi açar veya kapatır. Kapatınca ASL'nin yönetmediği değerler varsayılana döner." },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "Bisiklet & scooter hızı" },
@@ -88,14 +98,16 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "\"All Speed Limits\"i buradan al" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox sitesinde River-mochi'nin Adjust All Speed Limits mod bağlantısını açar." },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Patika hız sınırı" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "**Patika** hız sınırlarını ölçekler (patikalar yol değildir).\n" +
                     "**1.00 = oyun varsayılanı**\n" +
                     "Etkiler: bisiklet yolları, ayrılmış yaya+bisiklet yolları ve yaya patikaları.\n" +
                     "\n" +
-                    "Kaldırma notu: 1.00 yap veya sıfırlama düğmesini kullan, şehri kaydet, sonra kaldır.\n" +
-                    "Unutursan eski patikalar modlu hızda kalır, yeni patikalar vanilla oyun varsayılanını kullanır."
+                    "İsteğe bağlı: modu kaldırmadan önce oyun varsayılanlarına dön ve kaydet. Aksi halde mevcut yollar değiştirilen sınırları koruyabilir."
                 },
 
                 // Reset buttons
@@ -104,47 +116,10 @@ namespace BikesAndPaths
                     "Modun varsayılan ayar değerlerini uygular."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Oyun varsayılanları" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Oyun varsayılanlarına dön" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Tüm kaydırıcıları **%100** yapar ve oyun varsayılanlarını (vanilla) geri yükler."
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "Bisiklet grubu" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "Bisikletler ve elektrikli scooterlar.\n" +
-                    "**Aktif** = mevcut şeridi var (hareket ediyor).\n" +
-                    "**Toplam park** = yalnız otoparklar değil, her yerdeki tüm Parked durumlarını içerir."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "Araba grubu" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "Sadece kişisel arabalar (Bisiklet grubu hariç).\n" +
-                    "**Aktif** = mevcut şeridi var (hareket ediyor).\n" +
-                    "**Park** = sadece otoparklar değil, tüm **ParkedCar**.\n" +
-                    "Tarama sadece Options menüsü açıkken çalışır, şehir oynanışı sırasında değil; FPS derdi yok."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "Gizli park etmiş arabalar" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**OC sınırındaki toplam** = Şehir Dışı (OC) bağlantısında ParkedCar olan araba grubu araçları.\n" +
-                    "Bazı şehirlerde Şehir Dışı bağlantısında parkta takılmış çok sayıda araba görülür.\n" +
-                    "Gizli arabaların örnek dökümü için <Log hidden cars> kullan."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Gizli arabaları günlüğe yaz" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "**Logs/BikesAndPaths.log** içine tek seferlik rapor yazar.\n" +
-                    "Toplam + Bucket A/B/C dökümü ve örnek ID numaralarını içerir.\n" +
-                    "Scene Explorer moduyla listelenen Vehicle varlık ID'lerine atlayıp incele."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Günlüğü aç" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Varsa **Logs/BikesAndPaths.log** dosyasını açar.\n" +
-                    "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "Durum yüklenmedi." },
                 { "FAST_STATS_NOT_AVAIL",       "Şehir yok... ¯\\_(ツ)_/¯ ...İstatistik yok" },
@@ -167,20 +142,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "Yazarın Paradox Mods sayfasını açar." },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "Bisiklet debug raporu" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<Normal oynanış için gerekmez>.\n" +
-                    "Debug veya oyun yaması sonrası kontrol için tek seferlik ayrıntılı günlük raporu.\n" +
-                    "Önce bir şehir yükle.\n" +
-                    "Çıktı konumu: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Günlüğü aç" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Varsa **Logs/BikesAndPaths.log** dosyasını açar.\n" +
-                    "Dosya henüz bulunamazsa onun yerine Logs klasörünü açar."
-                }
             };
         }
 

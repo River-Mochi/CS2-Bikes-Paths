@@ -45,21 +45,31 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "Tốc độ" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "Ổn định" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "Đặt lại" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "Trạng thái xe cá nhân" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "Đường đi" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "Thông tin mod" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "Liên kết" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "Gỡ lỗi" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "<Bikes + Paths đã ngừng phát triển.>\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ.\n\n" +
+                    "<Cài Adjust All Speed Limits>\n" +
+                    "bằng nút bên dưới.\n\n" +
+                    "Bạn có thể gỡ B+P bất cứ lúc nào. Nếu muốn khôi phục ngay mặc định của game, hãy dùng nút khôi phục, chờ áp dụng xong và lưu thành phố. Không bắt buộc.\n\n" +
+                    "Cảm ơn, River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "<Bikes + Paths đã ngừng phát triển.>\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào <Adjust All Speed Limits> (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ.\n\n" +
+                    "ASL đã quản lý tốc độ. Bạn có thể gỡ B+P mà không cần đặt lại.\n\n" +
+                    "Cảm ơn, River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Bật Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "Bật hoặc tắt mod **ON / OFF**.\n" +
-                    "Khi tắt, hành vi xe đạp và scooter trở về mặc định của game.\n" +
-                    "\n" +
-                    "Thông tin trạng thái bên dưới vẫn dùng được ngay cả khi Bikes + Paths tắt."
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "Bật hoặc tắt B+P. Khi tắt, khôi phục các giá trị không do ASL quản lý." },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "Tốc độ xe đạp & scooter" },
@@ -88,14 +98,16 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Lấy \"All Speed Limits\" tại đây" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Mở liên kết tới mod Adjust All Speed Limits của River-mochi trên trang Paradox." },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Giới hạn tốc độ đường đi" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "Nhân giới hạn tốc độ của **đường đi** (đường đi không phải đường xe chạy).\n" +
                     "**1.00 = mặc định của game**\n" +
                     "Ảnh hưởng: đường xe đạp, đường tách người đi bộ+xe đạp, và đường đi bộ.\n" +
                     "\n" +
-                    "Gỡ mod: đặt về 1.00 hoặc dùng nút đặt lại, lưu thành phố, rồi gỡ mod.\n" +
-                    "Nếu quên, đường cũ vẫn giữ tốc độ đã chỉnh, còn đường mới dùng mặc định vanilla."
+                    "Không bắt buộc: khôi phục mặc định game và lưu trước khi gỡ. Nếu không, đường hiện có có thể giữ giới hạn đã chỉnh."
                 },
 
                 // Reset buttons
@@ -104,47 +116,10 @@ namespace BikesAndPaths
                     "Áp dụng các giá trị chỉnh mặc định của mod."
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Mặc định game" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "Khôi phục mặc định game" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "Đặt tất cả thanh trượt về **100%** và khôi phục mặc định của game (vanilla)."
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "Nhóm xe đạp" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "Xe đạp và scooter điện.\n" +
-                    "**Đang chạy** = có làn hiện tại (đang di chuyển).\n" +
-                    "**Tổng đang đỗ** = gồm mọi cờ Parked ở mọi nơi, không chỉ bãi đỗ."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "Nhóm ô tô" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "Chỉ xe cá nhân (không gồm nhóm xe đạp).\n" +
-                    "**Đang chạy** = có làn hiện tại (đang di chuyển).\n" +
-                    "**Đang đỗ** = mọi **ParkedCar**, không chỉ bãi đỗ.\n" +
-                    "Quét chỉ chạy khi menu Options mở, không chạy trong lúc chơi thành phố, nên không lo FPS."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "Xe đỗ ẩn" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**Tổng ở biên OC** = xe trong nhóm ô tô có ParkedCar tại kết nối Outside City (OC).\n" +
-                    "Một số thành phố có nhiều xe bị kẹt ở trạng thái đỗ tại kết nối Outside City.\n" +
-                    "Dùng <Log hidden cars> để xem phân nhóm mẫu của xe ẩn."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "Ghi log xe ẩn" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "Ghi báo cáo một lần vào **Logs/BikesAndPaths.log**.\n" +
-                    "Có tổng số + phân nhóm Bucket A/B/C và số ID mẫu.\n" +
-                    "Dùng mod Scene Explorer để nhảy tới ID thực thể Vehicle được liệt kê và kiểm tra."
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "Mở log" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "Mở **Logs/BikesAndPaths.log** nếu có.\n" +
-                    "Nếu chưa tìm thấy file, sẽ mở thư mục Logs."
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "Chưa tải trạng thái." },
                 { "FAST_STATS_NOT_AVAIL",       "Chưa có thành phố... ¯\\_(ツ)_/¯ ...Không có thống kê" },
@@ -167,20 +142,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "Mở trang Paradox Mods của tác giả." },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "Báo cáo gỡ lỗi xe đạp" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<Không cần cho chơi bình thường>.\n" +
-                    "Báo cáo log chi tiết một lần để gỡ lỗi hoặc kiểm tra sau ngày patch.\n" +
-                    "Hãy tải thành phố trước.\n" +
-                    "Nơi xuất: **Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "Mở log" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "Mở **Logs/BikesAndPaths.log** nếu có.\n" +
-                    "Nếu chưa tìm thấy file, sẽ mở thư mục Logs."
-                }
             };
         }
 

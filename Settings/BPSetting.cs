@@ -13,7 +13,6 @@ namespace BikesAndPaths
 {
     using System;
     using Colossal.IO.AssetDatabase; // FileLocation
-    using CS2Shared.RiverMochi;      // ShellOpen
     using Game.Modding;              // IMod, ModSetting
     using Game.Settings;             // Settings UI attributes
     using Game.UI;                   // Unit
@@ -24,11 +23,11 @@ namespace BikesAndPaths
     [FileLocation("ModsSettings/BikesAndPaths/BikesAndPaths")]
     [SettingsUITabOrder(ActionsTab, AboutTab)]
     [SettingsUIGroupOrder(
-        ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp, ActionsStatusGrp,
-        AboutInfoGrp, AboutLinksGrp, AboutDebugGrp)]
+        ActionsMigrationGrp, ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp,
+        AboutInfoGrp, AboutLinksGrp)]
     [SettingsUIShowGroupName(
-        ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp, ActionsStatusGrp,
-        AboutInfoGrp, AboutLinksGrp, AboutDebugGrp)]
+        ActionsSpeedGrp, ActionsPathSpeedGrp, ActionsResetGrp,
+        AboutInfoGrp, AboutLinksGrp)]
     public sealed class BPSetting : ModSetting
     {
         public const string ActionsTab = "Actions";
@@ -40,15 +39,13 @@ namespace BikesAndPaths
         public const string ActionsStabilityGrp = "Stability";
 
         public const string ActionsResetGrp = "Reset";
-        public const string ActionsStatusGrp = "Status";
+        public const string ActionsMigrationGrp = "Migration";
         public const string ActionsPathSpeedGrp = "PathSpeed";
 
         public const string AboutInfoGrp = "Mod info";
         public const string AboutLinksGrp = "Links";
-        public const string AboutDebugGrp = "Debug";
 
-        public const string ActionsStatusButtonsRow = "StatusButtonsRow";
-        public const string AboutDebugButtonsRow = "AboutDebugButtonsRow";
+        private const string kRetirementIconPath = "coui://bikesandpaths-options/retirement-heart.svg";
 
         private const string UrlParadox =
             "https://mods.paradoxplaza.com/authors/River-mochi/cities_skylines_2?games=cities_skylines_2&orderBy=desc&sortBy=best&time=alltime";
@@ -78,11 +75,36 @@ namespace BikesAndPaths
             PathSpeedScalar = DefaultPathSpeedScalar;
         }
 
+        // Show the appropriate retirement notice for the active speed owner.
+        [SettingsUIMultilineText(kRetirementIconPath)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
+        [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
+        public string MigrationText => string.Empty;
+
+        [SettingsUIMultilineText(kRetirementIconPath)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAslMigrationText))]
+        [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
+        public string AslMigrationText => string.Empty;
+
+        [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
+        [SettingsUIButton]
+        public bool OpenAllSpeedLimits
+        {
+            set
+            {
+                if (value)
+                {
+                    Application.OpenURL("https://mods.paradoxplaza.com/mods/149990/Windows");
+                }
+            }
+        }
+
         // ----------------------------
         // ACTIONS: Main toggle
         // ----------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
         [SettingsUISetter(typeof(BPSetting), nameof(SetEnableBikesAndPaths))]
         public bool EnableBikesAndPaths
         {
@@ -94,7 +116,7 @@ namespace BikesAndPaths
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideBikeSpeed))]
         [SettingsUISlider(min = 0.30f, max = 10.00f, step = 0.10f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(BPSetting), nameof(SetSpeedScalar))]
         public float SpeedScalar
@@ -122,7 +144,7 @@ namespace BikesAndPaths
         // -----------------------------
 
         [SettingsUISection(ActionsTab, ActionsPathSpeedGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HidePathSpeed))]
         [SettingsUISlider(min = 1.00f, max = 5.00f, step = 0.25f, unit = Unit.kFloatTwoFractions)]
         [SettingsUISetter(typeof(BPSetting), nameof(SetPathSpeedScalar))]
         public float PathSpeedScalar
@@ -130,12 +152,22 @@ namespace BikesAndPaths
             get; set;
         }
 
+        private bool HideBikeSpeed() => !EnableBikesAndPaths || AslOwnership.OwnsBicycles(GetWorld());
+
+        private bool HidePathSpeed() => !EnableBikesAndPaths || AslOwnership.OwnsPaths(GetWorld());
+
+        private bool HideAllTuning() => AslOwnership.OwnsPaths(GetWorld()) && AslOwnership.OwnsBicycles(GetWorld());
+
+        private bool HideAslMigrationText() => !HideAllTuning();
+
+        private bool HideResetButtons() => !EnableBikesAndPaths || HideAllTuning();
+
         // ------------------------
         // Actions: Reset buttons
         // ------------------------
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideResetButtons))]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToModDefaults
@@ -152,7 +184,7 @@ namespace BikesAndPaths
         }
 
         [SettingsUISection(ActionsTab, ActionsResetGrp)]
-        [SettingsUIHideByCondition(typeof(BPSetting), nameof(EnableBikesAndPaths), true)]
+        [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
         [SettingsUIButton]
         [SettingsUIButtonGroup("ResetRow")]
         public bool ResetToVanilla
@@ -165,79 +197,6 @@ namespace BikesAndPaths
                 }
 
                 DoResetToVanilla();
-            }
-        }
-
-        // -----------------------------
-        // Actions: Status (read-only)
-        // -----------------------------
-
-        [SettingsUISection(ActionsTab, ActionsStatusGrp)]
-        public string StatusSummary1
-        {
-            get
-            {
-                RefreshStatusSafe();
-                return BikesAndPathsStatus.BikesRow ?? string.Empty;
-            }
-        }
-
-        [SettingsUISection(ActionsTab, ActionsStatusGrp)]
-        public string StatusSummary2
-        {
-            get
-            {
-                RefreshStatusSafe();
-                return BikesAndPathsStatus.CarsRow ?? string.Empty;
-            }
-        }
-
-        [SettingsUISection(ActionsTab, ActionsStatusGrp)]
-        public string StatusSummary3
-        {
-            get
-            {
-                RefreshStatusSafe();
-                return BikesAndPathsStatus.CarsRow3 ?? string.Empty;
-            }
-        }
-
-        [SettingsUISection(ActionsTab, ActionsStatusGrp)]
-        [SettingsUIButtonGroup(ActionsStatusButtonsRow)]
-        [SettingsUIButton]
-        public bool LogBorderHiddenCars
-        {
-            set
-            {
-                if (!value)
-                {
-                    return;
-                }
-
-                World world = World.DefaultGameObjectInjectionWorld;
-                if (world == null || !world.IsCreated)
-                {
-                    return;
-                }
-
-                world.GetOrCreateSystemManaged<BikesAndPathsStatusSystem>()
-                    .LogBorderParkedSamples(headCount: 10, tailCount: 10);
-            }
-        }
-
-        [SettingsUISection(ActionsTab, ActionsStatusGrp)]
-        [SettingsUIButtonGroup(ActionsStatusButtonsRow)]
-        [SettingsUIButton]
-        public bool OpenLogFromStatus
-        {
-            set
-            {
-                if (!value)
-                {
-                    return;
-                }
-
-                ShellOpen.OpenModLogOrLogsFolder();
             }
         }
 
@@ -277,42 +236,6 @@ namespace BikesAndPaths
             }
         }
 
-        // ------------------------
-        // About: Debug
-        // ------------------------
-
-        [SettingsUISection(AboutTab, AboutDebugGrp)]
-        [SettingsUIButtonGroup(AboutDebugButtonsRow)]
-        [SettingsUIButton]
-        public bool DumpBicyclePrefabs
-        {
-            set
-            {
-                if (!value)
-                {
-                    return;
-                }
-
-                GetSystem()?.ScheduleDump();
-            }
-        }
-
-        [SettingsUISection(AboutTab, AboutDebugGrp)]
-        [SettingsUIButtonGroup(AboutDebugButtonsRow)]
-        [SettingsUIButton]
-        public bool OpenLogFromDebug
-        {
-            set
-            {
-                if (!value)
-                {
-                    return;
-                }
-
-                ShellOpen.OpenModLogOrLogsFolder();
-            }
-        }
-
         // --------------------------------------------------------------------
         // Defaults
         // --------------------------------------------------------------------
@@ -332,17 +255,6 @@ namespace BikesAndPaths
         // --------------------------------------------------------------------
         // Helpers
         // --------------------------------------------------------------------
-
-        private static void RefreshStatusSafe( )
-        {
-            try
-            {
-                BikesAndPathsStatus.RefreshIfNeeded();
-            }
-            catch
-            {
-            }
-        }
 
         private static World? GetWorld( )
         {
@@ -443,13 +355,19 @@ namespace BikesAndPaths
 
         private void DoResetToVanilla( )
         {
-            SpeedScalar = Vanilla;
+            if (!AslOwnership.OwnsBicycles(GetWorld()))
+            {
+                SpeedScalar = Vanilla;
+            }
 
             // Kept for settings compatibility; unused while Stability is disabled.
             StiffnessScalar = Vanilla;
             DampingScalar = Vanilla;
 
-            PathSpeedScalar = Vanilla;
+            if (!AslOwnership.OwnsPaths(GetWorld()))
+            {
+                PathSpeedScalar = Vanilla;
+            }
 
             ApplyAndSave();
             GetSystem()?.ScheduleResetVanillaAll();
@@ -457,13 +375,19 @@ namespace BikesAndPaths
 
         private void DoResetToModDefaults( )
         {
-            SpeedScalar = DefaultSpeed;
+            if (!AslOwnership.OwnsBicycles(GetWorld()))
+            {
+                SpeedScalar = DefaultSpeed;
+            }
 
             // Kept for settings compatibility; unused while Stability is disabled.
             StiffnessScalar = DefaultStiffness;
             DampingScalar = DefaultDamping;
 
-            PathSpeedScalar = DefaultPathSpeedScalar;
+            if (!AslOwnership.OwnsPaths(GetWorld()))
+            {
+                PathSpeedScalar = DefaultPathSpeedScalar;
+            }
 
             ApplyAndSave();
             GetSystem()?.ScheduleApplyAll();

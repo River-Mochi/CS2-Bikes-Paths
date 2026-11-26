@@ -87,6 +87,7 @@ namespace BikesAndPaths
             // Must run after LoadSettings so the copied values are not overwritten.
             MigrateLegacySettings(setting);
 
+            RegisterRetirementIcon();
             setting.RegisterInOptionsUI();
 
             updateSystem.UpdateAfter<BikesAndPathsSystem>(SystemUpdatePhase.PrefabUpdate);
@@ -99,6 +100,8 @@ namespace BikesAndPaths
                 Settings.UnregisterInOptionsUI();
                 Settings = null;
             }
+
+            UnregisterRetirementIcon();
         }
     }
 }

@@ -19,7 +19,7 @@
     <Nullable>enable</Nullable>
 
     <!-- Single source of truth for version number -->
-    <Version>1.1.5</Version>
+    <Version>1.1.7</Version>
     <AssemblyVersion>$(Version).0</AssemblyVersion>
     <FileVersion>$(Version).0</FileVersion>
 
@@ -69,6 +69,10 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <Pack>false</Pack>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\retirement-heart.svg" LogicalName="BikesAndPaths.Resources.retirement-heart.svg" />
   </ItemGroup>
 
   <!-- AUTO UPDATE PublishConfiguration GameVersion + ModVersion + nested mod.json "version" from $(Version).

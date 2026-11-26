@@ -3,59 +3,37 @@
 <!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
 <ModId Value="134067" />
 <!--Name of the mod to display to players-->
-<DisplayName Value="Bikes + Paths" />
+<DisplayName Value="[DEPRECATED] Bikes + Paths" />
 <!--Short description of the mod-->
-<ShortDescription Value="Adjust Bikes and Path Speed Limits. Detailed Status Report :)" />
+<ShortDescription Value="Retired. All features are now in Adjust All Speed Limits (ASL)." />
 <!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 <!--LongDescription Value="Bikes + Paths" /-->
 <LongDescription>
-🚴 **Path speed limit** - adjust bike and pedestrian paths (paths are independent of road speed limits).
+## ❤️ Bikes + Paths (B+P) is retiring!
 
-🚲 **Bike speeds** decrease or increase bicycles + electric scooters. Speed can be disabled [ ] if you just want the Paths.
+### Thank you for using this mod! Its features are now in River-Mochi's [Adjust All Speed Limits (ASL)](https://mods.paradoxplaza.com/mods/149990/Windows),
+with an advanced better in-city UI panel for bike and pedestrian paths. And the ASL Options menu has the separate bicycle and scooter speed tuning, and vehicle stats you had in Bikes and Paths before.
 
-🚴 **Status report** - compare Bike count versus Cars count + usage (Stats can be used without enabling Bikes or Path speed checkbox ✅ at all).
+### Moving to ASL
+- You can safely remove B+P anytime and switch to ASL 1.3.0 or newer. No reset is required.
+- Optional: if you want to restore vanilla values right away, use **Reset to Game Defaults** button with B+P alone, let the changes finish and save your city.
+Existing paths (including legacy hidden vehicle pathways) may retain modified limits otherwise. No need to revisit old saves.
+- When ASL is installed and controls both speed features, simply remove B+P.
+- B+P 1.1.7 automatically leaves overlapping speed tuning to ASL.
+- The old status and debug controls have also moved to ASL.
+- This mod remains available for the transition and will work as a standalone, but once you install All Speed Limits, this mod should be removed to avoid conflicts.
 
-- road speed mods don't let you set "path" speed limits, so that is unique to this mod.
-
-### Features
-- ✅ Speed ⬆️ ⬇️
-- ✅ Smoothing math for acceleration + braking (no teleport or panic braking)
-- ✅ One-click Reset buttons.
-
----
-
-## Tech notes
-- Road speed limits and game conditions may still cap speeds on bikes in normal roads.
-- Path speed limit - for both bike and pedestrian paths.
-- Compatible with "Road Speed Adjuster" mod (as that does normal roads and not Paths).
-- To disable the mod without uninstalling, uncheck [ ] the enable box.
-- Safe to remove (Reset button first for fast return to game defaults, then save city, and uninstall). If you don't reset, it's not a problem, you keep the changed paths until you replace your paths since they are vanilla paths.
-
-### Support and Feedback
-- Suppoer by clicking the Like 👍 button (top right).
-- Report issues on Github or Discord, link icons on the right.
-
-### Design + Performance
-- Bikes + Paths is built to be lightweight. It's partly why this was made; to have a mod that does not have parts that run in the city per-frame all the time.
-- No Harmony patch. It works to apply tuning when you change settings (or when a city loads), then goes idle, simple.
-- Status report refreshes only when the Options menu is open (to not affect city gameplay performance).
-- This is a brief idea, there is much more; be sure, effort is made for these details because I like the idea I can run these kind of mods even on an old laptop.
-
-#### Supports 11+ languages: Hello, Bonjour, Hola, Hallo, Ciao, こんにちは, 안녕하세요, Cześć, Olá, 你好, 你好, Merhaba, Xin chào
+Thank you, River-mochi
 
 ### Credits
 - River-mochi - author
 - Thumbnail: photo of dog by Joe Caione: https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg
-
-tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, change path speed, bike path, slow path, slow cims
-
 </LongDescription>
 
 <!--Thumbnail-->
 <Thumbnail Value="Properties/ThumbnailBikePathSkyDog.jpg" />
 <!--Screenshot, can be set multiple times-->
 <Screenshot Value="Properties/image10-Actions.jpg" />
-<Screenshot Value="Properties/image20-Status.jpg" />
 <Screenshot Value="Properties/image30-slowBike.jpg" />
 <Screenshot Value="Properties/image50-BikesParis.jpg" />
 <!--Tag, can be set multiple times-->
@@ -63,7 +41,7 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <!--Link to the forum post where the mod can be discussed-->
 <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/fast-bikes.1900016/" />
 <!--Version of the mod-->
-<ModVersion Value="1.1.5" />
+<ModVersion Value="1.1.7" />
 <!--Recommended version of the base game to use the mod-->
 <GameVersion Value="1.6.*" />
 <!--Dependency for the mod, can be set multiple times-->
@@ -72,7 +50,9 @@ tags: slow bike, bicycle speed, fix bike traffic, scooter, quality of life, chan
 <RequiredDLC Value="" />
 <!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 <ChangeLog>
-- Updated for 1.6.2
+- Retired: all features are now in mod "Adjust All Speed Limits" (ASL), Please install that mod instead.
+- Added migration instructions and direct ASL web link.
+- Standalone tuning/reset controls remain available for safe migration. Overlapping tuning is delegated to ASL.
 </ChangeLog>
 <!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
 <ExternalLink Type="" Url="" />

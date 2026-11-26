@@ -1,114 +1,21 @@
 # Bikes + Paths (Cities: Skylines II)
 
-Bikes + Paths increases/lowers **bicycles** and **electric scooters**.  
-It can also raise **path speed limits** so bikes don’t get bottlenecked on paths.
+## ❤️ Retired — moving to ASL
 
-## Features
-- **Bike & scooter speed** multiplier (0.30x to 10.00x)
-- **Accel/brake auto-scaled** for smoother high-speed behavior
-- **Path speed limit** (1.00x to 5.00x)
-  - Affects: bike paths, pedestrian+bike paths, and pedestrian-only paths (**not roads**)
-- One-click reset buttons:
-  - **Game defaults** (vanilla)
-  - **Mod defaults** (recommended)
-- **Status panel** (runs only while Options is open)
-  - Bike group counts (bikes + e-scooters)
-  - Car group counts (personal cars; bikes excluded)
-  - “Total at OC border” count for hidden parked cars at Outside Connection
-- Logs / debug:
-  - **Log hidden cars** → writes A/B/C bucket breakdown + sample entity IDs to `Logs/BikesAndPaths.log`
-  - **Bike debug report** → detailed report to `Logs/BikesAndPaths.log` (good for patch-day sanity checks)
+Thank you for using this mod! Its features are now in [Adjust All Speed Limits (ASL)](https://mods.paradoxplaza.com/mods/149990/Windows) (1.3.0+), with a more advanced in-city panel for separate bike and pedestrian path limits, bicycle and scooter tuning, and personal vehicle statistics.
 
-> Compatibility note: the optional “sway/stability tuning” UI has been removed for now to avoid conflicts with mods that also modify stiffness/damping.
+### Migration
 
----
+You can safely remove B+P anytime. Install ASL and set your preferred speeds (2.00 in B+P = 200% in ASL). If ASL already controls both speed features, simply remove B+P; no reset is required.
 
-## Options
+**Optional:** To restore vanilla values right away, use **Reset to Game Defaults** with B+P alone, let the changes finish and save your city. Existing paths, including legacy hidden vehicle pathways that ASL excludes from global path tuning, may otherwise retain modified limits. You do not need to revisit old saves.
 
-### Enable Bikes + Paths
-Turns the mod ON/OFF.
+B+P 1.1.6 automatically leaves overlapping speed tuning (including resets) to ASL. Standalone tuning and reset controls remain available when ASL does not manage them, so existing players can restore legacy settings. The old status and debug controls have moved to ASL. Saved B+P settings are retained; they are not automatically imported into ASL.
 
-- **ON**: applies tuning to bike/scooter prefabs and path speed limits.
-- **OFF**: restores vanilla values.
+Do not run older versions of both mods together. Existing paths can retain modified limits if you uninstall B+P without resetting.
 
-### Bike & scooter speed
-Scales **max speed** allowed. Acceleration/braking auto-adjust for the selected speed.
-
-- **0.30 = 30%** of game default  
-- **1.00 = game default**
-
-Notes:
-- Road speed limits and game conditions may still cap speeds.
-- If faster bikes on normal roads are needed too, use a road speed limit mod (this mod handles **paths**, not roads).
-
-### Path speed limit
-Scales speed limits for **paths** (not roads).
-
-- **1.00 = vanilla**
-- Affects bike/ped paths and pedestrian-only paths
-- Separate from road speed limit mods (they change roads only)
-
----
-
-## Status: “Hidden parked cars” + “Log hidden cars”
-Some parked vehicles are **Unspawned** (hidden) because they’re parked inside buildings/garages — normal.
-
-Some cities also show lots of cars **hidden at the border (OC / Outside Connection)**.  
-In the Status panel, the row shows **Total at OC border**.
-
-If you want to help investigate:
-1. Open **Options → Bikes + Paths → Status**
-2. Click **Log hidden cars**
-3. Open `Logs/BikesAndPaths.log`
-4. The log prints:
-   - **Total OC Hidden Cars**
-   - Bucket **A/B/C** breakdown
-   - Sample **VehicleIndex:Version** IDs
-5. Use **Scene Explorer** mod → “Jump To” the listed vehicle entity IDs
-   - Look at `ParkedCar.m_Lane` and owner/citizen panels
-
----
-
-## Performance notes
-Bikes + Paths is built to be lightweight.
-
-- Applies tuning when settings change (or when a city loads), then goes idle.
-- Status report refreshes only when the Options menu is open.
-- No constant per-frame city work for the tuning features.
-
----
-
-## Languages
-- Supports **12+ languages**
-
----
-
-## Remove mod (clean uninstall)
-Best uninstall method:
-1. Set **Enable Bikes + Paths = OFF**
-2. Make sure **Path speed limit = 1.00**
-3. Load the city once, save once
-4. Uninstall the mod
-
-If you uninstall without resetting Path Speed to 1.00:
-- existing paths can keep the modified speed limits (new paths will be vanilla)
-
----
-
-## Troubleshooting
-- Load a city first (don’t test from main menu).
-- Toggle **Enable Bikes + Paths** OFF then ON.
-- Run **Bike debug report** and check `Logs/BikesAndPaths.log`.
-
-If settings get corrupted:
-- Delete `ModsSettings/BikesAndPaths/BikesAndPaths.coc`
-- Start the game (a fresh settings file will be recreated)
-
----
+Thank you, River-mochi
 
 ## Links
 - Discord: https://discord.gg/gwXgvtyhjc
 - GitHub: https://github.com/River-Mochi/CS2-Bikes-Paths
-
-## Credits
-**River-mochi** — mod author

@@ -45,21 +45,31 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsSpeedGrp),      "速度" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStabilityGrp),  "稳定性" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsResetGrp),      "重置" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsStatusGrp),     "个人车辆状态" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsPathSpeedGrp),  "路径" },
 
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutInfoGrp),  "模组信息" },
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutLinksGrp), "链接" },
-                { m_Setting.GetOptionGroupLocaleID(BPSetting.AboutDebugGrp), "调试" },
+
+                // Retirement notice
+                { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
+                    "<Bikes + Paths 已停止维护。>\n\n" +
+                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。\n\n" +
+                    "<安装 Adjust All Speed Limits>\n" +
+                    "请点击下方按钮。\n\n" +
+                    "B+P 可随时卸载。如想立即恢复游戏默认值，请点击恢复游戏默认值，等待调整完成后保存城市。此步骤并非必需。\n\n" +
+                    "谢谢，River-mochi"
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
+                    "<Bikes + Paths 已停止维护。>\n\n" +
+                    "感谢使用本模组！所有功能现已整合到 <Adjust All Speed Limits> (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。\n\n" +
+                    "ASL 已接管速度设置。现在可直接卸载 B+P，无需重置。\n\n" +
+                    "谢谢，River-mochi"
+                },
 
                 // Master toggle
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "启用 Bikes + Paths" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)),
-                    "开启或关闭此模组 **ON / OFF**。\n" +
-                    "关闭后，自行车和滑板车行为会恢复为游戏默认值。\n" +
-                    "\n" +
-                    "即使 Bikes + Paths 关闭，下方状态信息仍可使用。"
-                },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.EnableBikesAndPaths)), "开启或关闭 B+P。关闭时恢复未由 ASL 管理的设置。" },
 
                 // Speed
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.SpeedScalar)), "自行车和滑板车速度" },
@@ -88,14 +98,16 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "在此获取“All Speed Limits”" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "打开 Paradox 网站上 River-mochi 的 Adjust All Speed Limits 模组链接。" },
+
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "路径速度限制" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
                     "缩放 **路径** 速度限制（路径不是道路）。\n" +
                     "**1.00 = 游戏默认值**\n" +
                     "影响：自行车道、行人+自行车分隔路径、行人路径。\n" +
                     "\n" +
-                    "卸载提示：设为 1.00 或使用重置按钮，保存城市，然后卸载。\n" +
-                    "如果忘记了，旧路径会保留修改后的速度，新路径会使用 vanilla 游戏默认值。"
+                    "可选：卸载前恢复游戏默认值并保存城市。否则已有路径可能保留修改后的限速。"
                 },
 
                 // Reset buttons
@@ -104,47 +116,10 @@ namespace BikesAndPaths
                     "应用此模组的默认调校值。"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "游戏默认值" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.ResetToVanilla)), "恢复游戏默认值" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.ResetToVanilla)),
                     "将所有滑块设为 **100%** 并恢复游戏默认值（vanilla）。"
                 },
-
-                // Status lines
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary1)), "自行车组" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary1)),
-                    "自行车和电动滑板车。\n" +
-                    "**活动** = 当前有车道（正在移动）。\n" +
-                    "**总停放** = 包含所有位置的 Parked 标记，不只是停车场。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary2)), "汽车组" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary2)),
-                    "仅个人汽车（不包括自行车组）。\n" +
-                    "**活动** = 当前有车道（正在移动）。\n" +
-                    "**停放** = 所有 **ParkedCar**，不只是停车场。\n" +
-                    "扫描只在选项菜单打开时运行，不在城市正常游玩时运行，因此不用担心 FPS。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.StatusSummary3)), "隐藏停放汽车" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.StatusSummary3)),
-                    "**OC 边界总数** = 在 Outside City (OC) 连接处带 ParkedCar 的汽车组车辆。\n" +
-                    "有些城市会在 Outside City 连接处显示大量卡住的停放汽车。\n" +
-                    "使用 <Log hidden cars> 查看隐藏汽车的示例分类。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.LogBorderHiddenCars)), "记录隐藏汽车" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.LogBorderHiddenCars)),
-                    "向 **Logs/BikesAndPaths.log** 写入一次性报告。\n" +
-                    "包含总数 + Bucket A/B/C 分类和示例 ID。\n" +
-                    "使用 Scene Explorer 模组跳转到列出的 Vehicle 实体 ID 并检查。"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromStatus)), "打开日志" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromStatus)),
-                    "如果存在，则打开 **Logs/BikesAndPaths.log**。\n" +
-                    "如果尚未找到文件，则改为打开 Logs 文件夹。"
-                },
-
                 // Status fallback keys
                 { "FAST_STATUS_NOT_LOADED",     "状态未加载。" },
                 { "FAST_STATS_NOT_AVAIL",       "没有城市... ¯\\_(ツ)_/¯ ...没有统计" },
@@ -167,20 +142,6 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenParadoxMods)), "Paradox Mods" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenParadoxMods)),  "打开作者的 Paradox Mods 页面。" },
 
-                // Debug
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.DumpBicyclePrefabs)), "自行车调试报告" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.DumpBicyclePrefabs)),
-                    "<正常游玩不需要>。\n" +
-                    "用于调试或游戏补丁日检查的一次性详细日志报告。\n" +
-                    "请先加载城市。\n" +
-                    "输出位置：**Logs/BikesAndPaths.log**"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenLogFromDebug)), "打开日志" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenLogFromDebug)),
-                    "如果存在，则打开 **Logs/BikesAndPaths.log**。\n" +
-                    "如果尚未找到文件，则改为打开 Logs 文件夹。"
-                }
             };
         }
 

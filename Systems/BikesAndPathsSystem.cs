@@ -67,6 +67,7 @@ namespace BikesAndPaths
             // Apply current settings on each city load (including city switching without restarting).
             if (Mod.Settings != null)
             {
+                LogUtils.Info(() => $"[BaP] Speed ownership: paths={(AslOwnership.OwnsPaths(World) ? "ASL" : "B+P")}, bicycles={(AslOwnership.OwnsBicycles(World) ? "ASL" : "B+P")}.");
                 ScheduleApplyAll();
             }
         }
@@ -146,6 +147,18 @@ namespace BikesAndPaths
 
             try
             {
+                // Check registered systems at execution time, not mod load order.
+                if (AslOwnership.OwnsPaths(World))
+                {
+                    m_PathDirty = false;
+                    DisposePathBatch();
+                }
+
+                if (AslOwnership.OwnsBicycles(World))
+                {
+                    m_BikeDirty = false;
+                }
+
                 if (m_Dump)
                 {
                     m_Dump = false;
