@@ -50,7 +50,7 @@ Thank you, River-mochi
 <RequiredDLC Value="" />
 <!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 <ChangeLog>
-- Retired: all features are now in Adjust All Speed Limits (ASL), Please install that mod instead.
+- Retired: all features are now in mod "Adjust All Speed Limits" (ASL), Please install that mod instead.
 - Added migration instructions and direct ASL web link.
 - Standalone tuning/reset controls remain available for safe migration. Overlapping tuning is delegated to ASL.
 </ChangeLog>
