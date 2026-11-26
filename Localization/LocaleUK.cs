@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Розробку Bikes + Paths завершено.\n\n" +
-                    "Дякую, що користувалися модом! Усі функції тепер є в Adjust All Speed Limits (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів. Перейдіть до ASL за кнопкою нижче.\n\n" +
+                    "<Розробку Bikes + Paths завершено.>\n\n" +
+                    "Дякую, що користувалися модом! Усі функції тепер є в Adjust All Speed Limits (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів. <Встановіть Adjust All Speed Limits> за кнопкою нижче.\n\n" +
                     "B+P можна видалити будь-коли. Щоб одразу повернути стандартні значення гри, натисніть кнопку відновлення, дочекайтеся завершення змін і збережіть місто. Це необов’язково.\n\n" +
                     "Дякую, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Розробку Bikes + Paths завершено.\n\n" +
-                    "Дякую, що користувалися модом! Усі функції тепер є в Adjust All Speed Limits (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів.\n\n" +
+                    "<Розробку Bikes + Paths завершено.>\n\n" +
+                    "Дякую, що користувалися модом! Усі функції тепер є в <Adjust All Speed Limits> (ASL), із зручнішою панеллю в місті для велодоріжок і пішохідних шляхів.\n\n" +
                     "ASL уже керує швидкістю. Можна видалити B+P без скидання.\n\n" +
                     "Дякую, River-mochi"
                 },

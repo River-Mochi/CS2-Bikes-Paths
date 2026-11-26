@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths 已停止维护。\n\n" +
-                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。请点击下方按钮迁移至 ASL。\n\n" +
+                    "<Bikes + Paths 已停止维护。>\n\n" +
+                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。点击下方按钮<安装 Adjust All Speed Limits>。\n\n" +
                     "B+P 可随时卸载。如想立即恢复游戏默认值，请点击恢复游戏默认值，等待调整完成后保存城市。此步骤并非必需。\n\n" +
                     "谢谢，River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths 已停止维护。\n\n" +
-                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。\n\n" +
+                    "<Bikes + Paths 已停止维护。>\n\n" +
+                    "感谢使用本模组！所有功能现已整合到 <Adjust All Speed Limits> (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。\n\n" +
                     "ASL 已接管速度设置。现在可直接卸载 B+P，无需重置。\n\n" +
                     "谢谢，River-mochi"
                 },

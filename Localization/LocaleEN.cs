@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths is retired.\n\n" +
-                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths. Please switch to ASL using the button below.\n\n" +
+                    "<Bikes + Paths is retired.>\n\n" +
+                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths. <Install Adjust All Speed Limits> using the button below.\n\n" +
                     "You can safely remove Bikes + Paths anytime. To restore vanilla values right away, use Reset to Game Defaults, let the changes finish and save your city. This is optional.\n\n" +
                     "Thank you, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths is retired.\n\n" +
-                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths.\n\n" +
+                    "<Bikes + Paths is retired.>\n\n" +
+                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in <Adjust All Speed Limits> mod, with a more advanced in-city panel for bike and pedestrian paths.\n\n" +
                     "ASL already manages these features. You can safely remove Bikes + Paths now. No reset is required.\n\n" +
                     "Thank you, River-mochi"
                 },

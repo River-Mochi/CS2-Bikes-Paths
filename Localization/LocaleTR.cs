@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths artık geliştirilmiyor.\n\n" +
-                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var. Aşağıdaki düğmeyle ASL'ye geçebilirsin.\n\n" +
+                    "<Bikes + Paths artık geliştirilmiyor.>\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var. Aşağıdaki düğmeyle <Adjust All Speed Limits'i yükle>.\n\n" +
                     "B+P'yi istediğin zaman kaldırabilirsin. Oyun varsayılanlarına hemen dönmek için sıfırlama düğmesini kullan, işlemin bitmesini bekle ve şehri kaydet. Bu isteğe bağlıdır.\n\n" +
                     "Teşekkürler, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths artık geliştirilmiyor.\n\n" +
-                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var.\n\n" +
+                    "<Bikes + Paths artık geliştirilmiyor.>\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık <Adjust All Speed Limits> (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var.\n\n" +
                     "ASL hız ayarlarını zaten yönetiyor. B+P'yi sıfırlama yapmadan kaldırabilirsin.\n\n" +
                     "Teşekkürler, River-mochi"
                 },

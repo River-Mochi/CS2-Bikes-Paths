@@ -45,6 +45,8 @@ namespace BikesAndPaths
         public const string AboutInfoGrp = "Mod info";
         public const string AboutLinksGrp = "Links";
 
+        private const string kRetirementIconPath = "coui://bikesandpaths-options/retirement-heart.svg";
+
         private const string UrlParadox =
             "https://mods.paradoxplaza.com/authors/River-mochi/cities_skylines_2?games=cities_skylines_2&orderBy=desc&sortBy=best&time=alltime";
 
@@ -74,12 +76,12 @@ namespace BikesAndPaths
         }
 
         // Show the appropriate retirement notice for the active speed owner.
-        [SettingsUIMultilineText]
+        [SettingsUIMultilineText(kRetirementIconPath)]
         [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAllTuning))]
         [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
         public string MigrationText => string.Empty;
 
-        [SettingsUIMultilineText]
+        [SettingsUIMultilineText(kRetirementIconPath)]
         [SettingsUIHideByCondition(typeof(BPSetting), nameof(HideAslMigrationText))]
         [SettingsUISection(ActionsTab, ActionsMigrationGrp)]
         public string AslMigrationText => string.Empty;

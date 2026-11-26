@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths è stato ritirato.\n\n" +
-                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali. Passa ad ASL con il pulsante qui sotto.\n\n" +
+                    "<Bikes + Paths è stato ritirato.>\n\n" +
+                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali. <Installa Adjust All Speed Limits> con il pulsante qui sotto.\n\n" +
                     "Puoi rimuovere B+P in qualsiasi momento. Per tornare subito ai valori del gioco, usa Ripristina valori di gioco, attendi la fine delle modifiche e salva la città. È facoltativo.\n\n" +
                     "Grazie, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths è stato ritirato.\n\n" +
-                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali.\n\n" +
+                    "<Bikes + Paths è stato ritirato.>\n\n" +
+                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in <Adjust All Speed Limits> (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali.\n\n" +
                     "ASL gestisce già le tue impostazioni di velocità. Puoi rimuovere B+P senza ripristinare nulla.\n\n" +
                     "Grazie, River-mochi"
                 },

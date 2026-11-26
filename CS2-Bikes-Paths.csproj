@@ -71,6 +71,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\retirement-heart.svg" LogicalName="BikesAndPaths.Resources.retirement-heart.svg" />
+  </ItemGroup>
+
   <!-- AUTO UPDATE PublishConfiguration GameVersion + ModVersion + nested mod.json "version" from $(Version).
          remove BOM, make EOL=LF, and left-align text -->
   <Target Name="UpdatePublishConfigVersion" BeforeTargets="PrepareForBuild" Condition="Exists('$(PublishConfigScript)') AND Exists('$(MSBuildProjectDirectory)\$(PublishConfigurationPath)')">

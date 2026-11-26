@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths 지원이 종료되었습니다.\n\n" +
-                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다. 아래 버튼으로 ASL로 이동하세요.\n\n" +
+                    "<Bikes + Paths 지원이 종료되었습니다.>\n\n" +
+                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다. 아래 버튼으로 <Adjust All Speed Limits 설치>를 진행하세요.\n\n" +
                     "B+P는 언제든 제거할 수 있습니다. 바로 게임 기본값으로 복원하려면 기본값 복원 버튼을 누르고 작업이 끝난 뒤 도시를 저장하세요. 선택 사항입니다.\n\n" +
                     "감사합니다, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths 지원이 종료되었습니다.\n\n" +
-                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다.\n\n" +
+                    "<Bikes + Paths 지원이 종료되었습니다.>\n\n" +
+                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 <Adjust All Speed Limits> (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다.\n\n" +
                     "ASL이 이미 속도 설정을 관리합니다. 초기화 없이 B+P를 제거해도 됩니다.\n\n" +
                     "감사합니다, River-mochi"
                 },

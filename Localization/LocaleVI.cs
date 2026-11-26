@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths đã ngừng phát triển.\n\n" +
-                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ. Hãy chuyển sang ASL bằng nút bên dưới.\n\n" +
+                    "<Bikes + Paths đã ngừng phát triển.>\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ. <Cài Adjust All Speed Limits> bằng nút bên dưới.\n\n" +
                     "Bạn có thể gỡ B+P bất cứ lúc nào. Nếu muốn khôi phục ngay mặc định của game, hãy dùng nút khôi phục, chờ áp dụng xong và lưu thành phố. Không bắt buộc.\n\n" +
                     "Cảm ơn, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths đã ngừng phát triển.\n\n" +
-                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ.\n\n" +
+                    "<Bikes + Paths đã ngừng phát triển.>\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào <Adjust All Speed Limits> (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ.\n\n" +
                     "ASL đã quản lý tốc độ. Bạn có thể gỡ B+P mà không cần đặt lại.\n\n" +
                     "Cảm ơn, River-mochi"
                 },

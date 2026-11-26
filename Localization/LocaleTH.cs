@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths ยุติการพัฒนาแล้ว\n\n" +
-                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม เปลี่ยนไปใช้ ASL ได้จากปุ่มด้านล่าง\n\n" +
+                    "<Bikes + Paths ยุติการพัฒนาแล้ว>\n\n" +
+                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม <ติดตั้ง Adjust All Speed Limits> จากปุ่มด้านล่าง\n\n" +
                     "ลบ B+P ได้ทุกเมื่อ หากต้องการคืนค่าเริ่มต้นของเกมทันที ให้กดปุ่มคืนค่า รอให้เสร็จแล้วบันทึกเมือง ขั้นตอนนี้ไม่บังคับ\n\n" +
                     "ขอบคุณ River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths ยุติการพัฒนาแล้ว\n\n" +
-                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม\n\n" +
+                    "<Bikes + Paths ยุติการพัฒนาแล้ว>\n\n" +
+                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน <Adjust All Speed Limits> (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม\n\n" +
                     "ASL จัดการความเร็วอยู่แล้ว ลบ B+P ได้เลยโดยไม่ต้องคืนค่า\n\n" +
                     "ขอบคุณ River-mochi"
                 },

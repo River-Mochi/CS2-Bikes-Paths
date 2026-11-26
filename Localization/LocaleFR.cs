@@ -53,14 +53,14 @@ namespace BikesAndPaths
                 // Retirement notice
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
-                    "❤️ Bikes + Paths n’est plus maintenu.\n\n" +
-                    "Merci d’avoir utilisé ce mod ! Toutes ses fonctions sont maintenant dans Adjust All Speed Limits (ASL), avec un panneau en ville plus complet pour les pistes cyclables et les chemins piétons. Passe à ASL via le bouton ci-dessous.\n\n" +
+                    "<Bikes + Paths n’est plus maintenu.>\n\n" +
+                    "Merci d’avoir utilisé ce mod ! Toutes ses fonctions sont maintenant dans Adjust All Speed Limits (ASL), avec un panneau en ville plus complet pour les pistes cyclables et les chemins piétons. <Installe Adjust All Speed Limits> via le bouton ci-dessous.\n\n" +
                     "Tu peux retirer B+P à tout moment. Pour retrouver les valeurs du jeu tout de suite, utilise Rétablir les valeurs du jeu, attends la fin des changements et sauvegarde la ville. C’est facultatif.\n\n" +
                     "Merci, River-mochi"
                 },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.AslMigrationText)),
-                    "❤️ Bikes + Paths n’est plus maintenu.\n\n" +
-                    "Merci d’avoir utilisé ce mod ! Toutes ses fonctions sont maintenant dans Adjust All Speed Limits (ASL), avec un panneau en ville plus complet pour les pistes cyclables et les chemins piétons.\n\n" +
+                    "<Bikes + Paths n’est plus maintenu.>\n\n" +
+                    "Merci d’avoir utilisé ce mod ! Toutes ses fonctions sont maintenant dans <Adjust All Speed Limits> (ASL), avec un panneau en ville plus complet pour les pistes cyclables et les chemins piétons.\n\n" +
                     "ASL gère déjà tes réglages de vitesse. Tu peux retirer B+P maintenant, sans réinitialisation.\n\n" +
                     "Merci, River-mochi"
                 },
