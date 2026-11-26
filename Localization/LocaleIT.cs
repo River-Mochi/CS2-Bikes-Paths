@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths è stato ritirato.>\n\n" +
-                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali. <Installa Adjust All Speed Limits> con il pulsante qui sotto.\n\n" +
+                    "Grazie per aver usato questa mod! Tutte le funzioni sono ora in Adjust All Speed Limits (ASL), con un pannello in città più avanzato per piste ciclabili e percorsi pedonali.\n\n" +
+                    "<Installa Adjust All Speed Limits>\n" +
+                    "con il pulsante qui sotto.\n\n" +
                     "Puoi rimuovere B+P in qualsiasi momento. Per tornare subito ai valori del gioco, usa Ripristina valori di gioco, attendi la fine delle modifiche e salva la città. È facoltativo.\n\n" +
                     "Grazie, River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Apre Adjust All Speed Limits su Paradox Mods." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Ottieni \"All Speed Limits\" qui" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Apre un collegamento alla mod Adjust All Speed Limits di River-mochi sul sito Paradox." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Limite velocità percorsi" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

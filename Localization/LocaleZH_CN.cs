@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths 已停止维护。>\n\n" +
-                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。点击下方按钮<安装 Adjust All Speed Limits>。\n\n" +
+                    "感谢使用本模组！所有功能现已整合到 Adjust All Speed Limits (ASL)，并提供更方便的城市内面板，可调整自行车道和人行道限速。\n\n" +
+                    "<安装 Adjust All Speed Limits>\n" +
+                    "请点击下方按钮。\n\n" +
                     "B+P 可随时卸载。如想立即恢复游戏默认值，请点击恢复游戏默认值，等待调整完成后保存城市。此步骤并非必需。\n\n" +
                     "谢谢，River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "在 Paradox Mods 打开 Adjust All Speed Limits。" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "在此获取“All Speed Limits”" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "打开 Paradox 网站上 River-mochi 的 Adjust All Speed Limits 模组链接。" },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "路径速度限制" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

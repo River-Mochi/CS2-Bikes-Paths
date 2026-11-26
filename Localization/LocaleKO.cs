@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths 지원이 종료되었습니다.>\n\n" +
-                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다. 아래 버튼으로 <Adjust All Speed Limits 설치>를 진행하세요.\n\n" +
+                    "이 모드를 이용해 주셔서 감사합니다! 모든 기능이 Adjust All Speed Limits (ASL)에 통합되었으며, 도시 내 패널에서 자전거길과 보행로를 더 편리하게 조절할 수 있습니다.\n\n" +
+                    "<Adjust All Speed Limits 설치>\n" +
+                    "아래 버튼을 이용하세요.\n\n" +
                     "B+P는 언제든 제거할 수 있습니다. 바로 게임 기본값으로 복원하려면 기본값 복원 버튼을 누르고 작업이 끝난 뒤 도시를 저장하세요. 선택 사항입니다.\n\n" +
                     "감사합니다, River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox Mods에서 Adjust All Speed Limits를 엽니다." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "\"All Speed Limits\" 받기" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox 웹사이트에서 River-mochi의 Adjust All Speed Limits 모드 링크를 엽니다." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "경로 속도 제한" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

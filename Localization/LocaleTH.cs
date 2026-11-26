@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths ยุติการพัฒนาแล้ว>\n\n" +
-                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม <ติดตั้ง Adjust All Speed Limits> จากปุ่มด้านล่าง\n\n" +
+                    "ขอบคุณที่ใช้ม็อดนี้! ทุกฟังก์ชันย้ายไปอยู่ใน Adjust All Speed Limits (ASL) พร้อมแผงควบคุมในเมืองที่ปรับทางจักรยานและทางเดินได้สะดวกกว่าเดิม\n\n" +
+                    "<ติดตั้ง Adjust All Speed Limits>\n" +
+                    "ใช้ปุ่มด้านล่าง\n\n" +
                     "ลบ B+P ได้ทุกเมื่อ หากต้องการคืนค่าเริ่มต้นของเกมทันที ให้กดปุ่มคืนค่า รอให้เสร็จแล้วบันทึกเมือง ขั้นตอนนี้ไม่บังคับ\n\n" +
                     "ขอบคุณ River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "เปิด Adjust All Speed Limits บน Paradox Mods" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "รับ \"All Speed Limits\" ที่นี่" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "เปิดลิงก์ไปยังม็อด Adjust All Speed Limits ของ River-mochi บนเว็บไซต์ Paradox" },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "ขีดจำกัดความเร็วของทางเดิน" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

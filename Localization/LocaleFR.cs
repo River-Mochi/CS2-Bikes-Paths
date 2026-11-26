@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths n’est plus maintenu.>\n\n" +
-                    "Merci d’avoir utilisé ce mod ! Toutes ses fonctions sont maintenant dans Adjust All Speed Limits (ASL), avec un panneau en ville plus complet pour les pistes cyclables et les chemins piétons. <Installe Adjust All Speed Limits> via le bouton ci-dessous.\n\n" +
+                    "Merci d’avoir utilisé ce mod ! Toutes ses fonctions sont maintenant dans Adjust All Speed Limits (ASL), avec un panneau en ville plus complet pour les pistes cyclables et les chemins piétons.\n\n" +
+                    "<Installe Adjust All Speed Limits>\n" +
+                    "via le bouton ci-dessous.\n\n" +
                     "Tu peux retirer B+P à tout moment. Pour retrouver les valeurs du jeu tout de suite, utilise Rétablir les valeurs du jeu, attends la fin des changements et sauvegarde la ville. C’est facultatif.\n\n" +
                     "Merci, River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Ouvre Adjust All Speed Limits sur Paradox Mods." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Obtenir « All Speed Limits » ici" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Ouvre un lien vers le mod Adjust All Speed Limits de River-mochi sur le site Paradox." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Limite de vitesse des chemins" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

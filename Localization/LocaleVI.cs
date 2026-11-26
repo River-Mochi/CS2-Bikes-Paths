@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths đã ngừng phát triển.>\n\n" +
-                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ. <Cài Adjust All Speed Limits> bằng nút bên dưới.\n\n" +
+                    "Cảm ơn bạn đã dùng mod! Mọi tính năng đã được đưa vào Adjust All Speed Limits (ASL), với bảng điều khiển trong thành phố tiện hơn cho đường xe đạp và lối đi bộ.\n\n" +
+                    "<Cài Adjust All Speed Limits>\n" +
+                    "bằng nút bên dưới.\n\n" +
                     "Bạn có thể gỡ B+P bất cứ lúc nào. Nếu muốn khôi phục ngay mặc định của game, hãy dùng nút khôi phục, chờ áp dụng xong và lưu thành phố. Không bắt buộc.\n\n" +
                     "Cảm ơn, River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Mở Adjust All Speed Limits trên Paradox Mods." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Lấy \"All Speed Limits\" tại đây" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Mở liên kết tới mod Adjust All Speed Limits của River-mochi trên trang Paradox." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Giới hạn tốc độ đường đi" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

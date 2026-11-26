@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths is retired.>\n\n" +
-                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths. <Install Adjust All Speed Limits> using the button below.\n\n" +
+                    "Thank you for using this mod! I hope you enjoyed it. All its features are now in Adjust All Speed Limits mod, with a more advanced in-city panel for bike and pedestrian paths.\n\n" +
+                    "<Install Adjust All Speed Limits>\n" +
+                    "using the button below.\n\n" +
                     "You can safely remove Bikes + Paths anytime. To restore vanilla values right away, use Reset to Game Defaults, let the changes finish and save your city. This is optional.\n\n" +
                     "Thank you, River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Opens Adjust All Speed Limits on Paradox Mods." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Get \"All Speed Limits\" Here" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Opens a link to River-mochi's Adjust All Speed Limits mod on the Paradox website." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Path speed limit" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),

@@ -54,7 +54,9 @@ namespace BikesAndPaths
                 { m_Setting.GetOptionGroupLocaleID(BPSetting.ActionsMigrationGrp), "ASL" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.MigrationText)),
                     "<Bikes + Paths artık geliştirilmiyor.>\n\n" +
-                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var. Aşağıdaki düğmeyle <Adjust All Speed Limits'i yükle>.\n\n" +
+                    "Bu modu kullandığın için teşekkürler! Tüm özellikler artık Adjust All Speed Limits (ASL) içinde. Bisiklet ve yaya yolları için gelişmiş şehir içi paneli var.\n\n" +
+                    "<Adjust All Speed Limits'i yükle>\n" +
+                    "Aşağıdaki düğmeyi kullan.\n\n" +
                     "B+P'yi istediğin zaman kaldırabilirsin. Oyun varsayılanlarına hemen dönmek için sıfırlama düğmesini kullan, işlemin bitmesini bekle ve şehri kaydet. Bu isteğe bağlıdır.\n\n" +
                     "Teşekkürler, River-mochi"
                 },
@@ -96,8 +98,8 @@ namespace BikesAndPaths
     //            },
 
                 // Path Speed
-                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "ALL Speed Limits on Paradox" },
-                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox Mods'ta Adjust All Speed Limits sayfasını açar." },
+                { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "\"All Speed Limits\"i buradan al" },
+                { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.OpenAllSpeedLimits)), "Paradox sitesinde River-mochi'nin Adjust All Speed Limits mod bağlantısını açar." },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(BPSetting.PathSpeedScalar)), "Patika hız sınırı" },
                 { m_Setting.GetOptionDescLocaleID(nameof(BPSetting.PathSpeedScalar)),
